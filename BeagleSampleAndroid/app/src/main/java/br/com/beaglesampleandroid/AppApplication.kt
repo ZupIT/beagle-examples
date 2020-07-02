@@ -19,6 +19,7 @@ package br.com.beaglesampleandroid
 import android.app.Application
 import br.com.beaglesampleandroid.beagle.BeagleSetup
 
+
 class AppApplication: Application() {
 
     override fun onCreate() {
