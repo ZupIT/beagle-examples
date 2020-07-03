@@ -14,12 +14,11 @@
 * limitations under the License.
 */
 
-import BeagleUI
+import Beagle
 import Foundation
 
 class BeagleConfig {
     static func config() {
-        
         let dependencies = BeagleDependencies()
         dependencies.urlBuilder = UrlBuilder(
             baseUrl: URL(string: "http://localhost:8080")
