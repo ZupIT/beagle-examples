@@ -39,11 +39,7 @@
 		<dependency>
 			<groupId>br.com.zup.beagle</groupId>
 			<artifactId>beagle-spring-starter</artifactId>
-			<version>0.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
@@ -99,8 +95,8 @@
 
 	<repositories>
 		<repository>
-			<id>beagle-nexus</id>
-			<url>https://repo-iti.zup.com.br/repository/beagle-jars-all</url>
+			<id>bintray-zupit-repo</id>
+			<url>https://dl.bintray.com/zupit/repo</url>
 		</repository>
 	</repositories>
 
