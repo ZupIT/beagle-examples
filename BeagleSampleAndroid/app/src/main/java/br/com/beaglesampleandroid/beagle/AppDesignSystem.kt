@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle
 
-import android.app.Application
-import br.com.beaglesampleandroid.beagle.BeagleSetup
+import br.com.beaglesampleandroid.R
+import br.com.zup.beagle.android.annotation.BeagleComponent
+import br.com.zup.beagle.android.setup.DesignSystem
 
-class AppApplication: Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-
-        instance = this
-
-        BeagleSetup().init(instance)
-    }
-
-    companion object {
-        lateinit var instance: Application
+@BeagleComponent
+class AppDesignSystem: DesignSystem() {
+    override fun textStyle(id: String): Int? {
+        return when(id) {
+            "TextStyle" -> R.style.TextStyle
+            else -> R.style.TextDefault
+        }
     }
 }

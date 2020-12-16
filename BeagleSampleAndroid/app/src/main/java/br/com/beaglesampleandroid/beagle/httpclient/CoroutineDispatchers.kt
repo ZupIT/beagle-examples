@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle.httpclient
 
-import android.app.Application
-import br.com.beaglesampleandroid.beagle.BeagleSetup
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 
-class AppApplication: Application() {
+internal object CoroutineDispatchers {
 
-    override fun onCreate() {
-        super.onCreate()
-
-        instance = this
-
-        BeagleSetup().init(instance)
+    init {
+        reset()
     }
 
-    companion object {
-        lateinit var instance: Application
+    lateinit var IO: CoroutineDispatcher
+    lateinit var Main: CoroutineDispatcher
+    lateinit var Default: CoroutineDispatcher
+
+    fun reset() {
+        IO = Dispatchers.IO
+        Main = Dispatchers.Main
+        Default = Dispatchers.Default
     }
 }

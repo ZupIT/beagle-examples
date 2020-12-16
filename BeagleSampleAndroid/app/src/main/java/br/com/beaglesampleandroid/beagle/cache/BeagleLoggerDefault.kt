@@ -14,22 +14,31 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle.cache
 
-import android.app.Application
-import br.com.beaglesampleandroid.beagle.BeagleSetup
+import android.util.Log
+import br.com.zup.beagle.android.annotation.BeagleComponent
+import br.com.zup.beagle.android.logger.BeagleLogger
 
-class AppApplication: Application() {
+private const val BEAGLE_TAG = "BeagleSDK"
 
-    override fun onCreate() {
-        super.onCreate()
+@BeagleComponent
+class BeagleLoggerDefault : BeagleLogger {
 
-        instance = this
-
-        BeagleSetup().init(instance)
+    override fun warning(message: String) {
+        Log.w(BEAGLE_TAG, message)
     }
 
-    companion object {
-        lateinit var instance: Application
+    override fun error(message: String) {
+        Log.e(BEAGLE_TAG, message)
     }
+
+    override fun error(message: String, throwable: Throwable) {
+        Log.e(BEAGLE_TAG, message, throwable)
+    }
+
+    override fun info(message: String) {
+        Log.i(BEAGLE_TAG, message)
+    }
+
 }

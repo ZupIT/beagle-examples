@@ -14,22 +14,27 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle.logger
 
-import android.app.Application
-import br.com.beaglesampleandroid.beagle.BeagleSetup
+import br.com.zup.beagle.android.store.LocalStore
 
-class AppApplication: Application() {
+internal object MemoryLocalStore : LocalStore {
 
-    override fun onCreate() {
-        super.onCreate()
+    private val cache = mutableMapOf<String, String>()
 
-        instance = this
-
-        BeagleSetup().init(instance)
+    override fun save(key: String, value: String) {
+        cache[key] = value
     }
 
-    companion object {
-        lateinit var instance: Application
+    override fun restore(key: String): String? {
+        return cache[key]
+    }
+
+    override fun delete(key: String) {
+        cache.remove(key)
+    }
+
+    override fun getAll(): Map<String, String> {
+        return cache.toMap()
     }
 }
