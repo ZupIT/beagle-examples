@@ -41,11 +41,9 @@
 		251920C8A3C3DD62670FF79AE798989C /* ImageContentMode+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08D55AABF054BC977B5B150D3DBA3ED /* ImageContentMode+Renderable.swift */; };
 		2951BE39A463D5091538DD0297974076 /* YogaKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EC5BE42888AEA90D7E5FB8EDF384C73 /* YogaKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2958759EA115F085E2C753D678050D74 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D05012824FD49180A5BCAC6DEDE029 /* LoadingView.swift */; };
-		2994541C09EC4708E2BB37C0559FCCE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */; };
 		2AD376386EBAA88887FA998F56B61BA9 /* FormManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708A1B91FA397A907A1702171F5EE3E /* FormManager.swift */; };
 		2D44D2D331CC8A61EB85FDC7575A4ECB /* AutoLayoutWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BA11DEAFE051CF7D465E6B91767B51 /* AutoLayoutWrapper.swift */; };
 		2DA9A0774E1AFDCBBE67B3DB769EE3D2 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CA0B18C2DEC8D387AD47185173501 /* Screen.swift */; };
-		3298EFB4B556E0C4C4FCCB143E972C0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA27509898F22E35356C53BECB13237 /* UIKit.framework */; };
 		333CAEA814CFD316FBEC9908CBF3C4D1 /* TabView+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61FCD4DB6FB91BBBEB59677010390D /* TabView+Renderable.swift */; };
 		33BAF7EE796BE037D65D5EC17C6B64CA /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DB9291FBCDE21A47F1F784D8A26515 /* ScreenType.swift */; };
 		3447196BE6D86CF798432D10F1CF8D94 /* UnitValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5362431882F2BA7464A6C6947AA9972F /* UnitValue.swift */; };
@@ -64,14 +62,12 @@
 		41F15F7FD82301B6592FDDE8D053A210 /* BeagleSchema-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D0E4B559B981E761625BF86C5852E18 /* BeagleSchema-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42E0BF6839A760A026D79A0626D42E0F /* FormLocalAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F118E29A36634F1B8BECD0A2949D537 /* FormLocalAction.swift */; };
 		4447E5A873E807C1876D9F4DFC2FC316 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325942DCFAD17D58E59EAF881C5CA43D /* Binding.swift */; };
-		47CD7D122A92CBB0DFCD1495E3A3C382 /* BeagleSchema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEF7391F64735B58956AFD50C3980DB /* BeagleSchema.framework */; };
 		482254DBD560B5182F61950754F8DAB9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002AE7862137C1CB08F4C2CCB1A4C5AB /* Style.swift */; };
 		48BEB5824C3E6235250D1D4FB96E24A5 /* BeagleScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7EAABFEF13AD10BF56BB930A4C704C /* BeagleScreenViewModel.swift */; };
 		498F1524273ACCC047D848DCA9BC943C /* Container+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EFAA9C6FAF929E5CA2587C66F19913 /* Container+Renderable.swift */; };
 		4A4B62755F61AEAD77E0135670FEDD43 /* Equality.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4615FADD12CD35B25738887417C924 /* Equality.generated.swift */; };
 		4A9C0034E5BDD16CB5E419496A9EC177 /* InputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0C46FD927EB1D2BCA08EE7661BFE8D /* InputValue.swift */; };
 		4B9F81B4CDF8283193E1A90424076708 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B1EE2564C738A4D60CC6F6549BADD8 /* Schema.swift */; };
-		4C7406E5080A8165DABE9F7978EB8C3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */; };
 		4CE8A242BB431DBD93AC8191F3E09FAA /* ContextObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D475ACC9DABBAADFCE922D7A9C5FFC18 /* ContextObserver.swift */; };
 		4E885BF050341C7F4E195C75F87D0106 /* SubmitFormGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D31A78106BB661B4B0CE0CDB5BC3DD /* SubmitFormGestureRecognizer.swift */; };
 		5018BC1717368D5489510A46A229124E /* AutoDecodable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9430B516F46D3528E2830EB445064 /* AutoDecodable.generated.swift */; };
@@ -124,7 +120,6 @@
 		7BA95FCE71D4281B7E9DE83B4C2060D5 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DD766EB1A96CCB34FDD23729DBA7A /* TabBar.swift */; };
 		7BC90504B476AEBB13EC8AA95CC6FAAC /* TabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB689F47A04C7EC4FB16D105DB9C4BB /* TabBarItemExtension.swift */; };
 		7C4E75EE419C2C6FDC7027EC04C1AA79 /* BeaglePrefetchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04DE2646EB76860D5284153834ADBEF /* BeaglePrefetchHelper.swift */; };
-		7CC3D31989355BDB6BE0CBF7411B870A /* YogaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B835E0ED9AC7F40CAD2AC7B7B8AA7E /* YogaKit.framework */; };
 		812753D9DA0F6DB84F24E9BF97B8A42E /* WebViewUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23E9FF13EE01579BACD5F7DD08E311D /* WebViewUIComponent.swift */; };
 		81B34989C8A03CBB7FD4CE169460B2B0 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D76E27A7956C38A619BD4DED7E661F /* Expression.swift */; };
 		81EDBFDEDAC6F48AAAAAD4E24A1D4E96 /* YGValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD2D97AA8CA1237DFD4DFB2431BA74B7 /* YGValue.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
@@ -138,7 +133,6 @@
 		89EC409C52A4A65BF5EABBA96E18BD3B /* DependencyWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B00651526ACA96A066651645135CF /* DependencyWindowManager.swift */; };
 		8A2646B548EE4E85DF2CF07742B7C2B8 /* BeagleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF5F197C797176622319C7A1549FAE /* BeagleLogger.swift */; };
 		8F8124EFCA3449A0D4BD3ACCEFFDD2C4 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D99A61E828A0249EC8A338F5722C622 /* PageIndicator.swift */; };
-		8FE98D49EDEB078EEFB61A60F50BEDC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */; };
 		91227E7021959929F63DEAAADA99BCDE /* log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C002C6720086EA1C93AAD2825EC032F /* log.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
 		93DDA04737F6150D6D624C4F849E93C9 /* UIView+Yoga.m in Sources */ = {isa = PBXBuildFile; fileRef = 632BDF63F7E658E0E6662170EABF4B1F /* UIView+Yoga.m */; };
 		94C566D81928C8809F6943A670822443 /* NetworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF721632F883A016200977709E4DF40 /* NetworkCache.swift */; };
@@ -157,7 +151,6 @@
 		A22DE784A5286751BE9A989D3AD826A9 /* UIView+Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BCD2EC945562C8267E3F7551EBB1AA /* UIView+Context.swift */; };
 		A2591DF718D0429BBD4316838A3B79AC /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0931397C5C2B1917DADF3400DB0F6A6 /* Widget.swift */; };
 		A4A8FA58DA7DBF9F1EA1791910218FDD /* YGMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E9767ED931FBF768EFAFA027ED364A /* YGMarker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A61A3D536A4B53D68F0F59AF56CB164B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */; };
 		A938E16E92D6FFFABCD8AE211FE025D7 /* SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E4D2FC83C1026EC1AF719EC44183CF /* SafeArea.swift */; };
 		ABB3BC8E177FEA5CADA96E5F403A3B0B /* ScreenComponent+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922AD27D6458F34455494550EBE0FE5A /* ScreenComponent+Renderable.swift */; };
 		ABC5C058CCE81F8D4C09C10831C2C4E7 /* CacheReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BD2CDEF631E02A704999F272CB5163 /* CacheReference.swift */; };
@@ -179,7 +172,6 @@
 		BEA48D6C948221DFCCBDB73561D5B50F /* YGLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CAE802243AF02915FC3A91845C59A6 /* YGLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C064ECAAA7AF990E27425A12150A419C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415C007A467C5E2F3C9B612DF2E77402 /* UIView+AutoLayout.swift */; };
 		C0CE0AE83B48D74E1A2828CBAE244C85 /* SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FC5F747AC341924A0D3C84ED60AA3C /* SafeArea.swift */; };
-		C1435A30FF8875B6BB02933162030252 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E2565425B8C4FEB319CC4B96ADA86D /* CoreData.framework */; };
 		C3B88CB95E5FA323A3D5988A74BA95CA /* Image+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996159C6D674AD4B0D385971E590FC23 /* Image+Renderable.swift */; };
 		C47951C9193E93F2F81170DE91704DC4 /* NavigationBar+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CF78710BC4470C89B3A5B17F52B3E1 /* NavigationBar+UIKit.swift */; };
 		C4E35993E4481780B154815819A31009 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B795024305CA7837D633C0780DDB3757 /* Accessibility.swift */; };
@@ -218,7 +210,6 @@
 		DF5A8D297696CDD2A03824611839186D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379B95337B69C9BBB1606F80D9364293 /* Request.swift */; };
 		DF92DC1721EF85765F3AB4C021B72F2B /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC37891871DA308672C48611C244468F /* LayoutManager.swift */; };
 		DFEE397C4958509229F813D02A7E90CF /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49CEBD3F00B34D6AD8D049BE895EB2A /* Events.swift */; };
-		E099BF7307B7F7D2DC6916EA3616F144 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */; };
 		E156A1631413F84FBDB302D10598853E /* WebView+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C9DDD6922D01B0C6CC09A25EFE28AA /* WebView+Renderable.swift */; };
 		E17D6D7A51C045206902ABFB54C55F95 /* YogaTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AE2E37695DFAB82970CF30FFF3A73 /* YogaTranslator.swift */; };
 		E1CBA4476560F357C48692AA921975E0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81208D844B7B17585E6CDFF20E06952E /* Observable.swift */; };
@@ -234,7 +225,6 @@
 		F00814E9CB3F2F4E89F442E135D6C1E8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FCADA06C2DB5E863DE64CADA4FB679 /* Image.swift */; };
 		F1F9C314FCFE4E3F68DDF6EB59DD1E71 /* String+RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4BD518BC6B2B1587EC89A489248EA9 /* String+RegularExpression.swift */; };
 		F4B1BC88A578AACAB679FE527E7F5274 /* YGConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD58B41EC74071E85B9ED3B359D55EE3 /* YGConfig.cpp */; settings = {COMPILER_FLAGS = "-fno-omit-frame-pointer -fexceptions -Wall -Werror -std=c++1y -fPIC -fno-objc-arc"; }; };
-		F62A8FE8A01AEA05C7DBD2FA55E41D29 /* yoga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44DF030C5260E1ED354FA18C4CC02713 /* yoga.framework */; };
 		F766978F0D7802E88A15CC15B85BD07D /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08389F8CC6C82A18BFA7672E90FBE875 /* Collection+Safe.swift */; };
 		F76B38F2BDF264A0104CEE1D91984B7E /* PageIndicator+Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32859E935858A637C08EA8C647206FDD /* PageIndicator+Renderable.swift */; };
 		FAF01C2B351029DC379FF660FC06F199 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0076CCA74D819B6641642F3879E2385C /* Analytics.swift */; };
@@ -336,7 +326,6 @@
 		28BF5F197C797176622319C7A1549FAE /* BeagleLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeagleLogger.swift; path = iOS/Sources/Beagle/Sources/Logger/BeagleLogger.swift; sourceTree = "<group>"; };
 		28C9DDD6922D01B0C6CC09A25EFE28AA /* WebView+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "WebView+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/WebView+Renderable/WebView+Renderable.swift"; sourceTree = "<group>"; };
 		291BAC07E6724A1173EC0BF5FF0F90DE /* Yoga.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Yoga.modulemap; sourceTree = "<group>"; };
-		2AA27509898F22E35356C53BECB13237 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2D4615FADD12CD35B25738887417C924 /* Equality.generated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equality.generated.swift; path = iOS/Schema/Sources/CodeGeneration/Generated/Equality.generated.swift; sourceTree = "<group>"; };
 		2D99A61E828A0249EC8A338F5722C622 /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = "iOS/Sources/Beagle/Sources/Components/PageIndicator+Renderable/PageIndicator.swift"; sourceTree = "<group>"; };
 		2E93A3832BC614A6BF30DBD96C0D7644 /* SimpleForm+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SimpleForm+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/SimpleForm+Renderable/SimpleForm+Renderable.swift"; sourceTree = "<group>"; };
@@ -351,7 +340,7 @@
 		36FC8D75C728591558A0704224A7983C /* ServerDrivenComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerDrivenComponent.swift; path = iOS/Sources/Beagle/Sources/Components/ServerDrivenComponent.swift; sourceTree = "<group>"; };
 		3708A1B91FA397A907A1702171F5EE3E /* FormManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormManager.swift; path = iOS/Sources/Beagle/Sources/Context/FormManager.swift; sourceTree = "<group>"; };
 		379B95337B69C9BBB1606F80D9364293 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = iOS/Sources/Beagle/Sources/Networking/Request.swift; sourceTree = "<group>"; };
-		39EBAC41F4BE5DE893B5FEFB9CF09A00 /* Pods_Beagle_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Beagle_Sample.framework; path = "Pods-Beagle Sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39EBAC41F4BE5DE893B5FEFB9CF09A00 /* Pods_Beagle_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beagle_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2DEB08D6C2EFEEBD1787DF87395736 /* Beagle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Beagle.debug.xcconfig; sourceTree = "<group>"; };
 		3B761F8BB187FF425FB2A2BABEC77268 /* TabViewUIComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabViewUIComponent.swift; path = "iOS/Sources/Beagle/Sources/Components/TabView+Renderable/TabViewUIComponent.swift"; sourceTree = "<group>"; };
 		3BA6BF63B38540B0E59A8EB5E4BCBA66 /* YGNode.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = YGNode.cpp; path = yoga/YGNode.cpp; sourceTree = "<group>"; };
@@ -363,7 +352,6 @@
 		439AE2E37695DFAB82970CF30FFF3A73 /* YogaTranslator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YogaTranslator.swift; path = "iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Style/YogaTranslator.swift"; sourceTree = "<group>"; };
 		43F25A2F430ECFA6C129968FE7735486 /* RequestDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestDispatcher.swift; path = iOS/Sources/Beagle/Sources/Networking/RequestDispatcher.swift; sourceTree = "<group>"; };
 		4456CC9658EAA5E4DEDD81A72BB62085 /* BeagleNavigatorAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeagleNavigatorAnimation.swift; path = iOS/Sources/Beagle/Sources/Navigation/BeagleNavigatorAnimation.swift; sourceTree = "<group>"; };
-		44DF030C5260E1ED354FA18C4CC02713 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		458FE78AF69F6AE465E43DD5A3917288 /* Confirm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Confirm.swift; path = iOS/Sources/Beagle/Sources/Action/Types/Confirm.swift; sourceTree = "<group>"; };
 		45E658139F61DF5AC23AFA77166CACC4 /* Text.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Text.swift; path = iOS/Schema/Sources/Widgets/Text/Text.swift; sourceTree = "<group>"; };
 		48BA11DEAFE051CF7D465E6B91767B51 /* AutoLayoutWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoLayoutWrapper.swift; path = iOS/Sources/Beagle/Sources/Renderer/AutoLayoutWrapper.swift; sourceTree = "<group>"; };
@@ -380,7 +368,7 @@
 		535B808428D3880166DDECD0412398BB /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Path.swift; path = iOS/Schema/Sources/ContextExpression/Path.swift; sourceTree = "<group>"; };
 		5362431882F2BA7464A6C6947AA9972F /* UnitValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnitValue.swift; path = iOS/Schema/Sources/Widgets/WidgetProperties/Flex/UnitValue.swift; sourceTree = "<group>"; };
 		542F589E26F7B48370757C7C39FDF7D0 /* HttpAditionalData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpAditionalData.swift; path = iOS/Sources/Beagle/Sources/Networking/HttpAditionalData.swift; sourceTree = "<group>"; };
-		5467552E084764C0E1914746445A1E93 /* AutoDecodable.swifttemplate */ = {isa = PBXFileReference; includeInIndex = 1; name = AutoDecodable.swifttemplate; path = iOS/Sources/Beagle/CodeGeneration/Templates/AutoDecodable.swifttemplate; sourceTree = "<group>"; };
+		5467552E084764C0E1914746445A1E93 /* AutoDecodable.swifttemplate */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AutoDecodable.swifttemplate; path = iOS/Sources/Beagle/CodeGeneration/Templates/AutoDecodable.swifttemplate; sourceTree = "<group>"; };
 		54B7FBD75E4866F3C698DB554762EB4B /* YGNodePrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNodePrint.h; path = yoga/YGNodePrint.h; sourceTree = "<group>"; };
 		55FC5F747AC341924A0D3C84ED60AA3C /* SafeArea.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SafeArea.swift; path = "iOS/Sources/Beagle/Sources/Components/Screen+Renderable/SafeArea.swift"; sourceTree = "<group>"; };
 		565D9948A76C86E90A0FE7B38BE17BFC /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Button.swift; path = iOS/Schema/Sources/Widgets/Button/Button.swift; sourceTree = "<group>"; };
@@ -388,7 +376,7 @@
 		576D87F2B48F2F20FDFA85B2DAAE3721 /* YGLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YGLayout.m; path = YogaKit/Source/YGLayout.m; sourceTree = "<group>"; };
 		57840B06FC195AB01F48BDEAE175E056 /* BeagleMessageLogs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeagleMessageLogs.swift; path = iOS/Sources/Beagle/Sources/Logger/BeagleMessageLogs.swift; sourceTree = "<group>"; };
 		58B19AF6A0DC336B5EA2014F586748C6 /* YogaKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YogaKit-prefix.pch"; sourceTree = "<group>"; };
-		5B3357A1CE67C0BF4AE31936A1BE6888 /* YogaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YogaKit.framework; path = YogaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3357A1CE67C0BF4AE31936A1BE6888 /* YogaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YogaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8DD766EB1A96CCB34FDD23729DBA7A /* TabBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabBar.swift; path = iOS/Schema/Sources/ServerDrivenComponent/TabBar/TabBar.swift; sourceTree = "<group>"; };
 		5D689ACE0282CA01111FEFA4B3AD9D27 /* ListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = "iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListViewController.swift"; sourceTree = "<group>"; };
 		5E61FCD4DB6FB91BBBEB59677010390D /* TabView+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabView+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/TabView+Renderable/TabView+Renderable.swift"; sourceTree = "<group>"; };
@@ -397,12 +385,11 @@
 		6267BC984DF36DA1D0AFFAFA66B889C9 /* Text+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Text+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/Text+Renderable/Text+Renderable.swift"; sourceTree = "<group>"; };
 		62CAE802243AF02915FC3A91845C59A6 /* YGLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGLayout.h; path = YogaKit/Source/YGLayout.h; sourceTree = "<group>"; };
 		62F6D6545039D2DD9BAC9B72E64B79A9 /* YGFloatOptional.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGFloatOptional.h; path = yoga/YGFloatOptional.h; sourceTree = "<group>"; };
-		631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		632BDF63F7E658E0E6662170EABF4B1F /* UIView+Yoga.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Yoga.m"; path = "YogaKit/Source/UIView+Yoga.m"; sourceTree = "<group>"; };
 		63D76E27A7956C38A619BD4DED7E661F /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = iOS/Schema/Sources/ContextExpression/Expression.swift; sourceTree = "<group>"; };
 		6482DD43A955E84277BE58E36818DE83 /* Navigate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Navigate.swift; path = iOS/Schema/Sources/Action/Types/Navigate/Navigate.swift; sourceTree = "<group>"; };
 		6513B8C3AB78037B59C9BE90F5CE33CD /* YGEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGEnums.h; path = yoga/YGEnums.h; sourceTree = "<group>"; };
-		65D0A19C165FA1126B1360680FE6DB12 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = yoga.framework; path = Yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D0A19C165FA1126B1360680FE6DB12 /* yoga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = yoga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6681A8EF24AFE9CB397AE0622D19CE10 /* Operation+Evaluate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Operation+Evaluate.swift"; path = "iOS/Sources/Beagle/Sources/ContextExpression/Operation+Evaluate.swift"; sourceTree = "<group>"; };
 		669FBE81BF25E02627F89D46F513FB4B /* YGConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGConfig.h; path = yoga/YGConfig.h; sourceTree = "<group>"; };
 		66A705673CBF82C14E98DF0E317A49B8 /* Beagle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Beagle.modulemap; sourceTree = "<group>"; };
@@ -410,16 +397,14 @@
 		6898C8D5FA5FEC8535C932D4C09ACA6D /* UIView+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Style.swift"; path = "iOS/Sources/Beagle/Sources/Common/Extensions/UIView+Style.swift"; sourceTree = "<group>"; };
 		6A243C15122AFD65ED60CB1EA5DD841A /* LazyComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LazyComponent.swift; path = iOS/Schema/Sources/ServerDrivenComponent/Lazy/LazyComponent.swift; sourceTree = "<group>"; };
 		6A4C6BB0E20F994B8F76D472CE27AE30 /* Form+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Form+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/Form+Renderable/Form+Renderable.swift"; sourceTree = "<group>"; };
-		6A68637FBC049DC990DC68B64EB75F7E /* BeagleSchema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BeagleSchema.framework; path = BeagleSchema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A68637FBC049DC990DC68B64EB75F7E /* BeagleSchema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeagleSchema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB850F076961BAE41AFB3523F950DB5 /* Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Action.swift; path = iOS/Sources/Beagle/Sources/Action/Action.swift; sourceTree = "<group>"; };
-		6EEF7391F64735B58956AFD50C3980DB /* BeagleSchema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BeagleSchema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700357E3B6E5590EB5DB91E2203B5090 /* FormInputComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInputComponent.swift; path = iOS/Schema/Sources/ServerDrivenComponent/Form/Input/FormInputComponent.swift; sourceTree = "<group>"; };
 		70A21A521B17E1B8DDB6C7FF060A6F8B /* Touchable+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Touchable+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Action/Touchable+Renderable.swift"; sourceTree = "<group>"; };
 		71150BB7BD08751B8EA5AE3653394A9B /* PageView+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PageView+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/Page+Renderable/PageView+Renderable.swift"; sourceTree = "<group>"; };
 		73A6FF29A80CD21780D3CC9D8419426E /* FormRemoteAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormRemoteAction.swift; path = iOS/Schema/Sources/Action/Types/FormRemoteAction.swift; sourceTree = "<group>"; };
 		766765D132344149CE6CA2C096C162F2 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = iOS/Schema/Sources/ServerDrivenComponent/PageView/PageView.swift; sourceTree = "<group>"; };
 		76DE76F3A3F6268B3542CA723561517B /* PageIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageIndicator.swift; path = iOS/Schema/Sources/ServerDrivenComponent/PageIndicator/Indicator/PageIndicator.swift; sourceTree = "<group>"; };
-		76E2565425B8C4FEB319CC4B96ADA86D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		78D331F1D6DD1E7038C39CE1D474E608 /* Yoga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Yoga.debug.xcconfig; sourceTree = "<group>"; };
 		79A1F818307964C59F2854DC6D328A4D /* Pods-Beagle Sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Beagle Sample.modulemap"; sourceTree = "<group>"; };
 		7AFC40982254A032E9160F4A3FF336EA /* Yoga-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Yoga-internal.h"; path = "yoga/Yoga-internal.h"; sourceTree = "<group>"; };
@@ -472,7 +457,7 @@
 		99C67B9336F04239C87E9FE6A4CB6900 /* Value+Evaluate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Value+Evaluate.swift"; path = "iOS/Sources/Beagle/Sources/ContextExpression/Value+Evaluate.swift"; sourceTree = "<group>"; };
 		99E7E3BFC4939846B78584F635AEF2F8 /* SubmitForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubmitForm.swift; path = iOS/Schema/Sources/Action/Types/SubmitForm.swift; sourceTree = "<group>"; };
 		9A2DA6BF02695243E4CCBC629CA4B5E5 /* ListViewUIComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListViewUIComponent.swift; path = "iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListViewUIComponent.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F8612F0079A8C02A1C6335081B0968F /* TabBarItemUIComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabBarItemUIComponent.swift; path = "iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBarItemUIComponent.swift"; sourceTree = "<group>"; };
 		9FF578665B08C376AD4CF68F5A9869CC /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = iOS/Schema/Sources/Widgets/WidgetProperties/Flex/Size.swift; sourceTree = "<group>"; };
 		A04DE2646EB76860D5284153834ADBEF /* BeaglePrefetchHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeaglePrefetchHelper.swift; path = iOS/Sources/Beagle/Sources/Caching/Prefetch/BeaglePrefetchHelper.swift; sourceTree = "<group>"; };
@@ -533,7 +518,6 @@
 		D67FA4960B880CE96E8D82F621EFBB25 /* TabBarUIComponent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabBarUIComponent.swift; path = "iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBarUIComponent.swift"; sourceTree = "<group>"; };
 		D6A2ACB7248AE6DC8E07213BA75C23A4 /* UnitValueExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnitValueExtension.swift; path = iOS/Sources/Beagle/Sources/Common/Extensions/UnitValueExtension.swift; sourceTree = "<group>"; };
 		D6BD2CDEF631E02A704999F272CB5163 /* CacheReference.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CacheReference.swift; path = iOS/Sources/Beagle/Sources/Caching/CacheManager/CacheReference.swift; sourceTree = "<group>"; };
-		D7B835E0ED9AC7F40CAD2AC7B7B8AA7E /* YogaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YogaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D887EAD3AFD496A11B739E419F71FBB9 /* YGMarker.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = YGMarker.cpp; path = yoga/YGMarker.cpp; sourceTree = "<group>"; };
 		D90C533B546A198CD4C2EA28C64BD202 /* TabBar+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabBar+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBar+Renderable.swift"; sourceTree = "<group>"; };
 		D9929D0BB046B93A0AA8C40761AB035A /* Alert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = iOS/Sources/Beagle/Sources/Action/Types/Alert.swift; sourceTree = "<group>"; };
@@ -541,7 +525,7 @@
 		DD2D97AA8CA1237DFD4DFB2431BA74B7 /* YGValue.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = YGValue.cpp; path = yoga/YGValue.cpp; sourceTree = "<group>"; };
 		DF9B3AE27642273E5805AF70392FBC6D /* UIView+Loading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Loading.swift"; path = "iOS/Sources/Beagle/Sources/Common/Extensions/UIView+Loading.swift"; sourceTree = "<group>"; };
 		E19654958B1F9EF8CD95EED30DBE5EBA /* FormDataStoreHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormDataStoreHandler.swift; path = iOS/Sources/Beagle/Sources/Context/FormDataStoreHandler.swift; sourceTree = "<group>"; };
-		E1C0525009CC95282350FBBDAD3C2333 /* Beagle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Beagle.framework; path = Beagle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C0525009CC95282350FBBDAD3C2333 /* Beagle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Beagle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E280CF8BFDC3242E77E4EC5CBE65F0AA /* YGLayoutExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YGLayoutExtensions.swift; path = YogaKit/Source/YGLayoutExtensions.swift; sourceTree = "<group>"; };
 		E3B1EE2564C738A4D60CC6F6549BADD8 /* Schema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schema.swift; path = iOS/Schema/Sources/Schema.swift; sourceTree = "<group>"; };
 		E5ACAC57B60BED7B205BD1142FD29694 /* Container.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Container.swift; path = iOS/Schema/Sources/Widgets/Container/Container.swift; sourceTree = "<group>"; };
@@ -550,13 +534,13 @@
 		E7137002F9553B543D2B1C300E9368A3 /* FormSubmit+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FormSubmit+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/Form+Renderable/Submit/FormSubmit+Renderable.swift"; sourceTree = "<group>"; };
 		E784554000B5BD6C46F29B95BEACCB09 /* YGValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGValue.h; path = yoga/YGValue.h; sourceTree = "<group>"; };
 		E915434EA5EE56C2FA81A4780C38C6B9 /* UrlBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UrlBuilder.swift; path = iOS/Sources/Beagle/Sources/Networking/UrlBuilder.swift; sourceTree = "<group>"; };
-		E99B874E1C3CB1F91ADD8CFBD4C68CA7 /* Equality.stencil */ = {isa = PBXFileReference; includeInIndex = 1; name = Equality.stencil; path = iOS/Sources/Beagle/CodeGeneration/Templates/Equality.stencil; sourceTree = "<group>"; };
+		E99B874E1C3CB1F91ADD8CFBD4C68CA7 /* Equality.stencil */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Equality.stencil; path = iOS/Sources/Beagle/CodeGeneration/Templates/Equality.stencil; sourceTree = "<group>"; };
 		EC5CA0B18C2DEC8D387AD47185173501 /* Screen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Screen.swift; path = iOS/Schema/Sources/ServerDrivenComponent/Screen/Screen.swift; sourceTree = "<group>"; };
 		ECD9889D3C765F540DDAC0B34CCBABC0 /* Beagle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Beagle.release.xcconfig; sourceTree = "<group>"; };
 		F08D55AABF054BC977B5B150D3DBA3ED /* ImageContentMode+Renderable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageContentMode+Renderable.swift"; path = "iOS/Sources/Beagle/Sources/Components/Image+Renderable/ImageContentMode+Renderable.swift"; sourceTree = "<group>"; };
 		F12F6210393EA8C3FD0388628E508445 /* OperationsProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationsProvider.swift; path = iOS/Sources/Beagle/Sources/ContextExpression/OperationsProvider.swift; sourceTree = "<group>"; };
 		F2CE36E12D031B0012249967FE78B72D /* SendRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SendRequest.swift; path = iOS/Schema/Sources/Action/Types/SendRequest.swift; sourceTree = "<group>"; };
-		F355801E3CC72F5D8B54B4EAE0B94D1B /* Initiable.swifttemplate */ = {isa = PBXFileReference; includeInIndex = 1; name = Initiable.swifttemplate; path = iOS/Sources/Beagle/CodeGeneration/Templates/Initiable.swifttemplate; sourceTree = "<group>"; };
+		F355801E3CC72F5D8B54B4EAE0B94D1B /* Initiable.swifttemplate */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Initiable.swifttemplate; path = iOS/Sources/Beagle/CodeGeneration/Templates/Initiable.swifttemplate; sourceTree = "<group>"; };
 		F387170800B2692D2B1D2BB7C3C1B519 /* YGNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YGNode.h; path = yoga/YGNode.h; sourceTree = "<group>"; };
 		F4076DC9EFC3881BCECE4F3A65ECA90F /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = iOS/Schema/Sources/ContextExpression/Value.swift; sourceTree = "<group>"; };
 		F50D1B56F9075A336954E3BD10D54826 /* BeagleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeagleView.swift; path = iOS/Sources/Beagle/Sources/Renderer/BeagleView.swift; sourceTree = "<group>"; };
@@ -580,10 +564,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47CD7D122A92CBB0DFCD1495E3A3C382 /* BeagleSchema.framework in Frameworks */,
-				C1435A30FF8875B6BB02933162030252 /* CoreData.framework in Frameworks */,
-				E099BF7307B7F7D2DC6916EA3616F144 /* Foundation.framework in Frameworks */,
-				7CC3D31989355BDB6BE0CBF7411B870A /* YogaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +571,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A61A3D536A4B53D68F0F59AF56CB164B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,9 +578,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7406E5080A8165DABE9F7978EB8C3E /* Foundation.framework in Frameworks */,
-				3298EFB4B556E0C4C4FCCB143E972C0B /* UIKit.framework in Frameworks */,
-				F62A8FE8A01AEA05C7DBD2FA55E41D29 /* yoga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,7 +585,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE98D49EDEB078EEFB61A60F50BEDC5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,7 +592,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2994541C09EC4708E2BB37C0559FCCE3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,7 +806,6 @@
 				E280CF8BFDC3242E77E4EC5CBE65F0AA /* YGLayoutExtensions.swift */,
 				A3FCD25DD0F6075687B4D90BCFFFD825 /* Support Files */,
 			);
-			name = YogaKit;
 			path = YogaKit;
 			sourceTree = "<group>";
 		};
@@ -891,7 +864,6 @@
 				3281FC3D00826FDC48ED6586F4BA4502 /* Beagle */,
 				AC397B7744EE6988A3B0C9B056BB383C /* Support Files */,
 			);
-			name = Beagle;
 			path = Beagle;
 			sourceTree = "<group>";
 		};
@@ -899,32 +871,10 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				E67FA38CEA5D45C6AEB8B9C2A7E1124D /* Frameworks */,
 				AC3BBB4176D70261900038231E17896F /* Pods */,
 				589781F17CA98CF815323420719604B7 /* Products */,
 				B4C1AAA6568975EB9FB89507F6EE75CF /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		DA74EC41C53B2888FD695FFB0707089A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				76E2565425B8C4FEB319CC4B96ADA86D /* CoreData.framework */,
-				631B3040D8C52944AED68F6DF421C8CB /* Foundation.framework */,
-				2AA27509898F22E35356C53BECB13237 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E67FA38CEA5D45C6AEB8B9C2A7E1124D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6EEF7391F64735B58956AFD50C3980DB /* BeagleSchema.framework */,
-				44DF030C5260E1ED354FA18C4CC02713 /* yoga.framework */,
-				D7B835E0ED9AC7F40CAD2AC7B7B8AA7E /* YogaKit.framework */,
-				DA74EC41C53B2888FD695FFB0707089A /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E6ACFBCE86643AD810B582B780672271 /* BeagleSchema */ = {
@@ -997,7 +947,6 @@
 				BA07A8FB45BD59C37729B3E86279AB26 /* WebView.swift */,
 				19F66FBDCD5FDFC57DD05D1C8D5517FF /* Support Files */,
 			);
-			name = BeagleSchema;
 			path = BeagleSchema;
 			sourceTree = "<group>";
 		};
@@ -1033,7 +982,6 @@
 				7AFC40982254A032E9160F4A3FF336EA /* Yoga-internal.h */,
 				2D3D2BC4B5890CC9EC9E14CEE50CD45B /* Support Files */,
 			);
-			name = Yoga;
 			path = Yoga;
 			sourceTree = "<group>";
 		};

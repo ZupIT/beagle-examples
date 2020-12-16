@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5210F95DECB2EE79AF8008E4 /* Pods_Beagle_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AB3D2833B677B4568AB87F /* Pods_Beagle_Sample.framework */; };
 		5C8BE1DC25897D63003699C6 /* BeagleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1CB25897D63003699C6 /* BeagleConfig.swift */; };
 		5C8BE1DD25897D63003699C6 /* BeagleLoggerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1CD25897D63003699C6 /* BeagleLoggerDefault.swift */; };
 		5C8BE1DE25897D63003699C6 /* CacheLRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1D025897D63003699C6 /* CacheLRU.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04AB3D2833B677B4568AB87F /* Pods_Beagle_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beagle_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C27A8C585A007314AB4CAFD /* Pods-Beagle Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beagle Sample.debug.xcconfig"; path = "Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8BE1CB25897D63003699C6 /* BeagleConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeagleConfig.swift; sourceTree = "<group>"; };
 		5C8BE1CD25897D63003699C6 /* BeagleLoggerDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeagleLoggerDefault.swift; sourceTree = "<group>"; };
@@ -53,21 +51,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5210F95DECB2EE79AF8008E4 /* Pods_Beagle_Sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D738403CAB1142F1CBD40C5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04AB3D2833B677B4568AB87F /* Pods_Beagle_Sample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5C8BE1CA25897D63003699C6 /* BeagleConfigurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +121,6 @@
 				6E007EAD243E0ABB00489AE5 /* Beagle Sample */,
 				6E007EAC243E0ABB00489AE5 /* Products */,
 				8C67AE3BA953693C1BA8C39B /* Pods */,
-				1D738403CAB1142F1CBD40C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
