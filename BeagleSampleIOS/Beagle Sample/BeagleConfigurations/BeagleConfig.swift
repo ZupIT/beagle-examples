@@ -41,7 +41,7 @@ class BeagleConfig {
     
     static func setAppTheme(in dependencies: BeagleDependencies) {
         let theme = AppTheme(styles: [
-            "h1" : BeagleStyles.h1
+            "TextStyle": BeagleStyles.textStyle
         ])
         
         dependencies.theme = theme

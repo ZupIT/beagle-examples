@@ -20,8 +20,8 @@ import Beagle
 
 struct BeagleStyles {
     
-    static func h1() -> (UITextView?) -> Void {
-        BeagleStyle.text(font: .systemFont(ofSize: 12, weight: .light), color: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1))
+    static func textStyle() -> (UITextView?) -> Void {
+        BeagleStyle.text(font: .systemFont(ofSize: 12, weight: .bold), color: .orange)
     }
     
 }
