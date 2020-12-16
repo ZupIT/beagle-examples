@@ -14,22 +14,7 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle.cache
 
-import android.app.Application
-import br.com.beaglesampleandroid.beagle.BeagleSetup
-
-class AppApplication: Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-
-        instance = this
-
-        BeagleSetup().init(instance)
-    }
-
-    companion object {
-        lateinit var instance: Application
-    }
+class BeagleLoggerDefault {
 }
