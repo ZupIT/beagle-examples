@@ -24,4 +24,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextDefault" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextStyle" parent="TextDefault">
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -32,7 +32,8 @@ class FirstScreenBeagleBuilder : ScreenBuilder {
             child = Container(
                     children = listOf(
                             Text(
-                                    text = "Hello Beagle"
+                                    text = "Hello Beagle",
+                                    styleId = "TextStyle"
                             ).applyStyle(
                                     Style(
                                             margin = EdgeValue(
