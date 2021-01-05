@@ -28,4 +28,25 @@ class AppDesignSystem: DesignSystem() {
             else -> R.style.TextDefault
         }
     }
+
+    override fun buttonStyle(id: String): Int? {
+        return when(id) {
+            "button" -> R.style.DesignSystem_Button_Default
+            else -> R.style.DesignSystem_Button_Default
+        }
+    }
+
+    override fun toolbarStyle(id: String): Int? {
+        return when(id){
+            "toolbar" -> R.style.DesignSystem_Toolbar_Center
+            else -> R.style.DesignSystem_Toolbar_Center
+        }
+    }
+
+    override fun inputTextStyle(id: String): Int? {
+        return when(id) {
+            "TextInput" -> R.style.TextInput
+            else -> R.style.TextInput
+        }
+    }
 }

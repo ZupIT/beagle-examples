@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(BeagleActivity.newIntent(this, ScreenRequest("/screen")))
+        startActivity(BeagleActivity.newIntent(this, ScreenRequest("/login")))
         finish()
     }
 }
