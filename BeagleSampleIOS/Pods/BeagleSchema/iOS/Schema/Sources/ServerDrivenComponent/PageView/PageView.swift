@@ -50,7 +50,6 @@ public struct PageView: RawComponent, AutoDecodable, HasContext {
         self.currentPage = currentPage
     }
     
-    #if swift(<5.3)
     public init(
         context: Context? = nil,
         onPageChange: [RawAction]? = nil,
@@ -60,7 +59,6 @@ public struct PageView: RawComponent, AutoDecodable, HasContext {
     ) {
         self.init(children: [children()], context: context, onPageChange: onPageChange, currentPage: currentPage)
     }
-    #endif
     
     public init(
         context: Context? = nil,

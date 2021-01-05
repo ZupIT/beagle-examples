@@ -23,8 +23,9 @@ extension SetContext: Action {
         let valueEvaluated = value.evaluate(with: origin)
         let contextObserver = origin.getContext(with: contextId)
 
-        if let contextValue = contextObserver?.value.value, let path = path {
-            contextObserver?.value = Context(id: contextId, value: contextValue.set(valueEvaluated, with: path))
+        if var contextValue = contextObserver?.value.value, let path = path {
+            contextValue.set(valueEvaluated, forPath: path)
+            contextObserver?.value = Context(id: contextId, value: contextValue)
         } else {
             contextObserver?.value = Context(id: contextId, value: valueEvaluated)
         }

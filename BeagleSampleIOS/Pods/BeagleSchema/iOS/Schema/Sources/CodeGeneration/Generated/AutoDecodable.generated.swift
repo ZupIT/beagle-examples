@@ -1,4 +1,4 @@
-// Generated using Sourcery 1.0.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.18.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 /*
@@ -73,24 +73,6 @@ extension Button {
         onPress = try container.decodeIfPresent(forKey: .onPress)
         clickAnalyticsEvent = try container.decodeIfPresent(AnalyticsClick.self, forKey: .clickAnalyticsEvent)
         widgetProperties = try WidgetProperties(from: decoder)
-    }
-}
-
-// MARK: Condition Decodable
-extension Condition {
-
-    enum CodingKeys: String, CodingKey {
-        case condition
-        case onTrue
-        case onFalse
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        condition = try container.decode(Expression<Bool>.self, forKey: .condition)
-        onTrue = try container.decodeIfPresent(forKey: .onTrue)
-        onFalse = try container.decodeIfPresent(forKey: .onFalse)
     }
 }
 
@@ -246,6 +228,22 @@ extension LazyComponent {
     }
 }
 
+// MARK: ListView Decodable
+extension ListView {
+
+    enum CodingKeys: String, CodingKey {
+        case children
+        case direction
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        children = try container.decode(forKey: .children)
+        direction = try container.decodeIfPresent(Direction.self, forKey: .direction) ?? .vertical
+    }
+}
+
 // MARK: PageView Decodable
 extension PageView {
 
@@ -332,9 +330,9 @@ extension SendRequest {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         url = try container.decode(Expression<String>.self, forKey: .url)
-        method = try container.decodeIfPresent(Expression<SendRequest.HTTPMethod>.self, forKey: .method)
+        method = try container.decodeIfPresent(SendRequest.HTTPMethod.self, forKey: .method)
         data = try container.decodeIfPresent(DynamicObject.self, forKey: .data)
-        headers = try container.decodeIfPresent(Expression<[String: String]>.self, forKey: .headers)
+        headers = try container.decodeIfPresent([String: String].self, forKey: .headers)
         onSuccess = try container.decodeIfPresent(forKey: .onSuccess)
         onError = try container.decodeIfPresent(forKey: .onError)
         onFinish = try container.decodeIfPresent(forKey: .onFinish)

@@ -45,10 +45,3 @@ public struct HttpAdditionalData: RemoteScreenAdditionalData {
         self.headers = headers
     }
 }
-
-extension HttpAdditionalData: Equatable {
-}
-
-extension HttpAdditionalData.HttpData: Equatable {
-
-}

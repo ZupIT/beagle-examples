@@ -59,10 +59,6 @@ public protocol IdentifiableComponent {
     var id: String? { get }
 }
 
-public protocol InitiableComponent {
-    var onInit: [RawAction]? { get }
-}
-
 /// Properties that all widgets have and are important to Beagle.
 public struct WidgetProperties: HasWidgetProperties, AutoDecodable, Equatable, AutoInitiable {
 

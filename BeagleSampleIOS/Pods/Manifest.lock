@@ -1,10 +1,10 @@
 PODS:
-  - Beagle (1.5.0):
-    - Beagle/Beagle (= 1.5.0)
-  - Beagle/Beagle (1.5.0):
-    - BeagleSchema (= 1.5.0)
+  - Beagle (1.2.1):
+    - Beagle/Beagle (= 1.2.1)
+  - Beagle/Beagle (1.2.1):
+    - BeagleSchema (= 1.2.1)
     - YogaKit
-  - BeagleSchema (1.5.0)
+  - BeagleSchema (1.2.1)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -29,11 +29,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ZupIT/YogaKit
 
 SPEC CHECKSUMS:
-  Beagle: 68b7583ec5ba63d8000f87afc32247d61019adbd
-  BeagleSchema: cc5463afa843ac07caaddb875d82c97a7d8a0153
+  Beagle: e182a62d200375932e76df297c8881aaa6599dfd
+  BeagleSchema: 8570b424ea2cfdca8ba74602b9011299afd7c453
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: 3a733275fd1639b96a304f6f5c11421478371e6b
 
 PODFILE CHECKSUM: 6adaabe90e6d30312999c6ea96177032db014fe9
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.9.3
