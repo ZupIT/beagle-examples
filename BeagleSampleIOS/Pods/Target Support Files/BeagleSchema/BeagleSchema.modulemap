@@ -1,0 +1,6 @@
+framework module BeagleSchema {
+  umbrella header "BeagleSchema-umbrella.h"
+
+  export *
+  module * { export * }
+}
