@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-public enum DynamicObject: Equatable, Hashable {
+public enum DynamicObject: Equatable {
     case empty
     case bool(Bool)
     case int(Int)
@@ -25,11 +25,7 @@ public enum DynamicObject: Equatable, Hashable {
     case expression(ContextExpression)
 }
     
-extension DynamicObject: CustomStringConvertible {
-    
-    public var description: String {
-        return self.toString()
-    }
+extension DynamicObject {
         
     public func asAny() -> Any? {
         switch self {
@@ -57,7 +53,7 @@ extension DynamicObject: CustomStringConvertible {
         }
     }
     
-    private func toString() -> String {
+    public func toString() -> String {
         switch self {
         case .empty:
             return ""

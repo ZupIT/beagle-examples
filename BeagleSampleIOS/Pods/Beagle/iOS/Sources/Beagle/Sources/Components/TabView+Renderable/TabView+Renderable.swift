@@ -20,14 +20,15 @@ import BeagleSchema
 extension TabView: ServerDrivenComponent {
 
     public func toView(renderer: BeagleRenderer) -> UIView {
-        let model = TabViewUIComponent.Model(tabIndex: 0, tabViewItems: children, renderer: renderer)
-        let tabView = TabViewUIComponent(model: model, renderer: renderer)
-        tabView.style.setup(Style(size: Size().width(100%), flex: Flex().grow(1)))
-        
+        let model = TabViewUIComponent.Model(tabIndex: 0, tabViewItems: children)
+        let tabView = TabViewUIComponent(model: model, controller: renderer.controller)
+
+        // TODO: use style in BeagleRenderer
         if let styleId = styleId {
-            tabView.beagle.applyStyle(for: tabView as UIView, styleId: styleId, with: renderer.controller)
+            renderer.controller.dependencies.theme.applyStyle(for: tabView as UIView, withId: styleId)
         }
 
+        tabView.style.setup(Style(size: Size().width(100%), flex: Flex().grow(1)))
         return tabView
     }
 }

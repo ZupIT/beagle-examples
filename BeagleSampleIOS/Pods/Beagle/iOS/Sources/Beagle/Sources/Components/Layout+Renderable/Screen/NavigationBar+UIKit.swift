@@ -40,7 +40,11 @@ extension NavigationBarItem {
             self.controller = controller
             super.init()
             if let localImage = barItem.image {
-                handleContextOnNavigationBarImage(icon: localImage)
+                image = UIImage(
+                    named: localImage,
+                    in: controller.dependencies.appBundle,
+                    compatibleWith: nil
+                )?.withRenderingMode(.alwaysOriginal)
                 accessibilityHint = barItem.text
             } else {
                 title = barItem.text
@@ -49,23 +53,6 @@ extension NavigationBarItem {
             target = self
             action = #selector(triggerAction)
             ViewConfigurator.applyAccessibility(barItem.accessibility, to: self)
-        }
-        
-        private func handleContextOnNavigationBarImage(icon: String) {
-            let expression: Expression<String> = "\(icon)"
-            let renderer = controller?.renderer
-            
-            // Since `BeagleScreenViewController` creates a different view hierarchy, to get the correct hierarchy we need to use the `view` from our `controller`.
-            guard case .view(let view) = controller?.content else { return }
-            
-            renderer?.observe(expression, andUpdateManyIn: view) { icon in
-                guard let icon = icon else { return }
-                self.image = UIImage(
-                    named: icon,
-                    in: self.controller?.dependencies.appBundle,
-                    compatibleWith: nil
-                )?.withRenderingMode(.alwaysOriginal)
-            }
         }
         
         required init?(coder aDecoder: NSCoder) {

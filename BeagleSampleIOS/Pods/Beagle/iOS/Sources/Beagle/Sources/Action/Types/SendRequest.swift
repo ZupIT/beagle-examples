@@ -18,24 +18,20 @@
 import BeagleSchema
 import UIKit
 
-extension SendRequest: AsyncAction {
-    
+extension SendRequest: Action {
     public func execute(controller: BeagleController, origin: UIView) {
-        let methodValue = method?.evaluate(with: origin)
-        let headersValue = headers?.evaluate(with: origin)
 
+        guard let url = controller.dependencies.urlBuilder.build(path: url.evaluate(with: origin) ?? "") else {
+            return
+        }
         let requestData = Request.RequestData(
-            method: methodValue?.rawValue,
-            headers: headersValue,
+            method: method?.rawValue,
+            headers: headers,
             body: data?.evaluate(with: origin).asAny()
         )
-
-        let dispatcher = RequestDispatcher(dependencies: controller.dependencies)
-        dispatcher.dispatchRequest(
-            path: url.evaluate(with: origin) ?? "",
-            type: .rawRequest(requestData),
-            additionalData: nil
-        ) { result in
+        let request = Request(url: url, type: .rawRequest(requestData), additionalData: nil)
+        controller.dependencies.networkClient.executeRequest(request) { result in
+            
             switch result {
             case .success(let response):
                 
@@ -49,26 +45,19 @@ extension SendRequest: AsyncAction {
                 }
                 
             case .failure(let error):
-                guard case .networkError(let error) = error else {
-                    self.executeError(value: .empty, controller: controller, origin: origin)
-                    return
-                }
-
+                
                 let data = error.getDynamicObject()
                 let statusCode = error.statusCode()
                 let statusText = error.localizedDescription
                 let message = error.localizedDescription
                 
                 let value: DynamicObject = [ "data": data, "status": .int(statusCode), "statusText": .string(statusText), "message": .string(message) ]
-                self.executeError(value: value, controller: controller, origin: origin)
+                
+                DispatchQueue.main.async {
+                    controller.execute(actions: self.onError, with: "onError", and: value, origin: origin)
+                    controller.execute(actions: self.onFinish, origin: origin)
+                }
             }
-        }
-    }
-
-    private func executeError(value: DynamicObject, controller: BeagleController, origin: UIView) {
-        DispatchQueue.main.async {
-            controller.execute(actions: self.onError, with: "onError", and: value, origin: origin)
-            controller.execute(actions: self.onFinish, origin: origin)
         }
     }
 }

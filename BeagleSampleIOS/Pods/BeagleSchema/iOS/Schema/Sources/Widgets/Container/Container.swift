@@ -16,7 +16,7 @@
 
 import UIKit
 
-public struct Container: RawWidget, HasContext, InitiableComponent, AutoDecodable {
+public struct Container: RawWidget, HasContext, AutoDecodable {
     // MARK: - Public Properties
     public let children: [RawComponent]
     public var widgetProperties: WidgetProperties
@@ -45,7 +45,6 @@ public struct Container: RawWidget, HasContext, InitiableComponent, AutoDecodabl
         self.init(children: children(), widgetProperties: widgetProperties, context: context, onInit: onInit)
     }
     
-    #if swift(<5.3)
     public init(
         context: Context? = nil,
         onInit: [RawAction]? = nil,
@@ -55,5 +54,4 @@ public struct Container: RawWidget, HasContext, InitiableComponent, AutoDecodabl
     ) {
         self.init(children: [children()], widgetProperties: widgetProperties, context: context, onInit: onInit)
     }
-    #endif
 }

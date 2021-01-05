@@ -27,7 +27,7 @@ public protocol BeaglePrefetchHelping {
 
 public class BeaglePreFetchHelper: BeaglePrefetchHelping {
     
-    public typealias Dependencies = DependencyRepository & DependencyLogger
+    public typealias Dependencies = DependencyRepository
     let dependencies: Dependencies
     
     public init(dependencies: Dependencies) {
@@ -36,13 +36,7 @@ public class BeaglePreFetchHelper: BeaglePrefetchHelping {
     
     public func prefetchComponent(newPath: Route.NewPath) {
         guard newPath.shouldPrefetch else { return }
-        guard case .value(let path) = newPath.url else {
-            dependencies.logger.log(Log.navigation(.unableToPrefetchWhenUrlIsExpression))
-            return
-        }
-        
-        dependencies.repository.fetchComponent(url: path, additionalData: nil, useCache: true) { _ in
-            // Intentionally unimplemented...
+        dependencies.repository.fetchComponent(url: newPath.url, additionalData: nil, useCache: true) { _ in
         }
     }
 }

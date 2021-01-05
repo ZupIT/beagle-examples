@@ -1,4 +1,3 @@
-//
 /*
  * Copyright 2020 ZUP IT SERVICOS EM TECNOLOGIA E INOVACAO SA
  *
@@ -15,25 +14,17 @@
  * limitations under the License.
  */
 
-import Foundation
+import UIKit
 
-/// Action to represent a condition
-public struct Condition: RawAction, AutoInitiableAndDecodable {
-    
-    public let condition: Expression<Bool>
-    public let onTrue: [RawAction]?
-    public let onFalse: [RawAction]?
+/// Defines a container that holds a listview item
+final class ListItemCollectionViewCell: UICollectionViewCell {
 
-// sourcery:inline:auto:Condition.Init
-    public init(
-        condition: Expression<Bool>,
-        onTrue: [RawAction]? = nil,
-        onFalse: [RawAction]? = nil
-    ) {
-        self.condition = condition
-        self.onTrue = onTrue
-        self.onFalse = onFalse
+    /// Sets up with the ComponentView
+    /// - Parameter componentView: some componentView
+    func setup(with componentView: UIView) {
+        componentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        componentView.frame = contentView.bounds
+        contentView.addSubview(componentView)
     }
-// sourcery:end
-
+    
 }

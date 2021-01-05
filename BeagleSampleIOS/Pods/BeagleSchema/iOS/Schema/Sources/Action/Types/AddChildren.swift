@@ -23,9 +23,9 @@ public struct AddChildren: RawAction, AutoInitiableAndDecodable {
     public var mode: Mode = .append
     
     public enum Mode: String, Decodable {
-        case append = "APPEND"
-        case prepend = "PREPEND"
-        case replace = "REPLACE"
+        case append
+        case prepend
+        case replace
     }
 
 // sourcery:inline:auto:AddChildren.Init

@@ -17,10 +17,8 @@
 
 import Foundation
 
-public typealias OperationHandler = (_ parameters: [DynamicObject]) -> DynamicObject
-
 public struct Operation {
-    public let name: String
+    public let name: Name
     public let parameters: [Parameter]
 
     public enum Parameter: Equatable {
@@ -28,7 +26,7 @@ public struct Operation {
         case value(Value)
     }
 
-    public init(name: String, parameters: [Parameter] = []) {
+    public init(name: Name, parameters: [Parameter]) {
         self.name = name
         self.parameters = parameters
     }
@@ -55,5 +53,27 @@ extension Operation: RepresentableByParsableString {
         result += ")"
         
         return result
+    }
+}
+
+extension Operation {
+    public enum Name: String {
+        // number
+        case sum, subtract, multiply, divide
+
+        // logic
+        case condition, not, and, or
+
+        // comparison
+        case gt, gte, lt, lte, eq
+
+        // string
+        case concat, capitalize, uppercase, lowercase, substr
+
+        // array
+        case insert, remove, removeIndex, contains
+
+        //other
+        case isNull, isEmpty, length
     }
 }

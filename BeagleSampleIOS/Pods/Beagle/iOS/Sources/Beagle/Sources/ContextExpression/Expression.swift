@@ -21,12 +21,14 @@ public extension Expression {
 
     func observe(
         view: UIView,
-        controller: BeagleControllerProtocol,
+        controller: BeagleController,
         updateFunction: @escaping (T?) -> Void
     ) {
         switch self {
         case let .expression(expression):
-            controller.addBinding(expression: expression, in: view, update: updateFunction)
+            controller.addBinding { [weak view] in
+               view?.configBinding(for: expression, completion: updateFunction)
+            }
         case let .value(value):
             updateFunction(value)
         }
@@ -42,6 +44,26 @@ public extension Expression {
     }
 }
 
+// MARK: ExpressibleByLiteral
+extension Expression: ExpressibleByStringLiteral {
+    public init(stringLiteral value: String) {
+        let escaped = value.escapeExpressions()
+        if let expression = SingleExpression(rawValue: value) {
+            self = .expression(.single(expression))
+        } else if let multiple = MultipleExpression(rawValue: value) {
+            self = .expression(.multiple(multiple))
+        } else if let value = escaped as? T {
+            self = .value(value)
+        } else {
+            assertionFailure("Error: invalid Expression syntax \(value)")
+            Beagle.dependencies.logger.log(Log.expression(.invalidSyntax))
+            self = .expression(.multiple(MultipleExpression(nodes: [])))
+        }
+    }
+}
+
+extension Expression: ExpressibleByStringInterpolation {}
+
 extension Expression: ExpressibleByIntegerLiteral where T == Int {
     public init(integerLiteral value: Int) {
         self = .value(value)
@@ -50,12 +72,6 @@ extension Expression: ExpressibleByIntegerLiteral where T == Int {
 
 extension Expression: ExpressibleByFloatLiteral where T == Float {
     public init(floatLiteral value: Float) {
-        self = .value(value)
-    }
-}
-
-extension Expression: ExpressibleByBooleanLiteral where T == Bool {
-    public init(booleanLiteral value: BooleanLiteralType) {
         self = .value(value)
     }
 }

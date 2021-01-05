@@ -16,12 +16,12 @@
 
 public struct TabItem: Decodable {
 
-    public let icon: StringOrExpression?
+    public let icon: String?
     public let title: String?
     public let child: RawComponent
 
     public init(
-        icon: StringOrExpression? = nil,
+        icon: String? = nil,
         title: String? = nil,
         child: RawComponent
     ) {
@@ -31,7 +31,7 @@ public struct TabItem: Decodable {
     }
     
     public init(
-        icon: StringOrExpression? = nil,
+        icon: String? = nil,
         title: String? = nil,
         @ChildBuilder
         _ child: () -> RawComponent
@@ -84,8 +84,7 @@ public struct TabView: RawComponent, AutoInitiable, HasContext {
     ) {
         self.init(children: children(), styleId: styleId, context: context)
     }
-    
-    #if swift(<5.3)
+
     public init(
         context: Context? = nil,
         styleId: String? = nil,
@@ -94,5 +93,4 @@ public struct TabView: RawComponent, AutoInitiable, HasContext {
     ) {
         self.init(children: [children()], styleId: styleId, context: context)
     }
-    #endif
 }

@@ -26,9 +26,8 @@ extension TextInput: ServerDrivenComponent {
                                           controller: renderer.controller)
         
         setupExpressions(toView: textInputView, renderer: renderer)
-        
         if let styleId = styleId {
-            textInputView.beagle.applyStyle(for: textInputView as UITextField, styleId: styleId, with: renderer.controller)
+            textInputView.applyStyle(styleId)
         }
         
         return textInputView
@@ -104,19 +103,14 @@ extension TextInput: ServerDrivenComponent {
             controller?.execute(actions: onBlur, with: "onBlur", and: value, origin: self)
         }
         
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            resignFirstResponder()
-        }
-        
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             var updatedText: String?
             if let text = textField.text,
                let textRange = Range(range, in: text) {
                updatedText = text.replacingCharacters(in: textRange, with: string)
             }
-            
             textField.text = updatedText
-            textChanged(updatedText)
+            textChanged()
             
             let value: DynamicObject = .dictionary(["value": .string(updatedText ?? "")])
             controller?.execute(actions: onChange, with: "onChange", and: value, origin: self)
@@ -128,7 +122,11 @@ extension TextInput: ServerDrivenComponent {
 
 private extension TextInput.TextInputView {
     
-    func textChanged(_ text: String?) {
+    func applyStyle(_ styleId: String) {
+        controller?.dependencies.theme.applyStyle(for: self as UITextField, withId: styleId)
+    }
+    
+    func textChanged() {
         observable.value.value = text
     }
 
@@ -140,21 +138,11 @@ private extension TextInput.TextInputView {
             keyboardType = .emailAddress
         case .number, .date:
             keyboardType = .numberPad
-            setupToolBar()
         case .password:
             keyboardType = .default
             isSecureTextEntry = true
         case .text:
             keyboardType = .default
         }
-    }
-    
-    func setupToolBar() {
-        let toolBar = UIToolbar()
-        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignFirstResponder))
-        toolBar.items = [spacer, doneButton]
-        toolBar.sizeToFit()
-        inputAccessoryView = toolBar
     }
 }

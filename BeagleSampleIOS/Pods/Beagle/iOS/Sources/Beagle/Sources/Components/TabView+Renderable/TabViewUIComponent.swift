@@ -25,7 +25,6 @@ extension TabViewUIComponent {
         var unselectedTextColor: UIColor?
         var selectedIconColor: UIColor?
         var unselectedIconColor: UIColor?
-        var renderer: BeagleRenderer
 
 // sourcery:inline:auto:TabViewUIComponent.Model.Init
      init(
@@ -34,8 +33,7 @@ extension TabViewUIComponent {
         selectedTextColor: UIColor? = nil,
         unselectedTextColor: UIColor? = nil,
         selectedIconColor: UIColor? = nil,
-        unselectedIconColor: UIColor? = nil,
-        renderer: BeagleRenderer
+        unselectedIconColor: UIColor? = nil
     ) {
         self.tabIndex = tabIndex
         self.tabViewItems = tabViewItems
@@ -43,7 +41,6 @@ extension TabViewUIComponent {
         self.unselectedTextColor = unselectedTextColor
         self.selectedIconColor = selectedIconColor
         self.unselectedIconColor = unselectedIconColor
-        self.renderer = renderer
     }
 // sourcery:end
     }
@@ -55,14 +52,13 @@ final class TabViewUIComponent: UIView {
     
     var tabBar: TabBarUIComponent
     
-    static func contentView(items: [TabItem], renderer: BeagleRenderer) -> PageViewUIComponent {
-        let pages = items.map { ComponentHostController($0.child, renderer: renderer) }
+    static func contentView(items: [TabItem], controller: BeagleController) -> PageViewUIComponent {
+        let pages = items.map { BeagleScreenViewController($0.child) }
         let view = PageViewUIComponent(
             model: .init(pages: pages),
             indicatorView: nil,
-            controller: renderer.controller
+            controller: controller
         )
-        view.style.setup(Style(flex: Flex().grow(1)))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
@@ -73,16 +69,19 @@ final class TabViewUIComponent: UIView {
     
     init(
         model: Model,
-        renderer: BeagleRenderer
+        controller: BeagleController
     ) {
         self.tabBar = TabBarUIComponent(
             model: .init(
                 tabIndex: model.tabIndex,
                 tabBarItems: model.tabViewItems.map { TabBarItem(icon: $0.icon, title: $0.title) },
-                renderer: model.renderer
+                selectedTextColor: model.selectedTextColor,
+                unselectedTextColor: model.unselectedTextColor,
+                selectedIconColor: model.selectedIconColor,
+                unselectedIconColor: model.unselectedIconColor
             )
         )
-        self.contentView = Self.contentView(items: model.tabViewItems, renderer: renderer)
+        self.contentView = Self.contentView(items: model.tabViewItems, controller: controller)
         super.init(frame: .zero)
         setupViews()
         setupTabBarSelectionEvent()
@@ -98,7 +97,6 @@ final class TabViewUIComponent: UIView {
         tabBar.onTabSelection = { [weak self] index in
             guard let self = self else { return }
             self.contentView.swipeToPage(at: index)
-            self.tabBar.scrollTo(page: index)
         }
     }
     

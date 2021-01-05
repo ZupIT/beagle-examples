@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 
-/// It's a `String` that will be treated internally as an `Expression<String>` if passed a value like "@{someExression}". Otherwise, it will be just a normal `String`.
-public typealias StringOrExpression = String
-
 public enum Expression<T: Decodable> {
     case value(T)
     case expression(ContextExpression)
 }
 
-public enum ContextExpression: Equatable, Hashable {
+public enum ContextExpression: Equatable {
     case single(SingleExpression)
     case multiple(MultipleExpression)
 }
 
-public enum SingleExpression: Hashable {
+public enum SingleExpression {
     case value(Value)
     case operation(Operation)
 }
 
-public struct MultipleExpression: Hashable {
+public struct MultipleExpression {
     public let nodes: [Node]
 
     public enum Node: Equatable {
@@ -42,22 +39,6 @@ public struct MultipleExpression: Hashable {
     
     public init(nodes: [Node]) {
         self.nodes = nodes
-    }
-}
-
-// MARK: - Equatable
-
-extension Expression: Equatable where T: Equatable {
-    public static func == (lhs: Expression<T>, rhs: Expression<T>) -> Bool {
-        switch (lhs, rhs) {
-        case let (.value(lhsValue), .value(rhsValue)):
-            return lhsValue == rhsValue
-        case let (.expression(lhsValue), .expression(rhsValue)):
-            return lhsValue == rhsValue
-        case (.value, .expression),
-             (.expression, .value):
-            return false
-        }
     }
 }
 
@@ -159,22 +140,3 @@ extension String {
         return result.replacingOccurrences(of: "\\@{", with: "@{")
     }
 }
-
-// MARK: ExpressibleByLiteral
-extension Expression: ExpressibleByStringLiteral {
-    public init(stringLiteral value: String) {
-        let escaped = value.escapeExpressions()
-        if let expression = SingleExpression(rawValue: value) {
-            self = .expression(.single(expression))
-        } else if let multiple = MultipleExpression(rawValue: value) {
-            self = .expression(.multiple(multiple))
-        } else if let value = escaped as? T {
-            self = .value(value)
-        } else {
-            assertionFailure("Error: invalid Expression syntax \(value)")
-            self = .expression(.multiple(MultipleExpression(nodes: [])))
-        }
-    }
-}
-
-extension Expression: ExpressibleByStringInterpolation {}
