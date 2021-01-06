@@ -24,14 +24,23 @@ class BeagleConfig {
     private init() {}
 
     static func setup() {
+        let deepLinkHandler = registerDeepLink()
+        
         BeagleConfig.setAppTheme(in: dependencies)
         BeagleConfig.setNetworkClient(in: dependencies)
         let innerDependencies = InnerDependencies()
+        dependencies.deepLinkHandler = deepLinkHandler
         dependencies.networkClient = NetworkClientDefault(dependencies: innerDependencies)
         dependencies.cacheManager = CacheManagerDefault(dependencies: innerDependencies)
         dependencies.logger = innerDependencies.logger
         dependencies.urlBuilder = UrlBuilder(baseUrl: URL(string: "http://localhost:8080"))
         Beagle.dependencies = dependencies
+    }
+    
+    private static func registerDeepLink() -> DeeplinkScreenManager {
+        let deepLink = DeeplinkScreenManager.shared
+        deepLink["screen-native"] = ItiHomeViewController.self
+        return deepLink
     }
     
     static private func setNetworkClient(in dependencies: BeagleDependencies) {

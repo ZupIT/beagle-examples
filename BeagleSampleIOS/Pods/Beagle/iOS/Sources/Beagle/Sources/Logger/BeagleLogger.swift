@@ -14,26 +14,16 @@
  * limitations under the License.
  */
 
-import UIKit
+import BeagleSchema
 
-final class ContainerIndicatorView: UIView {
-    lazy var indicatorView: UIView = {
-        let view = UIView()
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.backgroundColor = .black
-        return view
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupView() {
-        addSubview(indicatorView)
-    }
+public protocol DependencyLogger {
+    var logger: BeagleLoggerType { get }
+}
+
+public protocol DependencyLoggingCondition {
+    var isLoggingEnabled: Bool { get }
+}
+
+public protocol BeagleLoggerType: SchemaLogger {
+    func log(_ log: LogType)
 }
