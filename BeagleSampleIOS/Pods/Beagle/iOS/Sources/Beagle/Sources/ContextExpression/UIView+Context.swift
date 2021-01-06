@@ -21,6 +21,7 @@ import BeagleSchema
 extension UIView {
     private static var contextMapKey = "contextMapKey"
     private static var expressionLastValueMapKey = "expressionLastValueMapKey"
+    private static var parentContextKey = "parentContextKey"
     
     private class ObjectWrapper<T> {
         let object: T?
@@ -45,6 +46,15 @@ extension UIView {
         }
         set {
             objc_setAssociatedObject(self, &UIView.expressionLastValueMapKey, ObjectWrapper(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    weak var parentContext: UIView? {
+        get {
+            objc_getAssociatedObject(self, &UIView.parentContextKey) as? UIView
+        }
+        set {
+            objc_setAssociatedObject(self, &UIView.parentContextKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
     }
     
@@ -169,7 +179,7 @@ extension UIView {
                 result += string
             }
         }
-        return result as? T
+        return transform(.string(result))
     }
     
     // MARK: Get/Set Context
@@ -180,10 +190,7 @@ extension UIView {
             return global.context
         }
         guard let context = contextMap[id] else {
-            let observable = superview?.getContext(with: id)
-            if let contextObservable = observable {
-                contextMap[id] = contextObservable
-            }
+            let observable = (parentContext ?? superview)?.getContext(with: id)
             return observable
         }
         return context
@@ -192,7 +199,7 @@ extension UIView {
     func setContext(_ context: Context) {
         let global = dependencies.globalContext
         guard !global.isGlobal(id: context.id) else {
-            global.setValue(context.value)
+            global.set(context.value)
             return
         }
         if let contextObservable = contextMap[context.id] {
@@ -202,11 +209,21 @@ extension UIView {
         }
     }
     
+    func getContextValue(_ contextId: String) -> DynamicObject? {
+        let global = dependencies.globalContext
+        guard !global.isGlobal(id: contextId) else {
+            return global.context.value.value
+        }
+        return contextMap[contextId]?.value.value
+    }
+    
     // MARK: Private
     
     private func transform<T: Decodable>(_ dynamicObject: DynamicObject) -> T? {
         if T.self is String.Type {
-            return dynamicObject.toString() as? T
+            return dynamicObject.description as? T
+        } else if T.self is DynamicObject.Type {
+            return dynamicObject as? T
         } else {
             let encoder = JSONEncoder()
             let decoder = JSONDecoder()
@@ -229,7 +246,7 @@ extension UIView {
             if contextId == nil || contextId == binding.context {
                 return evaluate(for: expression)
             } else {
-                return transform(expressionLastValueMap[expression.rawValue] ?? .empty)
+                return transform(expressionLastValueMap[binding.rawValue] ?? .empty)
             }
         case let .value(.literal(literal)):
             return transform(literal.evaluate())
