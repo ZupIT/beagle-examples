@@ -17,6 +17,7 @@
 package br.com.beaglesampleBackend.controller
 
 import br.com.beaglesampleBackend.service.FirstScreenBeagleService
+import br.com.beaglesampleBackend.service.HomeCarouselOptionsService
 import br.com.beaglesampleBackend.service.LoginScreenService
 import br.com.beaglesampleBackend.service.PasswordScreenService
 import org.springframework.web.bind.annotation.GetMapping
@@ -26,7 +27,8 @@ import org.springframework.web.bind.annotation.RestController
 class ScreenController(
         private val firstScreenBeagleService: FirstScreenBeagleService,
         private val loginScreenService: LoginScreenService,
-        private val passwordScreenService: PasswordScreenService
+        private val passwordScreenService: PasswordScreenService,
+        private val carouselOptions: HomeCarouselOptionsService
 ) {
     @GetMapping("/screen")
     fun getFirstScreen() = firstScreenBeagleService.createScreenBeagle()
@@ -36,4 +38,7 @@ class ScreenController(
 
     @GetMapping("/password")
     fun getPasswordScreen() = passwordScreenService.createPasswordScreen()
+
+    @GetMapping("/carousel-options")
+    fun getCarouselOptions() = carouselOptions.getHomeCarouselOptions()
 }

@@ -4,6 +4,7 @@ import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyStyle
 import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.widget.action.Navigate
 import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.core.AlignSelf
@@ -71,7 +72,7 @@ class PasswordScreenBuilder : ScreenBuilder {
                                 text = "entrar",
                                 styleId = "button",
                                 onPress = listOf(
-
+                                        Navigate.OpenNativeRoute(route = "screen-native")
                                 )
                         ).applyStyle(
                                 Style(
