@@ -14,20 +14,17 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid
+package br.com.beaglesampleandroid.beagle
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import br.com.zup.beagle.android.view.BeagleActivity
-import br.com.zup.beagle.android.view.ScreenRequest
+import android.content.Intent
+import br.com.zup.beagle.android.annotation.BeagleComponent
+import br.com.zup.beagle.android.navigation.DeepLinkHandler
+import br.com.zup.beagle.android.widget.RootView
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        startActivity(BeagleActivity.newIntent(this, ScreenRequest("/login")))
-        finish()
-    }
+@BeagleComponent
+class AppDeepLinkHandler : DeepLinkHandler {
+    override fun getDeepLinkIntent(rootView: RootView,
+                                   path: String,
+                                   data: Map<String, String>?,
+                                   shouldResetApplication: Boolean): Intent = Intent(path)
 }

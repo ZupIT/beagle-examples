@@ -39,6 +39,23 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="TextTitleProfile" parent="TextDefault">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextAccessProfile" parent="TextDefault">
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextTemplateCard" parent="TextDefault">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
     <style name="TextInput" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:textSize">20sp</item>

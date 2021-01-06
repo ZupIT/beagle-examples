@@ -15,14 +15,11 @@
   ~ limitations under the License.
   -->
 
-<resources>
-    <color name="colorOrange">#ff9500</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorGray">#6F6F6F</color>
-    <color name="colorIti">#2D3748</color>
-    <color name="colorDarkBlue">#272E39</color>
-</resources>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorIti"/>
+            <corners android:bottomLeftRadius="25dp"/>
+        </shape>
+    </item>
+</selector>
