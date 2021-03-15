@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import Foundation
-import BeagleSchema
-
 public var dependencies: BeagleDependenciesProtocol = BeagleDependencies() {
-    didSet { BeagleSchema.dependencies = dependencies }
+    didSet {
+        AnalyticsService.shared = dependencies.analyticsProvider.ifSome {
+            AnalyticsService(provider: $0, logger: dependencies.logger)
+        }
+    }
 }
-
-
 
 // MARK: - Public Functions
 

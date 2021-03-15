@@ -8,7 +8,6 @@
 
 import UIKit
 import Beagle
-import BeagleSchema
 
 final class ItiHomeViewController: UIViewController, DeeplinkScreen {
     
@@ -25,29 +24,32 @@ final class ItiHomeViewController: UIViewController, DeeplinkScreen {
     }
     
     @IBOutlet weak var headerView: UIView!
-    
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var viewProfile: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         applyHeaderStyle()
         view.addSubview(beagleView)
         beagleView.anchor(
-            top: view.topAnchor,
+            top: viewProfile.bottomAnchor,
             left: view.leftAnchor,
-            right: view.rightAnchor
+            right: view.rightAnchor,
+            topConstant: 10
         )
-        
     }
     
     private func applyHeaderStyle() {
+        logoImage.clipsToBounds = true
+        logoImage.layer.cornerRadius = 35
         headerView.clipsToBounds = true
         headerView.layer.cornerRadius = 50
-        headerView.layer.maskedCorners = [.layerMinXMaxYCorner
-        ]
+        headerView.layer.maskedCorners = [.layerMinXMaxYCorner]
     }
     
     private lazy var beagleView: BeagleView = {
         return BeagleView(.remote(.init(url: "/carousel-options")))
     }()
     
-   
 }
