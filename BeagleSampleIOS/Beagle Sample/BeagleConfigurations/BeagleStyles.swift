@@ -24,4 +24,12 @@ struct BeagleStyles {
         BeagleStyle.text(font: .systemFont(ofSize: 12, weight: .bold), color: .orange)
     }
     
+    static func designSystemButton() -> (UIButton?) -> Void {
+        return BeagleStyle.button(withTitleColor: .white)
+            <> {
+                $0?.titleLabel |> BeagleStyle.label(withFont: .systemFont(ofSize: 18, weight: .semibold))
+                $0?.backgroundColor = #colorLiteral(red: 1, green: 0.5843137255, blue: 0, alpha: 1)
+        }
+    }
+    
 }

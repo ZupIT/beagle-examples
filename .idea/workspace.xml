@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22c01542-914c-4b6e-b4ae-f9588ed969b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BeagleSampleBackend/src/main/kotlin/br/com/beaglesampleBackend/widget/BalanceWidget.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/privado.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/privado.imageset/privado copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/proximo.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/proximo.imageset/proximo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/visao.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Assets.xcassets/visao.imageset/visao copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Component/BalanceComponent.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/BalanceWidget.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleBackend/src/main/kotlin/br/com/beaglesampleBackend/builder/HomeCarouselOptions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleBackend/src/main/kotlin/br/com/beaglesampleBackend/builder/HomeCarouselOptions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleBackend/src/main/kotlin/br/com/beaglesampleBackend/builder/LoginScreenBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleBackend/src/main/kotlin/br/com/beaglesampleBackend/builder/LoginScreenBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/BeagleConfigurations/BeagleConfig.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/BeagleConfigurations/BeagleConfig.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Common/UIView+AutoLayout.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Common/UIView+AutoLayout.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/ItiHomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/ItiHomeViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/ItiHomeViewController.xib" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/ItiHomeViewController.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Beagle Sample/Home/ProfileViewController.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Generated/AutoDecodable.generated.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Generated/AutoDecodable.generated.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Generated/Equality.generated.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Generated/Equality.generated.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Templates/AutoDecodable.swifttemplate" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Templates/AutoDecodable.swifttemplate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Templates/Equality.stencil" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/CodeGeneration/Templates/Equality.stencil" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Action.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Action.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/LocalFormHandler.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/LocalFormHandler.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Touchable+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/AddChildren.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/AddChildren.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Alert.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Alert.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Condition.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Condition.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Confirm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Confirm.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/FormLocalAction.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/FormLocalAction.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/FormValidation.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/FormValidation.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Navigate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/Navigate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SendRequest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SendRequest.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SetContext.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SetContext.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SubmitForm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Action/Types/SubmitForm.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Analytics/Analytics.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Analytics/Analytics.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Analytics/AnalyticsGestureRecognizer.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Caching/Prefetch/BeaglePrefetchHelper.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Caching/Prefetch/BeaglePrefetchHelper.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/CollectionExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/CollectionExtension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/KeyedDecodingContainerExtension.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/NSErrorExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/NSErrorExtension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/NSObjectExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/NSObjectExtension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/StyleBuildersExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/StyleBuildersExtension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/UIView+Style.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/UIView+Style.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/UnitValueExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Extensions/UnitValueExtension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/ContextObserver.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/ContextObserver.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/Observable.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/Observable.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/WidgetStateObservable.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Observable/WidgetStateObservable.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Protocols/HTTPRequestCanceling.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Protocols/HTTPRequestCanceling.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Util/FatalErrorUtil.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Common/Util/FatalErrorUtil.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Button+Renderable/Button+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Form+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Input/FormInput+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Input/InputValue.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Submit/FormSubmit+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Submit/SubmitFormGestureRecognizer.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/Validator.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Form+Renderable/ValidatorProvider.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Image+Renderable/Image+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Image+Renderable/ImageContentMode+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Container/Container+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Screen/NavigationBar+UIKit.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Screen/ScreenComponent+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Scroll/ScrollView+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Style/StyleViewConfigurator.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Layout+Renderable/Style/YogaTranslator.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Lazy+Renderable/LazyComponent+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Lazy+Renderable/OnStateUpdatable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListView+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListViewCell.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListViewController.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/ListView+Renderable/ListViewUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Page+Renderable/ComponentHostController.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Page+Renderable/PageView+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Page+Renderable/PageViewUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/PageIndicator+Renderable/PageIndicator+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/PageIndicator+Renderable/PageIndicator.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Screen+Renderable/SafeArea.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/ServerDrivenComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/SimpleForm+Renderable/SimpleForm+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBar+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBarItemExtension.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBarItemUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabBar+Renderable/TabBarUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabView+Renderable/TabView+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TabView+Renderable/TabViewUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Text+Renderable/Text+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/TextInput+Renderable/TextInput.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/WebView+Renderable/WebView+Renderable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/WebView+Renderable/WebViewUIComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Components/Widget.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Context/FormDataStoreHandler.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Context/FormManager.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/DynamicObject.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/DynamicObject.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/Expression.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/GlobalContext.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/GlobalContext.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/Operation+Evaluate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/OperationsProvider.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/UIView+Context.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/UIView+Context.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/ContextExpression/Value+Evaluate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleLogger.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleLogger.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleLoggerProxy.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleLoggerProxy.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleMessageLogs.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Logger/BeagleMessageLogs.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/BeagleNavigator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/BeagleNavigator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/BeagleNavigatorAnimation.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/BeagleNavigatorAnimation.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/DependencyURLOpener.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/DependencyURLOpener.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/DependencyWindowManager.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/DependencyWindowManager.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/UIWindow+Extension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Navigation/UIWindow+Extension.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/ImageDownloader.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/ImageDownloader.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/Repository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/Repository.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/Request.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/Request.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/RequestDispatcher.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Networking/RequestDispatcher.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/AutoLayoutWrapper.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/AutoLayoutWrapper.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleNavigationController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleNavigationController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleRenderer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleRenderer.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleScreenViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleScreenViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleScreenViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleScreenViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BeagleView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BindingConfigurator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/BindingConfigurator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/LayoutManager.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/LayoutManager.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/Screen+Renderable.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/Screen+Renderable.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/ScreenType.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/ScreenType.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/ViewConfigurator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Renderer/ViewConfigurator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Setup/BeagleDependencies.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Setup/BeagleDependencies.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Setup/BeagleSetup.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Setup/BeagleSetup.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Theme/Theme.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Beagle/iOS/Sources/Beagle/Sources/Theme/Theme.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/RawAction.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/AddChildren.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/Alert.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/Condition.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/Confirm.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/FormLocalAction.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/FormRemoteAction.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/FormValidation.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/Navigate/Navigate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/SendRequest.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/SetContext.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Action/Types/SubmitForm.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/CodeGeneration/Generated/AutoDecodable.generated.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/CodeGeneration/Generated/Equality.generated.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/CodeGeneration/SourceryProtocols.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Common/Collection+Safe.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Common/FunctionBuilders.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Common/String+RegularExpression.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Binding.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Context.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/DynamicObject.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Expression.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Literal.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Operation.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Parser.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Path.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ContextExpression/Value.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Decoding/AnyDecodableContainer.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Decoding/ComponentDecoder.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Deprecated/Deprecated.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Schema.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Form/Form.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Form/Input/FormInput.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Form/Input/FormInputComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Form/Submit/FormSubmit.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Lazy/LazyComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/ListView/ListView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/PageIndicator/Indicator/PageIndicator.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/PageView/PageView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/RawComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Screen/NavigationBar.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Screen/SafeArea.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Screen/Screen.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Screen/ScreenComponent/ScreenComponent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Scroll/ScrollView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/TabBar/TabBar.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/TabView/TabView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/Touchable/Touchable.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/ServerDrivenComponent/WebView/WebView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/Button/Button.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/Container/Container.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/Image/Image.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/Image/ImageContentMode.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/RawWidget.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/SimpleForm/SimpleForm.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/Text/Text.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/TextInput/TextInput.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Accessibility/Accessibility.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Analytics/AnalyticsModels.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Analytics/Events.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Flex/EdgeValue.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Flex/Flex.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Flex/Size.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Flex/UnitValue.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/BeagleSchema/iOS/Schema/Sources/Widgets/WidgetProperties/Style/Style.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Beagle/Beagle.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/BeagleSchema/BeagleSchema.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Debug-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Debug-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Debug-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Debug-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Release-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Release-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Release-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks-Release-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleIOS/Pods/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.release.xcconfig" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1po2WGz1lADeab04WHkC5MupwNb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="android.project.structure" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22c01542-914c-4b6e-b4ae-f9588ed969b0" name="Default Changelist" comment="" />
+      <created>1615835153217</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615835153217</updated>
+    </task>
+    <servers />
+  </component>
+</project>

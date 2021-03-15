@@ -24,24 +24,35 @@ class BeagleConfig {
     private init() {}
 
     static func setup() {
+        let deepLinkHandler = registerDeepLink()
+        
         BeagleConfig.setAppTheme(in: dependencies)
-        BeagleConfig.setNetworkClient(in: dependencies)
         let innerDependencies = InnerDependencies()
+        dependencies.deepLinkHandler = deepLinkHandler
         dependencies.networkClient = NetworkClientDefault(dependencies: innerDependencies)
         dependencies.cacheManager = CacheManagerDefault(dependencies: innerDependencies)
         dependencies.logger = innerDependencies.logger
         dependencies.urlBuilder = UrlBuilder(baseUrl: URL(string: "http://localhost:8080"))
+        
+        registerCustomComponents(in: dependencies)
+        
         Beagle.dependencies = dependencies
     }
     
-    static private func setNetworkClient(in dependencies: BeagleDependencies) {
-        client.httpRequestBuilder.additionalHeaders = ["x-circle-id":"578640d5-50af-41d4-817c-4639f80c207d"]
-        dependencies.networkClient = client
+    private static func registerCustomComponents(in dependencies: BeagleDependencies) {
+        dependencies.decoder.register(component: AccountBalance.self)
+    }
+    
+    private static func registerDeepLink() -> DeeplinkScreenManager {
+        let deepLink = DeeplinkScreenManager.shared
+        deepLink["screen-native"] = ItiHomeViewController.self
+        return deepLink
     }
     
     static func setAppTheme(in dependencies: BeagleDependencies) {
         let theme = AppTheme(styles: [
-            "TextStyle": BeagleStyles.textStyle
+            "TextStyle": BeagleStyles.textStyle,
+            "button": BeagleStyles.designSystemButton
         ])
         
         dependencies.theme = theme

@@ -15,7 +15,6 @@
  */
 
 import UIKit
-import BeagleSchema
 
 @available(*, deprecated, message: "use functionality from BeagleNavigation to customize BeagleNavigationController type")
 public protocol DependencyNavigationController {
@@ -62,21 +61,28 @@ class BeagleNavigator: BeagleNavigation {
     func navigate(action: Navigate, controller: BeagleController, animated: Bool = false, origin: UIView?) {
         controller.dependencies.logger.log(Log.navigation(.didReceiveAction(action)))
         switch action {
-        case let .openExternalURL(url):
+        case let .openExternalURL(url, _):
             openExternalURL(path: url, controller: controller)
-        case let .openNativeRoute(nativeRoute):
+        case let .openNativeRoute(nativeRoute, _):
             openNativeRoute(controller: controller, animated: animated, nativeRoute: nativeRoute)
-        case let .resetApplication(route):
-            navigate(route: route, controller: controller, animated: animated, origin: origin, transition: resetApplication(origin:destination:animated:))
-        case let .resetStack(route):
+        case let .resetApplication(route, controllerId, _):
+            navigate(
+                route: route,
+                controller: controller,
+                animated: animated,
+                origin: origin
+            ) { [weak self] origin, destination, animated in
+                self?.resetApplication(origin: origin, destination: destination, controllerId: controllerId, animated: animated)
+            }
+        case let .resetStack(route, _):
             navigate(route: route, controller: controller, animated: animated, origin: origin, transition: resetStack(origin:destination:animated:))
-        case let .pushView(route):
+        case let .pushView(route, _):
             navigate(route: route, controller: controller, animated: animated, origin: origin, transition: pushView(origin:destination:animated:))
         case .popView:
             popView(controller: controller, animated: animated)
-        case let .popToView(route):
+        case let .popToView(route, _):
             popToView(identifier: route, controller: controller, animated: animated)
-        case let .pushStack(route, controllerId):
+        case let .pushStack(route, controllerId, _):
             navigate(route: route,
                      controller: controller,
                      animated: animated,
@@ -155,8 +161,10 @@ class BeagleNavigator: BeagleNavigation {
         }
     }
     
-    private func resetApplication(origin: BeagleController, destination: UIViewController, animated: Bool) {
-        origin.dependencies.windowManager.window?.replace(rootViewController: destination, animated: animated, completion: nil)
+    private func resetApplication(origin: BeagleController, destination: UIViewController, controllerId: String?, animated: Bool) {
+        let navigation = navigationController(forId: controllerId)
+        navigation.viewControllers = [destination]
+        origin.dependencies.windowManager.window?.replace(rootViewController: navigation, animated: animated, completion: nil)
     }
     
     private func resetStack(origin: BeagleController, destination: UIViewController, animated: Bool) {
@@ -236,9 +244,9 @@ class BeagleNavigator: BeagleNavigation {
             let screenUrl = absoluteURL(for: remote.url, builder: urlBuilder)
             return screenUrl == expectedUrl
         case .declarative(let screen):
-            return screen.id == identifier
+            return screen.identifier == identifier
         case .declarativeText:
-            return controller.screen?.id == identifier
+            return controller.screen?.identifier == identifier
         }
     }
     
@@ -273,7 +281,7 @@ class BeagleNavigator: BeagleNavigation {
     ) -> RequestToken? {
         controller.serverDrivenState = .started
 
-        let newPath = path.url.evaluate(with: origin)
+        let newPath: String? = path.url.evaluate(with: origin)
         let remote = ScreenType.Remote(url: newPath ?? "", fallback: path.fallback, additionalData: nil)
         
         return BeagleScreenViewController.remote(remote, dependencies: controller.dependencies) {

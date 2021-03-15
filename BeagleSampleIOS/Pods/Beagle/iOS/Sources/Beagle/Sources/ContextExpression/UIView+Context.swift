@@ -1,4 +1,3 @@
-//
 /*
  * Copyright 2020 ZUP IT SERVICOS EM TECNOLOGIA E INOVACAO SA
  *
@@ -16,12 +15,12 @@
  */
 
 import UIKit
-import BeagleSchema
 
 extension UIView {
     private static var contextMapKey = "contextMapKey"
     private static var expressionLastValueMapKey = "expressionLastValueMapKey"
     private static var parentContextKey = "parentContextKey"
+    private static var componentType = "componentType"
     
     private class ObjectWrapper<T> {
         let object: T?
@@ -40,12 +39,21 @@ extension UIView {
         }
     }
     
-    var expressionLastValueMap: [String: DynamicObject] {
+    var expressionLastValueMap: DynamicDictionary {
         get {
-            return (objc_getAssociatedObject(self, &UIView.expressionLastValueMapKey) as? ObjectWrapper)?.object ?? [String: DynamicObject]()
+            return (objc_getAssociatedObject(self, &UIView.expressionLastValueMapKey) as? ObjectWrapper)?.object ?? DynamicDictionary()
         }
         set {
             objc_setAssociatedObject(self, &UIView.expressionLastValueMapKey, ObjectWrapper(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    var componentType: ServerDrivenComponent.Type? {
+        get {
+            return (objc_getAssociatedObject(self, &UIView.componentType) as? ObjectWrapper)?.object
+        }
+        set {
+            objc_setAssociatedObject(self, &UIView.componentType, ObjectWrapper(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -68,32 +76,19 @@ extension UIView {
             configBinding(for: expression, completion: completion)
         }
     }
-
-    func evaluate<T: Decodable>(expression: Expression<T>) -> T? {
-        return expression.evaluate(with: self)
-    }
-    
-    func evaluate<T: Decodable>(for expression: ContextExpression) -> T? {
-        switch expression {
-        case let .single(expression):
-            return evaluate(for: expression)
-        case let .multiple(expression):
-            return evaluate(for: expression)
-        }
-    }
     
     // MARK: Single Expression
     
     private func configBinding<T: Decodable>(_ binding: Binding, in expression: SingleExpression, completion: @escaping (T?) -> Void) {
         guard let context = getContext(with: binding.context) else { return }
-        let closure: (Context) -> Void = { [weak self] context in
-            completion(self?.evaluate(for: expression))
+        let closure: (Context) -> Void = { [weak self] _ in
+            completion(self?.evaluateSingle(expression).transform())
         }
         let contextObserver = ContextObserver(onContextChange: closure)
         context.addObserver(contextObserver)
     }
     
-    private func configBinding<T: Decodable>(_ operation: BeagleSchema.Operation, in expression: SingleExpression, completion: @escaping (T?) -> Void) {
+    private func configBinding<T: Decodable>(_ operation: Operation, in expression: SingleExpression, completion: @escaping (T?) -> Void) {
         for parameter in operation.parameters {
             switch parameter {
             case let .value(.binding(binding)):
@@ -110,22 +105,11 @@ extension UIView {
         case let .value(.binding(binding)):
             configBinding(binding, in: expression, completion: completion)
         case let .value(.literal(literal)):
-            completion(transform(literal.evaluate()))
+            completion(literal.evaluate().transform())
         case let .operation(operation):
             configBinding(operation, in: expression, completion: completion)
         }
-        completion(evaluate(for: expression))
-    }
-    
-    private func evaluate<T: Decodable>(for expression: SingleExpression) -> T? {
-        switch expression {
-        case let .value(.binding(binding)):
-            return transform(binding.evaluate(in: self))
-        case let .value(.literal(literal)):
-            return transform(literal.evaluate())
-        case let .operation(operation):
-            return transform(operation.evaluate(in: self))
-        }
+        completion(evaluateSingle(expression).transform())
     }
     
     // MARK: Multiple Expression
@@ -133,14 +117,14 @@ extension UIView {
     private func configBinding<T: Decodable>(_ binding: Binding, in expression: MultipleExpression, completion: @escaping (T?) -> Void) {
         guard let context = getContext(with: binding.context) else { return }
         let closure: (Context) -> Void = { [weak self] _ in
-            let value: T? = self?.evaluate(for: expression, contextId: binding.context)
+            let value: T? = self?.evaluateMultiple(expression, contextId: binding.context).transform()
             completion(value)
         }
         let contextObserver = ContextObserver(onContextChange: closure)
         context.addObserver(contextObserver)
     }
     
-    private func configBinding<T: Decodable>(_ operation: BeagleSchema.Operation, in expression: MultipleExpression, completion: @escaping (T?) -> Void) {
+    private func configBinding<T: Decodable>(_ operation: Operation, in expression: MultipleExpression, completion: @escaping (T?) -> Void) {
         for parameter in operation.parameters {
             switch parameter {
             case let .value(.binding(binding)):
@@ -164,22 +148,7 @@ extension UIView {
                 }
             }
         }
-        completion(evaluate(for: expression))
-    }
-    
-    private func evaluate<T: Decodable>(for expression: MultipleExpression, contextId: String? = nil) -> T? {
-        var result: String = ""
-        
-        expression.nodes.forEach {
-            switch $0 {
-            case let .expression(expression):
-                let evaluated: String? = evaluateWithCache(for: expression, contextId: contextId)
-                result += evaluated ?? ""
-            case let .string(string):
-                result += string
-            }
-        }
-        return transform(.string(result))
+        completion(evaluateMultiple(expression).transform())
     }
     
     // MARK: Get/Set Context
@@ -216,42 +185,32 @@ extension UIView {
         }
         return contextMap[contextId]?.value.value
     }
-    
-    // MARK: Private
-    
-    private func transform<T: Decodable>(_ dynamicObject: DynamicObject) -> T? {
-        if T.self is String.Type {
-            return dynamicObject.description as? T
-        } else if T.self is DynamicObject.Type {
-            return dynamicObject as? T
-        } else {
-            let encoder = JSONEncoder()
-            let decoder = JSONDecoder()
-            if #available(iOS 13.0, *) {
-                guard let data = try? encoder.encode(dynamicObject) else { return nil }
-                return try? decoder.decode(T.self, from: data)
-            } else {
-                // here we use array as a wrapper because iOS 12 (or prior) JSONEncoder/Decoder bug
-                // https://bugs.swift.org/browse/SR-6163
-                guard let data = try? encoder.encode([dynamicObject]) else { return nil }
-                return try? decoder.decode([T].self, from: data).first
-            }
+}
+
+extension DynamicObject {
+
+    internal func transform<T: Decodable>() -> T? {
+        switch T.self {
+        case is String.Type:
+            return description as? T
+        case is DynamicObject.Type:
+            return self as? T
+        default:
+            return transformByDecoding()
         }
     }
-    
-    // expression last value cache is used only for multiple expressions binding
-    private func evaluateWithCache<T: Decodable>(for expression: SingleExpression, contextId: String? = nil) -> T? {
-        switch expression {
-        case let .value(.binding(binding)):
-            if contextId == nil || contextId == binding.context {
-                return evaluate(for: expression)
-            } else {
-                return transform(expressionLastValueMap[binding.rawValue] ?? .empty)
-            }
-        case let .value(.literal(literal)):
-            return transform(literal.evaluate())
-        case let .operation(operation):
-            return transform(operation.evaluate(in: self))
+
+    private func transformByDecoding<T: Decodable>() -> T? {
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        if #available(iOS 13.0, *) {
+            guard let data = try? encoder.encode(self) else { return nil }
+            return try? decoder.decode(T.self, from: data)
+        } else {
+            // here we use array as a wrapper because iOS 12 (or prior) JSONEncoder/Decoder bug
+            // https://bugs.swift.org/browse/SR-6163
+            guard let data = try? encoder.encode([self]) else { return nil }
+            return try? decoder.decode([T].self, from: data).first
         }
     }
 }
