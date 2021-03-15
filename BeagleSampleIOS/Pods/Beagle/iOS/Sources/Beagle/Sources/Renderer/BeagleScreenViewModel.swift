@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-import UIKit
-import BeagleSchema
-
 class BeagleScreenViewModel {
         
     var screenType: ScreenType {
@@ -26,19 +23,12 @@ class BeagleScreenViewModel {
         }
     }
     var screen: Screen?
-    var state: State {
+    var state: ServerDrivenState {
         didSet { stateObserver?.didChangeState(state) }
     }
     
-    public enum State {
-        case initialized
-        case loading
-        case success
-        case failure(ServerDrivenState.Error)
-    }
-
+    public var beagleViewStateObserver: BeagleViewStateObserver?
     var dependencies: BeagleDependenciesProtocol
-    
     private var screenAppearEventIsPending = true
 
     // MARK: Observer
@@ -78,7 +68,16 @@ class BeagleScreenViewModel {
     ) {
         self.screenType = screenType
         self.dependencies = dependencies
-        self.state = .initialized
+        self.state = .started
+    }
+    
+    public convenience init(
+        screenType: ScreenType,
+        dependencies: BeagleDependenciesProtocol = Beagle.dependencies,
+        beagleViewStateObserver: @escaping BeagleViewStateObserver
+    ) {
+        self.init(screenType: screenType, dependencies: dependencies)
+        self.beagleViewStateObserver = beagleViewStateObserver
     }
     
     public func loadScreen() {
@@ -99,6 +98,7 @@ class BeagleScreenViewModel {
             screenAppearEventIsPending = false
             dependencies.analytics?.trackEventOnScreenAppeared(event)
         }
+        AnalyticsService.shared?.createRecord(screen: screenType)
     }
     
     public func trackEventOnScreenDisappeared() {
@@ -111,7 +111,7 @@ class BeagleScreenViewModel {
     
     func tryToLoadScreenFromText(_ text: String) {
         guard let loadedScreen = loadScreenFromText(text) else {
-            state = .failure(.declarativeText)
+            state = .error(.declarativeText)
             return
         }
 
@@ -126,7 +126,7 @@ class BeagleScreenViewModel {
     }
 
     func loadRemoteScreen(_ remote: ScreenType.Remote) {
-        state = .loading
+        state = .started
 
         Self.fetchScreen(remote: remote, dependencies: dependencies) {
             [weak self] result in guard let self = self else { return }
@@ -168,7 +168,7 @@ class BeagleScreenViewModel {
             screen = fallback
             state = .success
         } else {
-            state = .failure(.remoteScreen(error))
+            state = .error(.remoteScreen(error))
         }
     }
 }
@@ -178,5 +178,5 @@ class BeagleScreenViewModel {
 protocol BeagleScreenStateObserver: AnyObject {
     typealias ViewModel = BeagleScreenViewModel
 
-    func didChangeState(_ state: ViewModel.State)
+    func didChangeState(_ state: ServerDrivenState)
 }

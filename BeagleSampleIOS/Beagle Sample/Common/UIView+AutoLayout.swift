@@ -32,6 +32,8 @@ extension UIView {
         left: NSLayoutXAxisAnchor? = nil,
         bottom: NSLayoutYAxisAnchor? = nil,
         right: NSLayoutXAxisAnchor? = nil,
+        centerY: NSLayoutYAxisAnchor? = nil,
+        centerX: NSLayoutXAxisAnchor? = nil,
         topConstant: CGFloat = 0,
         leftConstant: CGFloat = 0,
         bottomConstant: CGFloat = 0,
@@ -54,6 +56,14 @@ extension UIView {
         
         if let bottom = bottom {
             anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
+        }
+        
+        if let centerY = centerY {
+            anchors.append(centerYAnchor.constraint(equalTo: centerY, constant: 0))
+        }
+        
+        if let centerX = centerX {
+            anchors.append(centerXAnchor.constraint(equalTo: centerX, constant: 0))
         }
         
         if let right = right {

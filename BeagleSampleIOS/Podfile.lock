@@ -1,10 +1,8 @@
 PODS:
-  - Beagle (1.5.0):
-    - Beagle/Beagle (= 1.5.0)
-  - Beagle/Beagle (1.5.0):
-    - BeagleSchema (= 1.5.0)
+  - Beagle (1.6.1):
+    - Beagle/Beagle (= 1.6.1)
+  - Beagle/Beagle (1.6.1):
     - YogaKit
-  - BeagleSchema (1.5.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -16,7 +14,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Beagle
-    - BeagleSchema
     - Yoga
 
 EXTERNAL SOURCES:
@@ -29,8 +26,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ZupIT/YogaKit
 
 SPEC CHECKSUMS:
-  Beagle: 68b7583ec5ba63d8000f87afc32247d61019adbd
-  BeagleSchema: cc5463afa843ac07caaddb875d82c97a7d8a0153
+  Beagle: f596a6be0c6637b45848e1c66e9a32c02143c88d
   Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
   YogaKit: 3a733275fd1639b96a304f6f5c11421478371e6b
 

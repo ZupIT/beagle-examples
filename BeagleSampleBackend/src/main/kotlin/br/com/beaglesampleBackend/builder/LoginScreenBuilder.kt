@@ -84,6 +84,7 @@ class LoginScreenBuilder: ScreenBuilder {
                                 )
                         ).applyStyle(
                                 Style(
+                                        backgroundColor = "",
                                         cornerRadius = CornerRadius(radius = 20.0)
                                 )
                         )

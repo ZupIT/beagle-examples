@@ -15,7 +15,6 @@
  */
 
 import UIKit
-import BeagleSchema
 
 public typealias BeagleController = UIViewController & BeagleControllerProtocol
 
@@ -28,11 +27,11 @@ public protocol BeagleControllerProtocol: NSObjectProtocol {
     func setIdentifier(_ id: String?, in view: UIView)
     func setContext(_ context: Context, in view: UIView)
     
-    func addOnInit(_ onInit: [RawAction], in view: UIView)
+    func addOnInit(_ onInit: [Action], in view: UIView)
     func addBinding<T: Decodable>(expression: ContextExpression, in view: UIView, update: @escaping (T?) -> Void)
     
-    func execute(actions: [RawAction]?, origin: UIView)
-    func execute(actions: [RawAction]?, with contextId: String, and contextValue: DynamicObject, origin: UIView)
+    func execute(actions: [Action]?, event: String?, origin: UIView)
+    func execute(actions: [Action]?, with contextId: String, and contextValue: DynamicObject, origin: UIView)
     
     func setNeedsLayout(component: UIView)
 }
@@ -52,7 +51,7 @@ public class BeagleScreenViewController: BeagleController {
     
     let bindings = Bindings()
     
-    private var onInit: [(UIView, [RawAction])] = []
+    private var onInit: [(UIView, [Action])] = []
     
     private var navigationControllerId: String?
     
@@ -74,7 +73,7 @@ public class BeagleScreenViewController: BeagleController {
         }
     }
     
-    public convenience init(_ component: RawComponent, controllerId: String? = nil) {
+    public convenience init(_ component: ServerDrivenComponent, controllerId: String? = nil) {
         self.init(.declarative(component.toScreen()), controllerId: controllerId)
         self.navigationControllerId = controllerId
     }
@@ -104,7 +103,10 @@ public class BeagleScreenViewController: BeagleController {
     }
 
     public var serverDrivenState: ServerDrivenState = .finished {
-        didSet { notifyBeagleNavigation(state: serverDrivenState) }
+        didSet {
+            notifyBeagleNavigation(state: serverDrivenState)
+            loadBeagleViewState(serverDrivenState)
+        }
     }
         
     public var screenType: ScreenType {
@@ -115,7 +117,7 @@ public class BeagleScreenViewController: BeagleController {
         return viewModel.screen
     }
     
-    public func addOnInit(_ onInit: [RawAction], in view: UIView) {
+    public func addOnInit(_ onInit: [Action], in view: UIView) {
         self.onInit.append((view, onInit))
     }
     
@@ -123,17 +125,18 @@ public class BeagleScreenViewController: BeagleController {
         bindings.add(self, expression, view, update)
     }
     
-    public func execute(actions: [RawAction]?, origin: UIView) {
+    public func execute(actions: [Action]?, event: String?, origin: UIView) {
         actions?.forEach {
-            ($0 as? Action)?.execute(controller: self, origin: origin)
+            AnalyticsService.shared?.createRecord(action: .init(action: $0, event: event, origin: origin, controller: self))
+            $0.execute(controller: self, origin: origin)
         }
     }
     
-    public func execute(actions: [RawAction]?, with contextId: String, and contextValue: DynamicObject, origin: UIView) {
+    public func execute(actions: [Action]?, with contextId: String, and contextValue: DynamicObject, origin: UIView) {
         guard let actions = actions else { return }
         let context = Context(id: contextId, value: contextValue)
         origin.setContext(context)
-        execute(actions: actions, origin: origin)
+        execute(actions: actions, event: contextId, origin: origin)
     }
             
     // MARK: - Lifecycle
@@ -172,7 +175,7 @@ public class BeagleScreenViewController: BeagleController {
     
     private func executeOnInit() {
         for (view, actions) in onInit {
-            execute(actions: actions, origin: view)
+            execute(actions: actions, event: "onInit", origin: view)
         }
         onInit.removeAll()
     }
@@ -215,20 +218,20 @@ public class BeagleScreenViewController: BeagleController {
     
     // MARK: - Update View
     
-    fileprivate func updateView(state: ViewModel.State) {
+    fileprivate func updateView(state: ServerDrivenState) {
         switch state {
-        case .initialized:
-            break
-        case .loading:
+        case .started:
             serverDrivenState = .started
+        case .finished:
+            serverDrivenState = .finished
         case .success:
-            serverDrivenState = .finished
             serverDrivenState = .success
-            renderScreenIfNeeded()
-        case .failure(let error):
-            renderScreenIfNeeded()
             serverDrivenState = .finished
+            renderScreenIfNeeded()
+        case .error(let error, _):
+            renderScreenIfNeeded()
             serverDrivenState = .error(error, viewModel.loadScreen)
+            serverDrivenState = .finished
         }
     }
     
@@ -237,6 +240,11 @@ public class BeagleScreenViewController: BeagleController {
             updateNavigationBar(animated: true)
             content = .view(screen.toView(renderer: renderer))
         }
+    }
+    
+    private func loadBeagleViewState(_ state: ServerDrivenState) {
+        guard let beagleViewState = viewModel.beagleViewStateObserver else { return }
+        beagleViewState(state)
     }
 
     public func reloadScreen(with screenType: ScreenType) {
@@ -288,7 +296,7 @@ extension BeagleControllerProtocol where Self: UIViewController {
 // MARK: - Observer
 
 extension BeagleScreenViewController: BeagleScreenStateObserver {
-    func didChangeState(_ state: BeagleScreenViewController.ViewModel.State) {
+    func didChangeState(_ state: ServerDrivenState) {
         updateView(state: state)
     }
 }
