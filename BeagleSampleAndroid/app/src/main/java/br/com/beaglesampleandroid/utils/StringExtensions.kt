@@ -14,21 +14,9 @@
  * limitations under the License.
  */
 
-package br.com.beaglesampleandroid.view
+package br.com.beaglesampleandroid.utils
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import br.com.beaglesampleandroid.R
-import br.com.zup.beagle.android.utils.loadView
-import br.com.zup.beagle.android.view.ScreenRequest
-import kotlinx.android.synthetic.main.activity_home.*
+fun String.applyCurrencyFormat(currencyPrefix: String): String {
 
-class HomeActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
-        frame_layout_card.loadView(this, ScreenRequest("/carousel-options"))
-
-    }
+    return currencyPrefix + this
 }
