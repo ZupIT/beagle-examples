@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1767456B25A5099D00170616 /* ItiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767456925A5099D00170616 /* ItiHomeViewController.swift */; };
 		1767456C25A5099D00170616 /* ItiHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1767456A25A5099D00170616 /* ItiHomeViewController.xib */; };
-		5C4AFE3025F92EC3003AC429 /* AccountBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AFE2F25F92EC3003AC429 /* AccountBalance.swift */; };
 		5C8BE1DC25897D63003699C6 /* BeagleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1CB25897D63003699C6 /* BeagleConfig.swift */; };
 		5C8BE1DD25897D63003699C6 /* BeagleLoggerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1CD25897D63003699C6 /* BeagleLoggerDefault.swift */; };
 		5C8BE1DE25897D63003699C6 /* CacheLRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1D025897D63003699C6 /* CacheLRU.swift */; };
@@ -34,7 +33,6 @@
 		1767456925A5099D00170616 /* ItiHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItiHomeViewController.swift; sourceTree = "<group>"; };
 		1767456A25A5099D00170616 /* ItiHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItiHomeViewController.xib; sourceTree = "<group>"; };
 		5C27A8C585A007314AB4CAFD /* Pods-Beagle Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beagle Sample.debug.xcconfig"; path = "Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		5C4AFE2F25F92EC3003AC429 /* AccountBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalance.swift; sourceTree = "<group>"; };
 		5C8BE1CB25897D63003699C6 /* BeagleConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeagleConfig.swift; sourceTree = "<group>"; };
 		5C8BE1CD25897D63003699C6 /* BeagleLoggerDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeagleLoggerDefault.swift; sourceTree = "<group>"; };
 		5C8BE1D025897D63003699C6 /* CacheLRU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheLRU.swift; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 			children = (
 				1767456925A5099D00170616 /* ItiHomeViewController.swift */,
 				1767456A25A5099D00170616 /* ItiHomeViewController.xib */,
-				5C4AFE2F25F92EC3003AC429 /* AccountBalance.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -331,7 +328,6 @@
 				5C8BE1E425897D63003699C6 /* BeagleStyles.swift in Sources */,
 				5C8BE1E125897D63003699C6 /* CacheDiskManager.swift in Sources */,
 				5CE8C76E25A61F2B008B1E7A /* UIView+AutoLayout.swift in Sources */,
-				5C4AFE3025F92EC3003AC429 /* AccountBalance.swift in Sources */,
 				5C8BE1E525897D63003699C6 /* HttpRequestBuilder.swift in Sources */,
 				5C8BE1DC25897D63003699C6 /* BeagleConfig.swift in Sources */,
 				5C8BE1DE25897D63003699C6 /* CacheLRU.swift in Sources */,

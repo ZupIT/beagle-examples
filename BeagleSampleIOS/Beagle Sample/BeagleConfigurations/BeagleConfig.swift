@@ -40,7 +40,7 @@ class BeagleConfig {
     }
     
     private static func registerCustomComponents(in dependencies: BeagleDependencies) {
-        dependencies.decoder.register(component: AccountBalance.self)
+        
     }
     
     private static func registerDeepLink() -> DeeplinkScreenManager {
