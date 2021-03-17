@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         BeagleConfig.setup()
         
-        let screen = Beagle.screen(.remote(.init(url: "/login")))
+        let screen = Beagle.screen(.remote(.init(url: "/screen")))
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = screen
         window?.makeKeyAndVisible()

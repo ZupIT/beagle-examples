@@ -20,7 +20,7 @@ final class ItiHomeViewController: UIViewController, DeeplinkScreen {
     }
     
     func screenController() -> UIViewController {
-        return self
+       self
     }
     
     @IBOutlet weak var headerView: UIView!
@@ -31,13 +31,6 @@ final class ItiHomeViewController: UIViewController, DeeplinkScreen {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         applyHeaderStyle()
-        view.addSubview(beagleView)
-        beagleView.anchor(
-            top: viewProfile.bottomAnchor,
-            left: view.leftAnchor,
-            right: view.rightAnchor,
-            topConstant: 10
-        )
     }
     
     private func applyHeaderStyle() {
@@ -47,9 +40,5 @@ final class ItiHomeViewController: UIViewController, DeeplinkScreen {
         headerView.layer.cornerRadius = 50
         headerView.layer.maskedCorners = [.layerMinXMaxYCorner]
     }
-    
-    private lazy var beagleView: BeagleView = {
-        return BeagleView(.remote(.init(url: "/carousel-options")))
-    }()
     
 }
