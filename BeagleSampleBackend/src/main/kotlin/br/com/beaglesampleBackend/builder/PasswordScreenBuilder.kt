@@ -3,6 +3,8 @@ package br.com.beaglesampleBackend.builder
 import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.Style
 import br.com.zup.beagle.ext.applyStyle
+import br.com.zup.beagle.ext.setFlex
+import br.com.zup.beagle.ext.setStyle
 import br.com.zup.beagle.ext.unitReal
 import br.com.zup.beagle.widget.action.Navigate
 import br.com.zup.beagle.widget.action.SetContext
@@ -45,49 +47,41 @@ class PasswordScreenBuilder : ScreenBuilder {
                                                 )
                                         )
 
-                                ).applyStyle(Style(margin = EdgeValue(horizontal = 8.unitReal()))),
+                                ).setStyle {
+                                        margin = EdgeValue.horizontal(8)
+                                },
                                 createdButton()
 
                         )
-                ).applyStyle(
-                        Style(
-                                flex = Flex(
-                                        grow = 1.0
-                                )
-                        )
-                )
+                ).setFlex {
+                        grow = 1.0
+                }
         )
     }
 
     private fun createdButton(): Container {
         return Container(
                 children = listOf(
-                        Text(text = "recuperar senha ", styleId = "TextStyle").applyStyle(
-                                Style(
-                                        margin = EdgeValue(all = 8.unitReal()),
-                                        flex = Flex(alignSelf = AlignSelf.CENTER)
-                                )
-                        ),
+                        Text(text = "recuperar senha ", styleId = "TextStyle").setStyle {
+                                margin = EdgeValue.all(8)
+                        }.setFlex {
+                                alignSelf = AlignSelf.CENTER
+                        },
                         Button(
                                 text = "entrar",
                                 styleId = "button",
                                 onPress = listOf(
                                         Navigate.OpenNativeRoute(route = "screen-native")
                                 )
-                        ).applyStyle(
-                                Style(
-                                        cornerRadius = CornerRadius(radius = 20.0)
-                                )
-                        )
+                        ).setStyle {
+                                cornerRadius = CornerRadius(radius = 20.0)
+                        }
                 )
-        ).applyStyle(
-                Style(
-                        flex = Flex(
-                                justifyContent = JustifyContent.FLEX_END,
-                                grow = 1.0
-                        ),
-                        margin = EdgeValue(horizontal = 8.unitReal(), bottom = 16.unitReal())
-                )
-        )
+        ).setStyle {
+                margin = EdgeValue.only(left = 8, right = 8, bottom = 16)
+        }.setFlex {
+                grow = 1.0
+                justifyContent = JustifyContent.FLEX_END
+        }
     }
 }
