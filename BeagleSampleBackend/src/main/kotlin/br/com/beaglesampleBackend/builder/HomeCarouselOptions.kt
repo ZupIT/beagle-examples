@@ -2,16 +2,20 @@ package br.com.beaglesampleBackend.builder
 
 import br.com.beaglesampleBackend.widget.AccountBalance
 import br.com.zup.beagle.core.CornerRadius
-import br.com.zup.beagle.core.Style
-import br.com.zup.beagle.ext.applyStyle
-import br.com.zup.beagle.ext.unitPercent
-import br.com.zup.beagle.ext.unitReal
+import br.com.zup.beagle.ext.setFlex
+import br.com.zup.beagle.ext.setStyle
 import br.com.zup.beagle.widget.action.RequestActionMethod
 import br.com.zup.beagle.widget.action.SendRequest
 import br.com.zup.beagle.widget.action.SetContext
 import br.com.zup.beagle.widget.context.ContextData
 import br.com.zup.beagle.widget.context.expressionOf
-import br.com.zup.beagle.widget.core.*
+import br.com.zup.beagle.widget.core.AlignSelf
+import br.com.zup.beagle.widget.core.EdgeValue
+import br.com.zup.beagle.widget.core.JustifyContent
+import br.com.zup.beagle.widget.core.ListDirection
+import br.com.zup.beagle.widget.core.Size
+import br.com.zup.beagle.widget.core.UnitType
+import br.com.zup.beagle.widget.core.UnitValue
 import br.com.zup.beagle.widget.layout.Container
 import br.com.zup.beagle.widget.ui.Image
 import br.com.zup.beagle.widget.ui.ImagePath
@@ -49,7 +53,9 @@ object HomeCarouselOptions {
                             dataSource = expressionOf("@{initialContext}"),
                             direction = ListDirection.HORIZONTAL,
                             template = template()
-                    ).applyStyle(style = Style(size = Size(width = 100.unitPercent())))
+                    ).setStyle {
+                            size = Size(width = UnitValue(100.0, UnitType.REAL))
+                    }
             )
     )
 
@@ -57,26 +63,24 @@ object HomeCarouselOptions {
             listOf(
                     Image(
                             ImagePath.Remote(remoteUrl = "@{item.icon}")
-                    ).applyStyle(
-                            style = Style(
-                                    size = Size(width = 40.unitReal(), height = 40.unitReal()),
-                                    flex = Flex(alignSelf = AlignSelf.FLEX_END)
-                            )
-                    ),
+                    ).setStyle {
+                            size = Size(width = UnitValue(40.0, UnitType.REAL), height = UnitValue(40.0, UnitType.REAL))
+                    }.setFlex {
+                            alignSelf = AlignSelf.FLEX_END
+                    },
                     Text(
                             text = "@{item.title}",
                             styleId = "h1",
                             textColor = "#ffffff"
                     )
             )
-    ).applyStyle(
-            style = Style(
-                    cornerRadius = CornerRadius(radius = 8.0),
-                    backgroundColor = "#fb5f31",
-                    size = Size(width = 140.unitReal(), height = 140.unitReal()),
-                    margin = EdgeValue(all = 10.unitReal()),
-                    padding = EdgeValue(all = 10.unitReal()),
-                    flex = Flex(justifyContent = JustifyContent.SPACE_BETWEEN)
-            )
-    )
+    ).setStyle {
+            cornerRadius = CornerRadius(radius = 8.0)
+            backgroundColor = "#fb5f31"
+            size = Size(width = UnitValue(140.0, UnitType.REAL), height = UnitValue(140.0, UnitType.REAL))
+            margin = EdgeValue.all(10)
+            padding = EdgeValue.all(10)
+    }.setFlex {
+            justifyContent = JustifyContent.SPACE_BETWEEN
+    }
 }

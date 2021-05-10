@@ -39,7 +39,7 @@
 		<dependency>
 			<groupId>br.com.zup.beagle</groupId>
 			<artifactId>beagle-spring-starter</artifactId>
-			<version>1.5.0</version>
+			<version>1.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
@@ -92,12 +92,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>bintray-zupit-repo</id>
-			<url>https://dl.bintray.com/zupit/repo</url>
-		</repository>
-	</repositories>
 
 </project>
