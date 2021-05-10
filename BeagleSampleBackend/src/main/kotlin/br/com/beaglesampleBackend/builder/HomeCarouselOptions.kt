@@ -54,7 +54,7 @@ object HomeCarouselOptions {
                             direction = ListDirection.HORIZONTAL,
                             template = template()
                     ).setStyle {
-                            size = Size(width = UnitValue(100.0, UnitType.REAL))
+                            size = Size(width = UnitValue(100.0, UnitType.PERCENT))
                     }
             )
     )
