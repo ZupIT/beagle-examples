@@ -40,6 +40,10 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -54,7 +58,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Beagle Android
-    ext.beagle_version = "1.6.0"
+    ext.beagle_version = "1.7.0"
     implementation "br.com.zup.beagle:android:$beagle_version"
     kapt "br.com.zup.beagle:android-processor:$beagle_version"
 
