@@ -19,8 +19,10 @@ package br.com.beaglesampleandroid.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.beaglesampleandroid.R
+import br.com.zup.beagle.android.utils.newServerDrivenIntent
 import br.com.zup.beagle.android.view.BeagleActivity
 import br.com.zup.beagle.android.view.ScreenRequest
+import br.com.zup.beagle.android.view.ServerDrivenActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(BeagleActivity.newIntent(this, ScreenRequest("/screen")))
+        val intent = this.newServerDrivenIntent<ServerDrivenActivity>(ScreenRequest("/screen"))
+
+        startActivity(intent)
         finish()
     }
 }
