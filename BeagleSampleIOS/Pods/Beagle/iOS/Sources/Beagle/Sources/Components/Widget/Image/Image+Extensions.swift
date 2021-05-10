@@ -37,7 +37,7 @@ extension Image {
             let expression: Expression<String> = "\(mobileId)"
             renderer.observe(expression, andUpdateManyIn: image) { mobileId in
                 guard let mobileId = mobileId, !mobileId.isEmpty else { return }
-                self.setImageFromAsset(named: mobileId, bundle: renderer.controller.dependencies.appBundle, imageView: image)
+                self.setImageFromAsset(named: mobileId, bundle: renderer.dependencies.appBundle, imageView: image)
             }
         case .remote(let remote):
             let expression: Expression<String> = "\(remote.url)"
@@ -54,7 +54,7 @@ extension Image {
             image.token?.cancel()
             switch path {
             case .local(let mobileId):
-                self.setImageFromAsset(named: mobileId, bundle: renderer.controller.dependencies.appBundle, imageView: image)
+                self.setImageFromAsset(named: mobileId, bundle: renderer.dependencies.appBundle, imageView: image)
             case .remote(let remote):
                 image.token = self.setRemoteImage(from: remote.url, placeholder: remote.placeholder, imageView: image, renderer: renderer)
             case .none: ()
@@ -69,7 +69,7 @@ extension Image {
     private func setRemoteImage(from url: String, placeholder: String?, imageView: UIImageView, renderer: BeagleRenderer) -> RequestToken? {
         var imagePlaceholder: UIImage?
         if let placeholder = placeholder {
-            imagePlaceholder = UIImage(named: placeholder, in: renderer.controller.dependencies.appBundle, compatibleWith: nil)
+            imagePlaceholder = UIImage(named: placeholder, in: renderer.dependencies.appBundle, compatibleWith: nil)
             imageView.image = imagePlaceholder
         }
         return lazyLoadImage(path: url, placeholderImage: imagePlaceholder, imageView: imageView, renderer: renderer)
@@ -77,7 +77,7 @@ extension Image {
     
     private func lazyLoadImage(path: String, placeholderImage: UIImage?, imageView: UIImageView, renderer: BeagleRenderer) -> RequestToken? {
         let controller = renderer.controller
-        return controller.dependencies.imageDownloader.fetchImage(url: path, additionalData: nil) {
+        return renderer.dependencies.imageDownloader.fetchImage(url: path, additionalData: nil) {
             [weak imageView, weak controller] result in
             guard let imageView = imageView else { return }
             switch result {
@@ -95,6 +95,25 @@ extension Image {
 
 private class BeagleImageView: UIImageView {
     var token: RequestToken?
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        guard let imageSize = image?.size else {
+            return .zero
+        }
+        guard imageSize.width > size.width || imageSize.height > size.height else {
+            return imageSize
+        }
+        let sizeRatio = size.height != 0 ? size.width / size.height : .zero
+        let imageRatio = imageSize.height != 0 ? imageSize.width / imageSize.height : .zero
+        
+        if imageRatio > sizeRatio {
+            return CGSize(width: size.width, height: size.width / imageRatio)
+        } else if imageRatio < sizeRatio {
+            return CGSize(width: size.height * imageRatio, height: size.height)
+        } else { // imageRatio == sizeRatio
+            return size
+        }
+    }
     
     init(with mode: ImageContentMode?) {
         super.init(frame: .zero)
