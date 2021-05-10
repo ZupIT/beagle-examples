@@ -16,42 +16,47 @@
 
 public struct Container: Widget, HasContext, InitiableComponent, AutoDecodable {
     // MARK: - Public Properties
-    public let children: [ServerDrivenComponent]
+    public let children: [ServerDrivenComponent]?
     public var widgetProperties: WidgetProperties
     public let onInit: [Action]?
     public let context: Context?
-    
+    public let styleId: String?
+
     public init(
-        children: [ServerDrivenComponent],
+        children: [ServerDrivenComponent]? = nil,
         widgetProperties: WidgetProperties = WidgetProperties(),
         context: Context? = nil,
-        onInit: [Action]? = nil
+        onInit: [Action]? = nil,
+        styleId: String? = nil
     ) {
         self.children = children
         self.widgetProperties = widgetProperties
         self.onInit = onInit
         self.context = context
+        self.styleId = styleId
     }
     
     public init(
         context: Context? = nil,
         onInit: [Action]? = nil,
+        styleId: String? = nil,
         widgetProperties: WidgetProperties = WidgetProperties(),
         @ChildrenBuilder
         _ children: () -> [ServerDrivenComponent]
     ) {
-        self.init(children: children(), widgetProperties: widgetProperties, context: context, onInit: onInit)
+        self.init(children: children(), widgetProperties: widgetProperties, context: context, onInit: onInit, styleId: styleId)
     }
     
     #if swift(<5.3)
     public init(
         context: Context? = nil,
         onInit: [Action]? = nil,
+        styleId: String? = nil,
         widgetProperties: WidgetProperties = WidgetProperties(),
         @ChildBuilder
         _ children: () -> ServerDrivenComponent
     ) {
-        self.init(children: [children()], widgetProperties: widgetProperties, context: context, onInit: onInit)
+        self.init(children: [children()], widgetProperties: widgetProperties, context: context, onInit: onInit, styleId: styleId)
     }
     #endif
 }

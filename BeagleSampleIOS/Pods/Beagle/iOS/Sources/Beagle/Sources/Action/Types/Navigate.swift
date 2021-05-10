@@ -17,8 +17,8 @@
 /// Handles screens navigations actions of the application.
 public enum Navigate: AnalyticsAction {
     
-    /// Opens up an available browser on the device and navigates to a specified URL as String.
-    case openExternalURL(String, analytics: ActionAnalyticsConfig? = nil)
+    /// Opens up an available browser on the device and navigates to a specified URL as Expression.
+    case openExternalURL(Expression<String>, analytics: ActionAnalyticsConfig? = nil)
     
     /// Opens a screen that is defined completely local in your app (does not depend on Beagle) which will be retrieved using `DeeplinkScreenManager`.
     case openNativeRoute(OpenNativeRoute, analytics: ActionAnalyticsConfig? = nil)
@@ -43,12 +43,12 @@ public enum Navigate: AnalyticsAction {
     case popView(analytics: ActionAnalyticsConfig? = nil)
     
     /// Returns the stack of screens in the application flow for a given screen in a route specified as String.
-    case popToView(String, analytics: ActionAnalyticsConfig? = nil)
+    case popToView(Expression<String>, analytics: ActionAnalyticsConfig? = nil)
     
     public struct OpenNativeRoute {
         
         /// Deeplink identifier.
-        public let route: String
+        public let route: Expression<String>
         
         /// Data that could be passed between screens.
         public let data: [String: String]?
@@ -57,11 +57,11 @@ public enum Navigate: AnalyticsAction {
         public let shouldResetApplication: Bool
 
         public init(
-            route: String,
+            route: StringOrExpression,
             data: [String: String]? = nil,
             shouldResetApplication: Bool = false
         ) {
-            self.route = route
+            self.route = Expression(stringLiteral: route)
             self.data = data
             self.shouldResetApplication = shouldResetApplication
         }
@@ -106,21 +106,52 @@ extension Route {
         /// - If __false__, Beagle will only request this screen when the Navigate action gets triggered (e.g: user taps a button).
         /// - If __true__, Beagle will trigger the request as soon as it renders the component that have
         /// this action. (e.g: when a button appears on the screen it will trigger)
-        public let shouldPrefetch: Bool
+        public let shouldPrefetch: Bool?
         
         /// A screen that should be rendered in case of request fail.
         public let fallback: Screen?
 
+        /// Used to pass additional http data on requests
+        public let httpAdditionalData: HttpAdditionalData?
+        
         /// Constructs a new path to a remote screen.
         ///
         /// - Parameters:
         ///   - url: Contains the navigation endpoint. Since its a _ExpressibleString_ type you can pass a Expression<String> or a regular String.
         ///   - shouldPrefetch: Changes _when_ this screen is requested.
         ///   - fallback: A screen that should be rendered in case of request fail.
-        public init(url: StringOrExpression, shouldPrefetch: Bool = false, fallback: Screen? = nil) {
+        ///   - httpAdditionalData: Used to pass additional http data on requests
+        public init(url: StringOrExpression, shouldPrefetch: Bool? = nil, fallback: Screen? = nil, httpAdditionalData: HttpAdditionalData? = nil) {
             self.url = "\(url)"
             self.shouldPrefetch = shouldPrefetch
             self.fallback = fallback
+            self.httpAdditionalData = httpAdditionalData
+        }
+    }
+}
+
+extension Route.NewPath {
+
+    /// RouteAdditionalData can be used on navigate actions to pass additional http data on requests triggered by Beagle.
+    public struct HttpAdditionalData: AutoDecodable {
+        
+        public var method: HTTPMethod?
+        public var headers: [String: String]?
+        public var body: DynamicObject?
+        
+        /// Constructs new http additional data
+        /// - Parameters:
+        ///   - method: Contains the HTTP method for the request.
+        ///   - headers: Contains the additional headers for a http request.
+        ///   - body: Contains additional body for a http request.
+        public init(
+            method: HTTPMethod? = .get,
+            headers: [String: String]? = [:],
+            body: DynamicObject?
+        ) {
+            self.method = method
+            self.headers = headers
+            self.body = body
         }
     }
 }
@@ -145,7 +176,7 @@ extension Navigate: Decodable, CustomReflectable {
         let analytics = try container.decodeIfPresent(ActionAnalyticsConfig.self, forKey: .analytics)
         switch type.lowercased() {
         case "beagle:openexternalurl":
-            self = .openExternalURL(try container.decode(String.self, forKey: .url), analytics: analytics)
+            self = .openExternalURL(try container.decode(Expression<String>.self, forKey: .url), analytics: analytics)
         case "beagle:opennativeroute":
             self = .openNativeRoute(try .init(from: decoder), analytics: analytics)
         case "beagle:resetapplication":
@@ -169,7 +200,7 @@ extension Navigate: Decodable, CustomReflectable {
         case "beagle:popview":
             self = .popView(analytics: analytics)
         case "beagle:poptoview":
-            self = .popToView(try container.decode(String.self, forKey: .route), analytics: analytics)
+            self = .popToView(try container.decode(Expression<String>.self, forKey: .route), analytics: analytics)
         default:
             throw DecodingError.dataCorruptedError(forKey: ._beagleAction_,
                                                    in: container,
@@ -282,12 +313,14 @@ extension Route.NewPath: Decodable {
         case url
         case shouldPrefetch
         case fallback
+        case httpAdditionalData
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try container.decode(Expression<String>.self, forKey: .url)
-        self.shouldPrefetch = try container.decodeIfPresent(Bool.self, forKey: .shouldPrefetch) ?? false
+        self.shouldPrefetch = try container.decodeIfPresent(Bool.self, forKey: .shouldPrefetch)
         self.fallback = try container.decodeIfPresent(ScreenComponent.self, forKey: .fallback)?.toScreen()
+        self.httpAdditionalData = try container.decodeIfPresent(HttpAdditionalData.self, forKey: .httpAdditionalData)
     }
 }
