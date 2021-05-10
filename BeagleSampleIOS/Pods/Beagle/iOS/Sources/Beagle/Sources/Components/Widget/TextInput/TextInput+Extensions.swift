@@ -23,12 +23,8 @@ extension TextInput: ServerDrivenComponent {
                                           onFocus: onFocus,
                                           controller: renderer.controller)
         
+        textInputView.styleId = styleId
         setupExpressions(toView: textInputView, renderer: renderer)
-        
-        if let styleId = styleId {
-            textInputView.beagle.applyStyle(for: textInputView as UITextField, styleId: styleId, with: renderer.controller)
-        }
-        
         textInputView.beagleFormElement = self
         
         return textInputView
@@ -39,9 +35,13 @@ extension TextInput: ServerDrivenComponent {
         renderer.observe(placeholder, andUpdate: \.placeholder, in: view)
         renderer.observe(type, andUpdate: \.inputType, in: view)
         renderer.observe(disabled, andUpdateManyIn: view) { disabled in
-            if let disabled = disabled {
-                view.isEnabled = !disabled
-            }
+            let enabled = !(disabled ?? false)
+            view.layoutUpdate(with: enabled)
+        }
+        
+        renderer.observe(enabled, andUpdateManyIn: view) { enabled in
+            if self.disabled != nil { return }
+            view.layoutUpdate(with: enabled ?? true)
         }
         renderer.observe(readOnly, andUpdateManyIn: view) { readOnly in
             if let readOnly = readOnly {
@@ -69,6 +69,10 @@ extension TextInput: ServerDrivenComponent {
         
         // MARK: - Properties
 
+        var styleId: String? {
+            didSet { applyStyle() }
+        }
+        
         var invalidInputColor: UIColor?
         var validInputColor: UIColor?
         var onChange: [Action]?
@@ -109,7 +113,7 @@ extension TextInput: ServerDrivenComponent {
             onChange: [Action]? =  nil,
             onBlur: [Action]? =  nil,
             onFocus: [Action]? =  nil,
-            controller: BeagleController
+            controller: BeagleController?
         ) {
             self.onChange = onChange
             self.onBlur = onBlur
@@ -125,6 +129,7 @@ extension TextInput: ServerDrivenComponent {
                 
         override func layoutSubviews() {
             super.layoutSubviews()
+            applyStyle()
             if superview != nil, errorMessage != nil && shouldFixHeight {
                 setupFixedHeight()
                 shouldFixHeight = false
@@ -152,6 +157,21 @@ extension TextInput: ServerDrivenComponent {
             validationLabel.frame.origin.y = newHeight
 
             yoga.applyLayout(preservingOrigin: true)
+        }
+        
+        func layoutUpdate(with enabled: Bool) {
+            isEnabled = enabled
+            var enabledColor = UIColor.black
+            if #available(iOS 13.0, *) {
+                enabledColor = .label
+            }
+            textColor = enabled ? enabledColor : .systemGray
+            layoutSubviews()
+        }
+        
+        private func applyStyle() {
+            guard let styleId = styleId else { return }
+            beagle.applyStyle(for: self as UITextField, styleId: styleId, with: controller)
         }
         
         func getValue() -> Any {
