@@ -28,7 +28,9 @@ extension Container {
                 style: style,
                 accessibility: widgetProperties.accessibility
             ),
-            context: context
+            context: context,
+            onInit: onInit,
+            styleId: styleId
         )
     }
 }
@@ -38,9 +40,13 @@ extension Container: ServerDrivenComponent {
     public func toView(renderer: BeagleRenderer) -> UIView {
         let containerView = UIView()
         
-        children.forEach {
+        children?.forEach {
             let view = renderer.render($0)
             containerView.addSubview(view)
+        }
+        
+        if let styleId = styleId {
+            containerView.beagle.applyStyle(for: containerView as UIView, styleId: styleId, with: renderer.controller)
         }
         
         return containerView

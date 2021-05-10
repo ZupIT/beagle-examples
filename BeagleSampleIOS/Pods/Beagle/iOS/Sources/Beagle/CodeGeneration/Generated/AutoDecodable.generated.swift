@@ -135,15 +135,17 @@ extension Container {
         case children
         case onInit
         case context
+        case styleId
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        children = try container.decode(forKey: .children)
+        children = try container.decodeIfPresent(forKey: .children)
         widgetProperties = try WidgetProperties(from: decoder)
         onInit = try container.decodeIfPresent(forKey: .onInit)
         context = try container.decodeIfPresent(Context.self, forKey: .context)
+        styleId = try container.decodeIfPresent(String.self, forKey: .styleId)
     }
 }
 
@@ -270,12 +272,30 @@ extension PageView {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        children = try container.decode(forKey: .children)
+        children = try container.decodeIfPresent(forKey: .children)
         let rawPageIndicator: ServerDrivenComponent? = try container.decodeIfPresent(forKey: .pageIndicator)
         pageIndicator = rawPageIndicator as? PageIndicatorComponent
         context = try container.decodeIfPresent(Context.self, forKey: .context)
         onPageChange = try container.decodeIfPresent(forKey: .onPageChange)
         currentPage = try container.decodeIfPresent(Expression<Int>.self, forKey: .currentPage)
+    }
+}
+
+// MARK: Route.NewPath.HttpAdditionalData Decodable
+extension Route.NewPath.HttpAdditionalData {
+
+    enum CodingKeys: String, CodingKey {
+        case method
+        case headers
+        case body
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        method = try container.decodeIfPresent(HTTPMethod.self, forKey: .method)
+        headers = try container.decodeIfPresent([String: String].self, forKey: .headers)
+        body = try container.decodeIfPresent(DynamicObject.self, forKey: .body)
     }
 }
 
@@ -318,7 +338,7 @@ extension ScrollView {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        children = try container.decode(forKey: .children)
+        children = try container.decodeIfPresent(forKey: .children)
         scrollDirection = try container.decodeIfPresent(ScrollAxis.self, forKey: .scrollDirection)
         scrollBarEnabled = try container.decodeIfPresent(Bool.self, forKey: .scrollBarEnabled)
         context = try container.decodeIfPresent(Context.self, forKey: .context)
@@ -343,7 +363,7 @@ extension SendRequest {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         url = try container.decode(Expression<String>.self, forKey: .url)
-        method = try container.decodeIfPresent(Expression<SendRequest.HTTPMethod>.self, forKey: .method)
+        method = try container.decodeIfPresent(Expression<HTTPMethod>.self, forKey: .method)
         data = try container.decodeIfPresent(DynamicObject.self, forKey: .data)
         headers = try container.decodeIfPresent(Expression<[String: String]>.self, forKey: .headers)
         onSuccess = try container.decodeIfPresent(forKey: .onSuccess)
@@ -369,7 +389,7 @@ extension SimpleForm {
         context = try container.decodeIfPresent(Context.self, forKey: .context)
         onSubmit = try container.decodeIfPresent(forKey: .onSubmit)
         onValidationError = try container.decodeIfPresent(forKey: .onValidationError)
-        children = try container.decode(forKey: .children)
+        children = try container.decodeIfPresent(forKey: .children)
         widgetProperties = try WidgetProperties(from: decoder)
     }
 }
@@ -422,6 +442,7 @@ extension TextInput {
         case value
         case placeholder
         case disabled
+        case enabled
         case readOnly
         case type
         case hidden
@@ -439,6 +460,7 @@ extension TextInput {
         value = try container.decodeIfPresent(Expression<String>.self, forKey: .value)
         placeholder = try container.decodeIfPresent(Expression<String>.self, forKey: .placeholder)
         disabled = try container.decodeIfPresent(Expression<Bool>.self, forKey: .disabled)
+        enabled = try container.decodeIfPresent(Expression<Bool>.self, forKey: .enabled)
         readOnly = try container.decodeIfPresent(Expression<Bool>.self, forKey: .readOnly)
         type = try container.decodeIfPresent(Expression<TextInputType>.self, forKey: .type)
         hidden = try container.decodeIfPresent(Expression<Bool>.self, forKey: .hidden)

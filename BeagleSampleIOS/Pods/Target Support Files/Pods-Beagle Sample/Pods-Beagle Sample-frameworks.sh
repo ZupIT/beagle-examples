@@ -176,11 +176,15 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Beagle/Beagle.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BeagleYoga/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BeagleYogaKit/YogaKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Beagle/Beagle.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BeagleYoga/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BeagleYogaKit/YogaKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
 fi
