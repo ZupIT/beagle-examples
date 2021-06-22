@@ -35,12 +35,17 @@ class BeagleConfig {
         dependencies.urlBuilder = UrlBuilder(baseUrl: URL(string: "http://localhost:8080"))
         
         registerCustomComponents(in: dependencies)
+        registerCustomAction(in: dependencies)
         
         Beagle.dependencies = dependencies
     }
     
     private static func registerCustomComponents(in dependencies: BeagleDependencies) {
         dependencies.decoder.register(component: AccountBalance.self)
+    }
+    
+    private static func registerCustomAction(in dependencies: BeagleDependencies) {
+        dependencies.decoder.register(action: AuthenticationAction.self)
     }
     
     private static func registerDeepLink() -> DeeplinkScreenManager {

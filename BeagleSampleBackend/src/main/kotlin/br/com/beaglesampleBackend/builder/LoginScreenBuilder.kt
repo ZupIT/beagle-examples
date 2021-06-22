@@ -1,12 +1,12 @@
 package br.com.beaglesampleBackend.builder
 
+import br.com.beaglesampleBackend.action.AuthenticationAction
 import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.ext.setFlex
 import br.com.zup.beagle.ext.setStyle
-import br.com.zup.beagle.widget.action.Navigate
-import br.com.zup.beagle.widget.action.Route
-import br.com.zup.beagle.widget.action.SetContext
+import br.com.zup.beagle.widget.action.*
 import br.com.zup.beagle.widget.context.ContextData
+import br.com.zup.beagle.widget.context.expressionOf
 import br.com.zup.beagle.widget.core.EdgeValue
 import br.com.zup.beagle.widget.core.JustifyContent
 import br.com.zup.beagle.widget.core.TextInputType
@@ -27,6 +27,19 @@ class LoginScreenBuilder: ScreenBuilder {
                         styleId = "toolbar"
                 ),
                 child = Container(
+                        onInit = listOf(
+                              AuthenticationAction(
+                                      success = listOf(
+                                              Navigate.OpenNativeRoute(route = "screen-native")
+                                      ),
+                                      error = listOf(
+                                              Alert(
+                                                      title = "Erro de Authenticação",
+                                                      message = "Faça o Login normalmente com cpf e password"
+                                              )
+                                      )
+                              )
+                        ),
                         context = ContextData(
                                 id = "credential",
                                 value = ""
@@ -65,11 +78,18 @@ class LoginScreenBuilder: ScreenBuilder {
                                 text = "continuar",
                                 styleId = "button",
                                 onPress = listOf(
-                                        SetContext(
-                                                contextId = "global",
-                                                value = "@{credential}"
-                                        ),
-                                        Navigate.PushView(route = Route.Remote("/password",shouldPrefetch = true))
+                                        Condition(
+                                                condition = expressionOf("@{eq(credential, '123456789')}"),
+                                                 onFalse = listOf(
+                                                        Alert(
+                                                                title = "Atenção",
+                                                                 message = "CPF invalido!"
+                                                        )
+                                                 ),
+                                                onTrue = listOf(
+                                                        Navigate.PushView(route = Route.Remote("/password",shouldPrefetch = true))
+                                                )
+                                        )
                                 )
                         ).setStyle {
                                 cornerRadius = CornerRadius(radius = 20.0)
