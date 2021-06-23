@@ -20,6 +20,7 @@
 		5C8BE1E425897D63003699C6 /* BeagleStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1D825897D63003699C6 /* BeagleStyles.swift */; };
 		5C8BE1E525897D63003699C6 /* HttpRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1DA25897D63003699C6 /* HttpRequestBuilder.swift */; };
 		5C8BE1E625897D63003699C6 /* NetworkClientDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BE1DB25897D63003699C6 /* NetworkClientDefault.swift */; };
+		5CC305BD2683562B00F66A18 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC305BC2683562B00F66A18 /* AuthenticationManager.swift */; };
 		5CE8C76125A618A5008B1E7A /* AccountBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8C76025A618A5008B1E7A /* AccountBalanceView.swift */; };
 		5CE8C76425A61AC0008B1E7A /* DeeplinkScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8C76325A61AC0008B1E7A /* DeeplinkScreenManager.swift */; };
 		5CE8C76E25A61F2B008B1E7A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE8C76D25A61F2B008B1E7A /* UIView+AutoLayout.swift */; };
@@ -44,6 +45,7 @@
 		5C8BE1D825897D63003699C6 /* BeagleStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeagleStyles.swift; sourceTree = "<group>"; };
 		5C8BE1DA25897D63003699C6 /* HttpRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestBuilder.swift; sourceTree = "<group>"; };
 		5C8BE1DB25897D63003699C6 /* NetworkClientDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientDefault.swift; sourceTree = "<group>"; };
+		5CC305BC2683562B00F66A18 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		5CE8C76025A618A5008B1E7A /* AccountBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalanceView.swift; sourceTree = "<group>"; };
 		5CE8C76325A61AC0008B1E7A /* DeeplinkScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkScreenManager.swift; sourceTree = "<group>"; };
 		5CE8C76D25A61F2B008B1E7A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		5CE8C76C25A61F03008B1E7A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5CC305BC2683562B00F66A18 /* AuthenticationManager.swift */,
 				5CE8C76D25A61F2B008B1E7A /* UIView+AutoLayout.swift */,
 			);
 			path = Common;
@@ -327,6 +330,7 @@
 				5C8BE1E225897D63003699C6 /* CoreCache.xcdatamodeld in Sources */,
 				5C8BE1E425897D63003699C6 /* BeagleStyles.swift in Sources */,
 				5C8BE1E125897D63003699C6 /* CacheDiskManager.swift in Sources */,
+				5CC305BD2683562B00F66A18 /* AuthenticationManager.swift in Sources */,
 				5CE8C76E25A61F2B008B1E7A /* UIView+AutoLayout.swift in Sources */,
 				5C8BE1E525897D63003699C6 /* HttpRequestBuilder.swift in Sources */,
 				5C8BE1DC25897D63003699C6 /* BeagleConfig.swift in Sources */,
