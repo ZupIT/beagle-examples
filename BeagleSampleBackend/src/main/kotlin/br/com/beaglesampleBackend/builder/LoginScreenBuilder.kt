@@ -27,19 +27,7 @@ class LoginScreenBuilder: ScreenBuilder {
                         styleId = "toolbar"
                 ),
                 child = Container(
-                        onInit = listOf(
-                              AuthenticationAction(
-                                      success = listOf(
-                                              Navigate.OpenNativeRoute(route = "screen-native")
-                                      ),
-                                      error = listOf(
-                                              Alert(
-                                                      title = "Erro de Authenticação",
-                                                      message = "Faça o Login normalmente com cpf e password"
-                                              )
-                                      )
-                              )
-                        ),
+
                         context = ContextData(
                                 id = "credential",
                                 value = ""
@@ -62,6 +50,24 @@ class LoginScreenBuilder: ScreenBuilder {
                                 ).setStyle {
                                         margin = EdgeValue.horizontal(8)
                                 },
+                            Button(
+                                text = "Autenticação por biometria",
+                                onPress = listOf(
+                                            AuthenticationAction(
+                                                success = listOf(
+                                                    Navigate.OpenNativeRoute(route = "screen-native")
+                                                ),
+                                                error = listOf(
+                                                    Alert(
+                                                        title = "Erro de Authenticação",
+                                                        message = "Faça o Login normalmente com cpf e password"
+                                                    )
+                                                )
+                                            )
+                                        )
+                            ).setStyle {
+                              margin = EdgeValue.only(top = 15)
+                            },
                                 createdButton()
 
                         )
