@@ -16,17 +16,7 @@
 
 package br.com.beaglesampleandroid.utils
 
-import android.os.Build
-import android.util.Log
-import android.view.View
-import androidx.annotation.RequiresApi
-import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentActivity
-import br.com.zup.beagle.android.action.Action
-import br.com.zup.beagle.android.widget.RootView
-
-class BiometricLogic(val success: List<Action>, val error:List<Action>) {
+//class BiometricLogic(val success: List<Action>, val error:List<Action>) {
 
 //    val biometricPrompt: BiometricPrompt
 //    val biometricManager = BiometricManager.from(rootView.getContext())
@@ -40,41 +30,41 @@ class BiometricLogic(val success: List<Action>, val error:List<Action>) {
 //        Log.d(TAG, "could not authenticate because: $canAuthenticate")
 //    }
 
-    private fun instanceOfBiometricPrompt(rootView: RootView, origin: View): BiometricPrompt {
-        val executor = ContextCompat.getMainExecutor(rootView.getContext())
-
-        val callback =
-            @RequiresApi(Build.VERSION_CODES.P)
-            object : BiometricPrompt.AuthenticationCallback() {
-                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                    super.onAuthenticationError(errorCode, errString)
-                    Log.i("Biometrics", "$errorCode :: $errString")
-                    //  handleEvent(rootView, origin, error)
-                }
-
-                override fun onAuthenticationFailed() {
-                    super.onAuthenticationFailed()
-                    Log.i("Biometrics", "error")
-                    //   handleEvent(rootView, origin, error)
-                }
-
-                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                    super.onAuthenticationSucceeded(result)
-                    Log.i("Biometrics", "Authentication was successful")
-                    //   handleEvent(rootView, origin, success)
-                }
-            }
-        return BiometricPrompt(rootView.getContext() as FragmentActivity, executor, callback)
-    }
-
-    private fun getPromptInfo(): BiometricPrompt.PromptInfo {
-        val promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("My App's Authentication")
-            .setSubtitle("Please login to get access")
-            .setDescription("My App is using Android biometric authentication")
-            .setDeviceCredentialAllowed(true)
-            .setConfirmationRequired(true)
-            .build()
-        return promptInfo
-    }
-}
+//    private fun instanceOfBiometricPrompt(rootView: RootView, origin: View): BiometricPrompt {
+//        val executor = ContextCompat.getMainExecutor(rootView.getContext())
+//
+//        val callback =
+//            @RequiresApi(Build.VERSION_CODES.P)
+//            object : BiometricPrompt.AuthenticationCallback() {
+//                override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+//                    super.onAuthenticationError(errorCode, errString)
+//                    Log.i("Biometrics", "$errorCode :: $errString")
+//                    //  handleEvent(rootView, origin, error)
+//                }
+//
+//                override fun onAuthenticationFailed() {
+//                    super.onAuthenticationFailed()
+//                    Log.i("Biometrics", "error")
+//                    //   handleEvent(rootView, origin, error)
+//                }
+//
+//                override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+//                    super.onAuthenticationSucceeded(result)
+//                    Log.i("Biometrics", "Authentication was successful")
+//                    //   handleEvent(rootView, origin, success)
+//                }
+//            }
+//        return BiometricPrompt(rootView.getContext() as FragmentActivity, executor, callback)
+//    }
+//
+//    private fun getPromptInfo(): BiometricPrompt.PromptInfo {
+//        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+//            .setTitle("My App's Authentication")
+//            .setSubtitle("Please login to get access")
+//            .setDescription("My App is using Android biometric authentication")
+//            .setDeviceCredentialAllowed(true)
+//            .setConfirmationRequired(true)
+//            .build()
+//        return promptInfo
+//    }
+//}
