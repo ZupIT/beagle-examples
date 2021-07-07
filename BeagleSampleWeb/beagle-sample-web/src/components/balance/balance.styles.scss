@@ -1,6 +1,8 @@
+@import "../../commons/colors.scss";
+
 .balance {
   margin: 30px 15px 30px 15px;
-  color: #778899;
+  color: $lightBlue;
   display: flex;
   flex-direction: column;
 
@@ -22,7 +24,7 @@
 
 .hide-box {
   height: 20px;
-  background-color: #778899;
+  background-color: $lightBlue;
   width: 150px;
   margin-top: 5px;
   border-radius: 3px;
@@ -38,6 +40,6 @@
   width: 90%;
   margin: 10px auto 25px auto;
   border-top: solid 0.5px;
-  border-color: #7b7b7b;
+  border-color: $lightGrey;
   opacity: 50%;
 }
