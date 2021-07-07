@@ -1,0 +1,12 @@
+.header {
+  height: 90px;
+  background-color: #1b2434;
+  display: flex;
+  margin-bottom: 50px;
+  box-shadow: 2px 1px 6px 5px rgb(0 0 0 / 20%);
+  &-icon {
+    display: block;
+    margin: auto;
+    width: 40px;
+  }
+}

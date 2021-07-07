@@ -1,0 +1,17 @@
+.profile {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left:150px;
+    margin-bottom: 50px;
+  }
+
+  &-name {
+    font-size: 1.5rem;
+  }
+
+  &-email:hover {
+    cursor: pointer;
+    color: #fb5f31;
+  }
+}
