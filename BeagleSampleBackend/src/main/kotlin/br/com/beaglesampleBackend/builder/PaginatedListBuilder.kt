@@ -36,8 +36,9 @@ private fun createPaginatedList() = Container(
                         )
                 )
                         .setFlex {
-                    flexDirection = FlexDirection.ROW;
-                    justifyContent= JustifyContent.SPACE_BETWEEN
+                            flexDirection = FlexDirection.ROW;
+                            justifyContent = JustifyContent.SPACE_BETWEEN;
+                            alignItems = AlignItems.CENTER
                 }
                         .setStyle {
                     positionType = PositionType.ABSOLUTE;
@@ -65,9 +66,8 @@ private fun createPreviousButton()= Button(
                 requestPage(baseUrl+"@{subtract(promotionalAd.page, 1)}.json")
         )
 ).setStyle {
-    size = Size(height = UnitValue(80.0, UnitType.REAL));
+    size = Size(height = UnitValue(80.0, UnitType.REAL), width = UnitValue(50.0, UnitType.REAL));
     borderColor = "#000000";
-    position = EdgeValue(top = UnitValue(40.0, UnitType.PERCENT))
 }
 
 private fun createNextButton()= Button(
@@ -77,9 +77,8 @@ private fun createNextButton()= Button(
                 requestPage(baseUrl+"@{sum(promotionalAd.page, 1)}.json")
         )
 ).setStyle {
-    size = Size(height = UnitValue(80.0, UnitType.REAL));
+    size = Size(height = UnitValue(80.0, UnitType.REAL),width = UnitValue(50.0, UnitType.REAL));
     borderColor = "#000000";
-    position = EdgeValue(top = UnitValue(40.0, UnitType.PERCENT))
 
 }
 
@@ -92,7 +91,7 @@ private fun createTemplates() = listOf<Template>(
                                         ImagePath.Remote("@{item.image.url}"),
                                         ImageContentMode.FIT_CENTER
                                 ).setStyle {
-                                    size = Size(height = UnitValue(100.00, UnitType.REAL))
+                                    size = Size(height = UnitValue(250.00, UnitType.REAL))
                                 }
                         )
                 )
@@ -102,13 +101,25 @@ private fun createTemplates() = listOf<Template>(
                 Container(
                         listOf(
                                 Text(
-                                        text = "@{item.title}"
-                                ),
+                                        text = "@{item.description}",
+                                        textColor = "#fb5f31",
+                                        styleId = "bannerDescription"
+                                ).setStyle {
+                                    margin = EdgeValue(left = UnitValue(50.0), top = UnitValue(50.0), bottom = UnitValue(30.0))
+
+                                },
                                 Text(
-                                        text = "@{item.description}"
-                                )
+                                        text = "@{item.title}",
+                                        textColor = "#000000",
+                                        styleId = "bannerTitle"
+                                ).setStyle {
+                                    margin = EdgeValue(left = UnitValue(50.0))
+                                }
                         )
-                )
+                ).setStyle {
+                    size = Size(height = UnitValue(250.00, UnitType.REAL));
+                    backgroundColor="#ffffff"
+                }
         )
 )
 

@@ -30,5 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         frame_layout_card.loadView(this, ScreenRequest("/carousel-options"))
 
+        frame_layout_card_b.loadView(this, ScreenRequest("/paginated-list"))
+
     }
 }
