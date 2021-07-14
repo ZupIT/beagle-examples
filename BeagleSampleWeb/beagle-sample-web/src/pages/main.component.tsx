@@ -7,15 +7,13 @@ import Banner from '../components/banner/banner.component'
 const MainComponent = () => {
   return (
     <>
-      <ProfileComponent></ProfileComponent>
-      <div>
+      <div className="top-wrapper">
+        <ProfileComponent></ProfileComponent>
+        <Banner />
+      </div>
       <CardComponent>
         <BeagleRemoteView route={'/carousel-options'} />
       </CardComponent>
-      <Banner/>
-      </div>
-      
-
     </>
   )
 }
