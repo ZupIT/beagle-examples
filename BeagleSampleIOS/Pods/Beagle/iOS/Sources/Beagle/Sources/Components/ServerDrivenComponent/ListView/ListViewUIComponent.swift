@@ -57,7 +57,7 @@ final class ListViewUIComponent: UIView {
     private var cellsContextManager = CellsContextManager()
     private var itemsSize = [Int: CGSize]()
     
-    let model: Model
+    var model: Model
     
     var items: [DynamicObject]? {
         didSet {
@@ -93,7 +93,9 @@ final class ListViewUIComponent: UIView {
         layout.scrollDirection = model.direction.scrollDirection
         
         let collection = listController.collectionView
-        collection.register(ListViewCell.self, forCellWithReuseIdentifier: "ListViewCell")
+        model.templates.enumerated().forEach { index, _ in
+            collection.register(ListViewCell.self, forCellWithReuseIdentifier: "ListViewCell\(index)")
+        }
         collection.dataSource = self
         collection.delegate = self
         collection.showsHorizontalScrollIndicator = model.isScrollIndicatorVisible
@@ -140,25 +142,38 @@ final class ListViewUIComponent: UIView {
             cellSizeAvailable[keyPath: otherValue] = size[keyPath: otherValue]
         }
         
-        var item = 0
+        let groups = Int((Double(numberOfItems) / Double(model.spanCount)).rounded(.up))
         var listSize = CGSize.zero
-        while item < numberOfItems && listSize[keyPath: directionValue] < size[keyPath: directionValue] {
-            let indexPath = IndexPath(item: item, section: 0)
-            let cell = collection.cellForItem(at: indexPath) ?? collectionView(collection, cellForItemAt: indexPath)
-            if let listViewCell = cell as? ListViewCell {
-                let cellSize = listViewCell.templateSizeThatFits(cellSizeAvailable)
-                listSize[keyPath: directionValue] += cellSize[keyPath: directionValue]
-                let otherMeasure = cellSize[keyPath: otherValue]
-                if listSize[keyPath: otherValue] < otherMeasure {
-                    listSize[keyPath: otherValue] = otherMeasure
+        var group = 0
+        while group < groups && listSize[keyPath: directionValue] < size[keyPath: directionValue] {
+            var item = 0
+            var groupSize = CGSize.zero
+            let offset = group * model.spanCount
+            while item < model.spanCount && item + offset < numberOfItems {
+                let indexPath = IndexPath(item: item + offset, section: 0)
+                let cell = collection.cellForItem(at: indexPath) ?? collectionView(collection, cellForItemAt: indexPath)
+                if let listViewCell = cell as? ListViewCell {
+                    let cellSize = listViewCell.templateSizeThatFits(cellSizeAvailable)
+                    groupSize[keyPath: otherValue] += cellSize[keyPath: otherValue]
+                    let directionMeasure = cellSize[keyPath: directionValue]
+                    if groupSize[keyPath: directionValue] < directionMeasure {
+                        groupSize[keyPath: directionValue] = directionMeasure
+                    }
                 }
+                item += 1
             }
-            item += 1
+            
+            listSize[keyPath: directionValue] += groupSize[keyPath: directionValue]
+            let otherMeasure = groupSize[keyPath: otherValue]
+            if listSize[keyPath: otherValue] < otherMeasure {
+                listSize[keyPath: otherValue] = otherMeasure
+            }
+            group += 1
         }
         
-        if item > 0 && item < numberOfItems {
-            let average = listSize[keyPath: directionValue] / CGFloat(item)
-            listSize[keyPath: directionValue] += CGFloat(numberOfItems - item) * average
+        if group > 0 && group < groups {
+            let average = listSize[keyPath: directionValue] / CGFloat(group)
+            listSize[keyPath: directionValue] += CGFloat(groups - group) * average
         }
         return listSize
     }
@@ -214,7 +229,8 @@ extension ListViewUIComponent {
     struct Model {
         var key: Path?
         var direction: ListView.Direction
-        var template: ServerDrivenComponent
+        var spanCount: Int = 1
+        var templates: [Template]
         var iteratorName: String
         var onScrollEnd: [Action]?
         var scrollEndThreshold: CGFloat
@@ -237,11 +253,16 @@ extension ListViewUIComponent: UICollectionViewDataSource {
         let itemKey = keyFor(item)
         let hash = hashFor(item: item, withKey: itemKey)
         
-        if let cell = cellsReadyToDisplay[hash] {
+        guard let templateIndex = templateIndexFor(item: item, in: collectionView) else {
+            let info = "\(model.iteratorName):\(itemKey ?? String(indexPath.item))"
+            dependencies.logger.log(Log.collection(.templateNotFound(item: info)))
+            return UICollectionViewCell()
+        }
+        if let cell = cellsReadyToDisplay[hash], cell.templateIndex == templateIndex {
             return cell
         }
         
-        let collectionCell = dequeueCellWithoutPendingActions(collectionView, indexPath: indexPath, itemHash: hash)
+        let collectionCell = dequeueCellWithoutPendingActions(collectionView, indexPath: indexPath, itemHash: hash, templateIndex: templateIndex)
         guard let cell = collectionCell as? ListViewCell else {
             return collectionCell
         }
@@ -251,20 +272,42 @@ extension ListViewUIComponent: UICollectionViewDataSource {
         let key = itemKey ?? String(indexPath.item)
         let contexts = cellsContextManager.contexts(for: hash)
         
-        cell.configure(hash: hash, key: key, item: item, contexts: contexts, listView: self)
+        cell.configure(hash: hash, key: key, item: item, templateIndex: templateIndex, contexts: contexts, listView: self)
         cellsReadyToDisplay[hash] = cell
         return cell
     }
     
-    private func dequeueCellWithoutPendingActions(_ collection: UICollectionView, indexPath: IndexPath, itemHash: Int) -> UICollectionViewCell {
-        let dequeuedCell = collection.dequeueReusableCell(withReuseIdentifier: "ListViewCell", for: indexPath)
+    private func templateIndexFor(item: DynamicObject, in collectionView: UICollectionView) -> Int? {
+        var templateIndex: Int?
+        let implicitContext = Context(id: model.iteratorName, value: item)
+        for (offset, element) in model.templates.enumerated() {
+            if let condition = element.case {
+                let result = condition.evaluate(with: collectionView, implicitContext: implicitContext)
+                if result == true {
+                    return offset
+                }
+            } else if templateIndex == nil {
+                templateIndex = offset
+            }
+        }
+        return templateIndex
+    }
+    
+    private func dequeueCellWithoutPendingActions(
+        _ collection: UICollectionView,
+        indexPath: IndexPath,
+        itemHash: Int,
+        templateIndex: Int
+    ) -> UICollectionViewCell {
+        let identifier = "ListViewCell\(templateIndex)"
+        let dequeuedCell = collection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
         if let cell = dequeuedCell as? ListViewCell, cell.hasPendingActions {
             if cell.itemHash == itemHash {
                 return cell
             } else if let cellItemHash = cell.itemHash {
                 cellsReadyToDisplay[cellItemHash] = cell
             }
-            return dequeueCellWithoutPendingActions(collection, indexPath: indexPath, itemHash: itemHash)
+            return dequeueCellWithoutPendingActions(collection, indexPath: indexPath, itemHash: itemHash, templateIndex: templateIndex)
         }
         return dequeuedCell
     }
@@ -295,7 +338,14 @@ extension ListViewUIComponent: UICollectionViewDataSource {
 extension ListViewUIComponent: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let spanKeyPath: WritableKeyPath<CGSize, CGFloat>
+        switch model.direction {
+        case .vertical: spanKeyPath = \.width
+        case .horizontal: spanKeyPath = \.height
+        }
+        
         var size = collectionView.frame.size
+        size[keyPath: spanKeyPath] = (size[keyPath: spanKeyPath] / CGFloat(model.spanCount)).rounded(.down)
         guard let items = items, indexPath.item < items.count else {
             return size
         }
@@ -307,13 +357,6 @@ extension ListViewUIComponent: UICollectionViewDelegateFlowLayout {
         let keyPath = model.direction.sizeKeyPath
         if let calculatedSize = itemsSize[itemHash] {
             size[keyPath: keyPath] = calculatedSize[keyPath: keyPath]
-        } else if #available(iOS 12.0, *) {
-            // Intentionally empty.
-            // Bellow iOS 12, if the size is 0, the size changes made at
-            // cell method `preferredLayoutAttributesFitting` won't apply.
-            // To fix it the size is set to 1.
-        } else if size[keyPath: keyPath] == 0 {
-            size[keyPath: keyPath] = 1
         }
         return size
     }

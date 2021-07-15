@@ -1,3 +1,4 @@
+//
 /*
  * Copyright 2020 ZUP IT SERVICOS EM TECNOLOGIA E INOVACAO SA
  *
@@ -16,13 +17,14 @@
 
 import UIKit
 
-extension ListView {
-
+extension GridView {
+    
     public func toView(renderer: BeagleRenderer) -> UIView {
         let view = ListViewUIComponent(
             model: ListViewUIComponent.Model(
                 key: key.ifSome { Path(rawValue: $0) },
                 direction: direction ?? .vertical,
+                spanCount: max(1, spanCount),
                 templates: templates,
                 iteratorName: iteratorName ?? "item",
                 onScrollEnd: onScrollEnd,
@@ -33,32 +35,5 @@ extension ListView {
         )
         renderer.observe(dataSource, andUpdate: \.items, in: view)
         return view
-    }
-}
-
-extension ScrollAxis {
-    var scrollDirection: UICollectionView.ScrollDirection {
-        switch self {
-        case .vertical:
-            return .vertical
-        case .horizontal:
-            return .horizontal
-        }
-    }
-    var sizeKeyPath: WritableKeyPath<CGSize, CGFloat> {
-        switch self {
-        case .vertical:
-            return \.height
-        case .horizontal:
-            return \.width
-        }
-    }
-    var pointKeyPath: WritableKeyPath<CGPoint, CGFloat> {
-        switch self {
-        case .vertical:
-            return \.y
-        case .horizontal:
-            return \.x
-        }
     }
 }

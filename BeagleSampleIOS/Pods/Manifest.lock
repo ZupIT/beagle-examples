@@ -1,7 +1,7 @@
 PODS:
-  - Beagle (1.7.0):
-    - Beagle/Beagle (= 1.7.0)
-  - Beagle/Beagle (1.7.0):
+  - Beagle (1.9.0):
+    - Beagle/Beagle (= 1.9.0)
+  - Beagle/Beagle (1.9.0):
     - BeagleYogaKit
   - BeagleYoga (1.19.0)
   - BeagleYogaKit (1.19.0):
@@ -17,7 +17,7 @@ SPEC REPOS:
     - BeagleYogaKit
 
 SPEC CHECKSUMS:
-  Beagle: 879fd93aba0a948c1afd4185557e5e6f82779ada
+  Beagle: 335531be0d7a49b98288f1f5ac02a963b04d5073
   BeagleYoga: 09c09f226e5bbabaea81e9b0c113676ad1c67fa3
   BeagleYogaKit: 8d17491b81f30f17f14ded3d057432f6bcce0f1e
 
