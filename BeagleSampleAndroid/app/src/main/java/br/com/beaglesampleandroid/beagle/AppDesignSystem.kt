@@ -28,6 +28,8 @@ class AppDesignSystem: DesignSystem() {
             "TextAccessProfile" -> R.style.TextAccessProfile
             "TextTitleProfile" -> R.style.TextTitleProfile
             "h1" -> R.style.TextTemplateCard
+            "bannerTitle" -> R.style.DesignSystem_Text_BannerTitle
+            "bannerDescription" -> R.style.DesignSystem_Text_BannerDescription
             else -> R.style.TextDefault
         }
     }

@@ -97,4 +97,14 @@
         <item name="android:background">#66272E39</item>
     </style>
 
+    <style name="DesignSystem.Text.BannerTitle" parent="TextDefault">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="DesignSystem.Text.BannerDescription" parent="TextDefault">
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:textSize">45sp</item>
+    </style>
+
 </resources>

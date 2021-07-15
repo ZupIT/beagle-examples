@@ -104,19 +104,19 @@ private fun createTemplates() = listOf<Template>(
                 Container(
                         listOf(
                                 Text(
-                                        text = "@{item.description}",
+                                        text = "@{item.title}",
                                         textColor = "#fb5f31",
-                                        styleId = "bannerDescription"
+                                        styleId = "bannerTitle"
                                 ).setStyle {
-                                    margin = EdgeValue(left = UnitValue(50.0), top = UnitValue(50.0), bottom = UnitValue(30.0))
+                                    margin = EdgeValue(left = UnitValue(30.0), top = UnitValue(30.0), bottom = UnitValue(20.0))
 
                                 },
                                 Text(
-                                        text = "@{item.title}",
+                                        text = "@{item.description}",
                                         textColor = "#000000",
-                                        styleId = "bannerTitle"
+                                        styleId = "bannerDescription"
                                 ).setStyle {
-                                    margin = EdgeValue(left = UnitValue(50.0))
+                                    margin = EdgeValue(left = UnitValue(30.0), right = UnitValue(30.0))
                                 }
                         )
                 ).setStyle {
