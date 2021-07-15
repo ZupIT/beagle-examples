@@ -14,7 +14,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -130,14 +129,15 @@
     <FrameLayout
         android:id="@+id/frame_layout_card"
         android:layout_width="match_parent"
-        android:layout_height="191dp"
+        android:layout_height="200dp"
         android:layout_marginTop="200dp" />
 
     <FrameLayout
         android:id="@+id/frame_layout_card_b"
         android:layout_width="match_parent"
         android:layout_height="308dp"
-        android:layout_marginTop="400dp" />
+        android:layout_marginTop="450dp" />
+
 
 
 </FrameLayout>

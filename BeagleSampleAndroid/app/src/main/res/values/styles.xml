@@ -92,4 +92,10 @@
         <item name="android:background">@color/colorOrange</item>
     </style>
 
+    <style name="DesignSystem.Button.PageBullet" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorOrange</item>
+        <item name="android:background">#66272E39</item>
+        <item name="android:button">10dp</item>
+    </style>
+
 </resources>

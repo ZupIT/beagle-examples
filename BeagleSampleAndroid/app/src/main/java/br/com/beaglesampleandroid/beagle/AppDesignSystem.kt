@@ -34,7 +34,7 @@ class AppDesignSystem: DesignSystem() {
 
     override fun buttonStyle(id: String): Int? {
         return when(id) {
-            "button" -> R.style.DesignSystem_Button_Default
+            "paginatedButton" -> R.style.DesignSystem_Button_PageBullet
             else -> R.style.DesignSystem_Button_Default
         }
     }

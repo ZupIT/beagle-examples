@@ -1,5 +1,6 @@
 package br.com.beaglesampleBackend.builder
 
+import br.com.zup.beagle.core.CornerRadius
 import br.com.zup.beagle.core.PositionType
 import br.com.zup.beagle.ext.setFlex
 import br.com.zup.beagle.ext.setStyle
@@ -68,6 +69,7 @@ private fun createPreviousButton()= Button(
 ).setStyle {
     size = Size(height = UnitValue(80.0, UnitType.REAL), width = UnitValue(50.0, UnitType.REAL));
     borderColor = "#000000";
+    cornerRadius = CornerRadius(5.0)
 }
 
 private fun createNextButton()= Button(
@@ -79,6 +81,7 @@ private fun createNextButton()= Button(
 ).setStyle {
     size = Size(height = UnitValue(80.0, UnitType.REAL),width = UnitValue(50.0, UnitType.REAL));
     borderColor = "#000000";
+    cornerRadius = CornerRadius(5.0)
 
 }
 

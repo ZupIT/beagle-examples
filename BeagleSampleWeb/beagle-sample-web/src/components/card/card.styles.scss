@@ -1,6 +1,7 @@
 .card{
   &.container {
     width: fit-content;
+    min-width: 82vw;
     max-width: 85vw;
     min-height: 250px;
     overflow: auto;
