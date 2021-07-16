@@ -1,0 +1,45 @@
+@import "../../commons/colors.scss";
+
+.balance {
+  margin: 30px 15px 30px 15px;
+  color: $lightBlue;
+  display: flex;
+  flex-direction: column;
+
+  &-text {
+    font-size: 0.8rem;
+  }
+
+  &-total {
+    font-size: 1.4rem;
+  }
+
+  &-show-hide-icon {
+    margin-top: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+}
+
+.hide-box {
+  height: 25px;
+  background-color: $lightBlue;
+  width: 150px;
+  margin-top: 5px;
+  border-radius: 3px;
+  opacity: 20%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.divider {
+  width: 90%;
+  margin: 10px auto 25px auto;
+  border-top: solid 0.5px;
+  border-color: $lightGrey;
+  opacity: 50%;
+}

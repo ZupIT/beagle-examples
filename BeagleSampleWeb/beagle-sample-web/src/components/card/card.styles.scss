@@ -1,0 +1,14 @@
+.card{
+  &.container {
+    width: fit-content;
+    min-width: 82vw;
+    max-width: 85vw;
+    min-height: 250px;
+    overflow: auto;
+    display: flex;
+    border-radius: 5px;
+    margin: 20px auto 20px auto;
+    box-shadow: 2px 1px 6px 5px rgb(0 0 0 / 10%);
+    background-color: white;
+  }
+}

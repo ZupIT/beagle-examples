@@ -28,13 +28,15 @@ class AppDesignSystem: DesignSystem() {
             "TextAccessProfile" -> R.style.TextAccessProfile
             "TextTitleProfile" -> R.style.TextTitleProfile
             "h1" -> R.style.TextTemplateCard
+            "bannerTitle" -> R.style.DesignSystem_Text_BannerTitle
+            "bannerDescription" -> R.style.DesignSystem_Text_BannerDescription
             else -> R.style.TextDefault
         }
     }
 
     override fun buttonStyle(id: String): Int? {
         return when(id) {
-            "button" -> R.style.DesignSystem_Button_Default
+            "paginatedButton" -> R.style.DesignSystem_Button_PageBullet
             else -> R.style.DesignSystem_Button_Default
         }
     }

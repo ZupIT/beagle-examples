@@ -19,6 +19,7 @@ package br.com.beaglesampleandroid.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.beaglesampleandroid.R
+import br.com.zup.beagle.android.networking.RequestData
 import br.com.zup.beagle.android.utils.loadView
 import br.com.zup.beagle.android.view.ScreenRequest
 import kotlinx.android.synthetic.main.activity_home.*
@@ -28,7 +29,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        frame_layout_card.loadView(this, ScreenRequest("/carousel-options"))
+        frame_layout_card.loadView(this, RequestData("/carousel-options"))
+
+        frame_layout_card_b.loadView(this, RequestData("/paginated-list"))
 
     }
 }

@@ -18,19 +18,12 @@ import UIKit
 
 extension ListView {
 
-    private var path: Path? {
-        if let key = key {
-            return Path(rawValue: key)
-        }
-        return nil
-    }
-    
     public func toView(renderer: BeagleRenderer) -> UIView {
         let view = ListViewUIComponent(
             model: ListViewUIComponent.Model(
-                key: path,
+                key: key.ifSome { Path(rawValue: $0) },
                 direction: direction ?? .vertical,
-                template: template,
+                templates: templates,
                 iteratorName: iteratorName ?? "item",
                 onScrollEnd: onScrollEnd,
                 scrollEndThreshold: CGFloat(scrollEndThreshold ?? 100),
@@ -43,21 +36,13 @@ extension ListView {
     }
 }
 
-extension ListView.Direction {
+extension ScrollAxis {
     var scrollDirection: UICollectionView.ScrollDirection {
         switch self {
         case .vertical:
             return .vertical
         case .horizontal:
             return .horizontal
-        }
-    }
-    var flexDirection: Flex.FlexDirection {
-        switch self {
-        case .vertical:
-            return .column
-        case .horizontal:
-            return .row
         }
     }
     var sizeKeyPath: WritableKeyPath<CGSize, CGFloat> {

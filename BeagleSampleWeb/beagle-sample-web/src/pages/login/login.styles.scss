@@ -1,0 +1,49 @@
+@import "../../commons/colors.scss";
+
+.login {
+  &-wrapper {
+    color: white;
+    width: 25vw;
+    margin: auto;
+    margin-top: 120px;
+    padding: 50px;
+    background-color: $darkBlue;
+    font-size: 0.8rem;
+    box-shadow: 2px 1px 6px 5px rgb(0 0 0 / 20%);
+  }
+
+  &-welcome{
+    color: #fb5f31;
+    font-size: 1.5rem;
+    margin-left: 5px;
+  }
+}
+
+.button {
+  width: 50%;
+  color: white;
+  border-color: transparent !important;
+  margin: 25px auto 25px auto !important;
+  background: $gradient !important;
+}
+
+.text-input {
+  color: white;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 0.5px white;
+
+  &:focus-visible{
+    outline: none;
+  }
+
+  &::placeholder{
+    color: white;
+    opacity: 90%;
+  }
+
+}

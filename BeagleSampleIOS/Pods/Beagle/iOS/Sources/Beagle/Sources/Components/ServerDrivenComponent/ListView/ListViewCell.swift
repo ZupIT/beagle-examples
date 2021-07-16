@@ -23,6 +23,7 @@ final class ListViewCell: UICollectionViewCell {
     private(set) var itemKey: String?
     private(set) var viewsIdentifier = [UIView: String]()
     private(set) var viewContexts = [UIView: [Context]]()
+    private(set) var templateIndex: Int?
     
     private var bindings = [() -> Void]()
     private var onInits = [(actions: [Action], view: UIView)]()
@@ -39,7 +40,7 @@ final class ListViewCell: UICollectionViewCell {
         let undefined = YGValue(value: .nan, unit: .undefined)
         contentView.configureLayout { layout in
             func maxValue(_ value: CGFloat) -> YGValue {
-                guard value != .nan, value != .greatestFiniteMagnitude else {
+                guard !value.isNaN, value != .greatestFiniteMagnitude else {
                     return undefined
                 }
                 return YGValue(value: Float(value), unit: .point)
@@ -59,14 +60,16 @@ final class ListViewCell: UICollectionViewCell {
         hash: Int,
         key: String,
         item: DynamicObject,
+        templateIndex: Int,
         contexts: DynamicDictionary?,
         listView: ListViewUIComponent
     ) {
         self.itemHash = hash
         self.itemKey = key
         self.listView = listView
+        self.templateIndex = templateIndex
         
-        let container = templateContainer(for: listView)
+        let container = templateContainer(for: listView, templateIndex: templateIndex)
         if let contexts = contexts {
             restoreContexts(contexts)
             container.setContext(Context(id: listView.model.iteratorName, value: item))
@@ -98,16 +101,18 @@ final class ListViewCell: UICollectionViewCell {
         }
     }
     
-    private func templateContainer(for listView: ListViewUIComponent) -> TemplateContainer {
+    private func templateContainer(for listView: ListViewUIComponent, templateIndex: Int) -> TemplateContainer {
         if let templateContainer = self.templateContainer {
             return templateContainer
         }
         let flexDirection = listView.model.direction.flexDirection
-        let template = listView.renderer.render(listView.model.template)
+        let template = listView.renderer.render(listView.model.templates[templateIndex].view)
         let container = TemplateContainer(template: template)
         container.parentContext = listView
         listView.listController.dependencies.style(container).setup(
-            Style().flex(Flex().flexDirection(flexDirection).shrink(0))
+            Style()
+                .size(Size().minWidth(1).minHeight(1))
+                .flex(Flex().flexDirection(flexDirection).shrink(0))
         )
         templateContainer = container
         contentView.addSubview(container)
@@ -168,7 +173,17 @@ final class ListViewCell: UICollectionViewCell {
             yoga.flexShrink = shrink + 1
             yoga.flexShrink = shrink
         }
-        contentView.frame = listView.bounds
+        
+        let keyPath: WritableKeyPath<CGSize, CGFloat>
+        switch listView.model.direction {
+        case .vertical: keyPath = \.width
+        case .horizontal: keyPath = \.height
+        }
+        var rect = listView.bounds
+        let spansSpace = rect.size[keyPath: keyPath]
+        rect.size[keyPath: keyPath] = (spansSpace / CGFloat(listView.model.spanCount)).rounded(.down)
+        
+        contentView.frame = rect
         listView.listController.dependencies.style(contentView).applyLayout()
         
         let size = container.bounds.size

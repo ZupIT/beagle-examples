@@ -1,0 +1,26 @@
+@import "../../commons/colors.scss";
+
+.header {
+  height: 90px;
+  background-color: $darkBlue;
+  display: flex;
+  margin-bottom: 70px;
+  box-shadow: 2px 1px 6px 5px rgb(0 0 0 / 20%);
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 120px;
+  padding-right: 120px;
+
+  &-icon {
+    display: block;
+    height: 60%;
+  }
+
+  &-logout{
+    color: white;
+    cursor: pointer;
+    &:hover{
+      color: $orange;
+    }
+  }
+}

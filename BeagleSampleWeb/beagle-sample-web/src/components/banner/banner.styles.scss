@@ -1,0 +1,27 @@
+@import "../../commons/colors.scss";
+
+.banner-wrapper {
+  max-width: 445px;;
+  width: fit-content;
+  position: relative;
+  right: 150px;
+}
+
+.paginated-button {
+  border: none !important;
+  background-color: rgba(255, 255, 255, 15%) !important;
+  color: $orange !important;
+  min-width: fit-content !important;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 40%) !important;
+  }
+}
+
+.banner-title{
+  font-size: 1.5rem;
+}
+
+.banner-description{
+  font-size: 2rem;
+}
