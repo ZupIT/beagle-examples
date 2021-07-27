@@ -47,5 +47,5 @@ class ScreenController(
     fun getPaginatedList() = paginatedList.getPaginatedList()
 
     @GetMapping("/get-started")
-    fun getForm() = getGetStarted.createGetStartedScreen()
+    fun getGetStartedScreen() = getGetStarted.createGetStartedScreen()
 }
