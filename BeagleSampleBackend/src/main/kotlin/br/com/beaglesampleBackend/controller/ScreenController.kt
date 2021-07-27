@@ -17,16 +17,19 @@
 package br.com.beaglesampleBackend.controller
 
 import br.com.beaglesampleBackend.service.*
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
+@CrossOrigin(origins = ["http://localhost:8080"], maxAge = 3600)
 @RestController
 class ScreenController(
         private val firstScreenBeagleService: FirstScreenBeagleService,
         private val loginScreenService: LoginScreenService,
         private val passwordScreenService: PasswordScreenService,
         private val carouselOptions: HomeCarouselOptionsService,
-        private val paginatedList: PaginatedListService
+        private val paginatedList: PaginatedListService,
+        private val getGetStarted: GetStartedScreenService
 ) {
     @GetMapping("/screen")
     fun getFirstScreen() = firstScreenBeagleService.createScreenBeagle()
@@ -42,4 +45,7 @@ class ScreenController(
 
     @GetMapping("/paginated-list")
     fun getPaginatedList() = paginatedList.getPaginatedList()
+
+    @GetMapping("/get-started")
+    fun getForm() = getGetStarted.createGetStartedScreen()
 }

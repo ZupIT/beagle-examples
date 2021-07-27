@@ -1,7 +1,9 @@
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:beagle/beagle.dart';
+import 'package:beagle_components/beagle_components.dart';
 import 'package:flutter/material.dart';
 import 'package:get_started_beagle_flutter/beagle-config/beagle.dart';
+import 'package:get_started_beagle_flutter/pages/native-screen.dart';
 
 void main() {
   BeagleFlutterConfig.initBeagle();
@@ -13,12 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Beagle Flutter Demo',
+      initialRoute: '/',
+      routes: {'native-route': (context) => NativeScreen()},
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage('Flutter Demo Home Page'),
+      home: MyHomePage('Flutter Beagle Demo'),
     );
   }
 }
@@ -39,13 +43,10 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'This is a Beagle Component',
-            ),
+          children: [
             BeagleWidget(
-              screenRequest: BeagleScreenRequest('/screen'),
-            )
+              screenRequest: BeagleScreenRequest('/get-started'),
+            ),
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.

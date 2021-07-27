@@ -14,14 +14,14 @@ packages:
       name: beagle
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1-alpha"
+    version: "0.9.2-alpha"
   beagle_components:
     dependency: "direct main"
     description:
       name: beagle_components
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1-alpha"
+    version: "0.9.2-alpha"
   boolean_selector:
     dependency: transitive
     description:
@@ -286,7 +286,7 @@ packages:
       name: yoga_engine
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
 sdks:
   dart: ">=2.12.0 <3.0.0"
   flutter: ">=2.0.0"
