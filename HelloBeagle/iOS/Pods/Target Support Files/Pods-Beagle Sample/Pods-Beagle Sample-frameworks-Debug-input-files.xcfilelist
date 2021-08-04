@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Beagle Sample/Pods-Beagle Sample-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Beagle/Beagle.framework
+${BUILT_PRODUCTS_DIR}/BeagleYoga/yoga.framework
+${BUILT_PRODUCTS_DIR}/BeagleYogaKit/YogaKit.framework
