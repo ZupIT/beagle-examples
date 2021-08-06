@@ -8,6 +8,7 @@ For more information, please [read the documentation](https://docs.usebeagle.io)
 
 💻 Requirements
 ------------
+
 To try out these sample apps, you need to use [Intellij IDEA](https://www.jetbrains.com/idea/).
 You can clone this repository and test out each project in each folder.
 
@@ -23,3 +24,8 @@ You can clone this repository and test out each project in each folder.
 | A screen created only for positioning matters. Learn more about flex and positioning with Beagle's layout engine [Yoga Layout](https://yogalayout.com/). <br><br>• Low complexity<br>• Flex <br>• Style<br><br><br>**[> Browse](FlexScreenBeagle/)** <br><br>  | <img src="readme/screenshots/FlexScreenBeagle.png" width="320" alt="FlexScreenBeagle sample demo">|
 |  |  |
 | A custom operation that validates a password using a regular expression and notifies through a text changed by a context. <br><br>• Low complexity<br>• Custom Operations <br>• Context<br><br><br>**[> Browse](CustomOperationBeagle/)** <br><br>  | <img src="readme/screenshots/CustomOperationBeagle.png" width="320" alt="CustomOperationBeagle sample demo">| 
+
+🗂 Zup Open Source Forum
+------------
+
+[![Zup forum](/docs/img/zup-forum-topics.png)](https://forum.zup.com.br/c/en/9)
