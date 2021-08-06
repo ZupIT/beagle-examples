@@ -28,4 +28,4 @@ You can clone this repository and test out each project in each folder.
 🗂 Zup Open Source Forum
 ------------
 
-[![Zup forum](/docs/img/zup-forum-topics.png)](https://forum.zup.com.br/c/en/9)
+[![Zup forum](/readme/screenshots/zup-forum-topics.png)](https://forum.zup.com.br/c/en/9)
