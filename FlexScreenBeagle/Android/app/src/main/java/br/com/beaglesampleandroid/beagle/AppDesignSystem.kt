@@ -30,6 +30,7 @@ class AppDesignSystem: DesignSystem() {
             "h1" -> R.style.TextTemplateCard
             "bannerTitle" -> R.style.DesignSystem_Text_BannerTitle
             "bannerDescription" -> R.style.DesignSystem_Text_BannerDescription
+            "sd_fallback_text" -> R.style.TextStyleFallback
             else -> R.style.TextDefault
         }
     }
@@ -44,6 +45,7 @@ class AppDesignSystem: DesignSystem() {
     override fun toolbarStyle(id: String): Int? {
         return when(id){
             "toolbar" -> R.style.DesignSystem_Toolbar_Center
+            "sd_fallback_nav_bar" -> R.style.ToolBarStyle
             else -> R.style.DesignSystem_Toolbar_Center
         }
     }
