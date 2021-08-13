@@ -1,5 +1,5 @@
 # Beagle Samples
-<img src="readme/samples_montage.gif" alt="Beagle Samples" width="1024" />
+![all](https://user-images.githubusercontent.com/60155378/129401519-6cda1932-52ea-438b-89ec-863a0290dcc4.gif)
 
 This repository contains a set of individual Beagle projects to help you learn about
 Beagle in Android, iOS, Web and Backend. Each sample demonstrates different use cases, complexity levels and more.
