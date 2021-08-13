@@ -25,7 +25,7 @@
         <item name="android:scrollbarThumbVertical">@color/colorGray</item>
         <item name="android:scrollbarThumbHorizontal">@color/colorGray</item>
         <item name="android:windowBackground">@color/colorWhite</item>
-        <item name="colorControlNormal">@color/colorBlack</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
     <style name="TextDefault" parent="Widget.AppCompat.TextView">
@@ -106,5 +106,17 @@
         <item name="android:textColor">@color/colorOrange</item>
         <item name="android:textSize">45sp</item>
     </style>
+    <style name="TextStyleFallback" parent="Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 
+    <style name="ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="backgroundColor">@color/colorBlack</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
 </resources>

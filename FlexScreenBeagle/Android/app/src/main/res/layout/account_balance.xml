@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="o seu saldo e:"
+        android:text="o seu saldo é:"
         style="@style/TextStyleAccountBalance"
         android:textColor="@color/colorWhite"
         app:layout_constraintStart_toStartOf="parent"

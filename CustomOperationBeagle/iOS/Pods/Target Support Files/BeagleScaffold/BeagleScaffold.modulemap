@@ -1,0 +1,6 @@
+framework module BeagleScaffold {
+  umbrella header "BeagleScaffold-umbrella.h"
+
+  export *
+  module * { export * }
+}

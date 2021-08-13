@@ -19,6 +19,7 @@ package br.com.beaglesampleandroid.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.beaglesampleandroid.R
+import br.com.zup.beagle.android.networking.RequestData
 import br.com.zup.beagle.android.utils.newServerDrivenIntent
 import br.com.zup.beagle.android.view.BeagleActivity
 import br.com.zup.beagle.android.view.ScreenRequest
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = this.newServerDrivenIntent<ServerDrivenActivity>(ScreenRequest("/login"))
+        val intent = this.newServerDrivenIntent<ServerDrivenActivity>(RequestData(url = "/screen"))
 
         startActivity(intent)
         finish()
