@@ -17,13 +17,13 @@ You can clone this repository and test out each project in each folder.
 
 | Project | |
 |:-----|---------|
-| A hello world with Beagle that shows one of the most basic screens you can do. Just for the sake of doing a hello world as your first screen. <br><br> • Basic complexity <br><br> **[> Browse](HelloBeagle/)**<br><br> | <img src="readme/screenshots/HelloBeagle.png" width="320" alt="HelloBeagle sample demo"> |
+| A hello world with Beagle that shows one simple basic screen. This is a good first screen to help you understand Beagle and the server driven ui concept. <br><br> • Basic complexity <br><br> **[> Browse](HelloBeagle/)**<br><br> | <img src="readme/screenshots/HelloBeagle.png" width="320" alt="HelloBeagle sample demo"> |
 |  |  |
-| A Beagle implementation of a biometry login flow, using touch id or face id. It's created a custom action to manage the login flow of the app. Also some custom widgets are created to display information on the screen. <br><br>• Medium complexity<br>• Custom Actions <br>• Custom Widgets<br>• Navigation<br><br>**[> Browse](LoginBeagle/)** <br><br>  | <img src="readme/screenshots/LoginBeagle.png" width="320" alt="LoginBeagle sample demo">|
+| A Beagle implementation of a biometry login flow, using touch id or face id (for iOS). A custom action is created to manage the app's login flow. Also some custom widgets are created to display information on the screen. A **listView** is also implementend on this sample. You can check its code on the Backend project listed here <br><br>• Medium complexity<br>• Custom Actions <br>• Custom Widgets<br>• Navigation<br><br>**[> Browse](LoginBeagle/)** <br><br>  | <img src="readme/screenshots/LoginBeagle.png" width="320" alt="LoginBeagle sample demo">|
 |  |  |
-| A screen created only for positioning matters. Learn more about flex and positioning with Beagle's layout engine [Yoga Layout](https://yogalayout.com/). <br><br>• Low complexity<br>• Flex <br>• Style<br><br><br>**[> Browse](FlexScreenBeagle/)** <br><br>  | <img src="readme/screenshots/FlexScreenBeagle.png" width="320" alt="FlexScreenBeagle sample demo">|
+| A screen created only to show how elements are positioned in a screen. Learn more about flex and position with Beagle's layout engine [Yoga Layout](https://yogalayout.com/). <br><br>• Low complexity<br>• Flex <br>• Style<br><br><br>**[> Browse](FlexScreenBeagle/)** <br><br>  | <img src="readme/screenshots/FlexScreenBeagle.png" width="320" alt="FlexScreenBeagle sample demo">|
 |  |  |
-| A custom operation that validates a password using a regular expression and notifies through a text changed by a context. <br><br>• Low complexity<br>• Custom Operations <br>• Context<br><br><br>**[> Browse](CustomOperationBeagle/)** <br><br>  | <img src="readme/screenshots/CustomOperationBeagle.png" width="320" alt="CustomOperationBeagle sample demo">| 
+| A custom operation that validates a password using a regular expression (REGEX) and that notifies through a text that changes at the screen between values "Senha Inválida" for invalid values and "Senha válida" for valid values. The text is changed at the screen using context (a resource from Beagle). <br><br>• Low complexity<br>• Custom Operations <br>• Context<br><br><br>**[> Browse](CustomOperationBeagle/)** <br><br>  | <img src="readme/screenshots/CustomOperationBeagle.png" width="320" alt="CustomOperationBeagle sample demo">| 
 
 🗂 Zup Open Source Forum
 ------------
