@@ -13,5 +13,5 @@ This project is a sample for learning purposes of the Beagle library. Feel free 
 
 ```sh
     $ yarn
-    $ npm start
+    $ yarn start
 ```
