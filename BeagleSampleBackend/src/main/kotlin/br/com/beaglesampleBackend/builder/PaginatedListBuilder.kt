@@ -44,7 +44,7 @@ private fun createPaginatedList() = Container(
                         .setStyle {
                     positionType = PositionType.ABSOLUTE;
                     size = Size(width = UnitValue(100.00, UnitType.PERCENT),
-                    height = UnitValue(100.00, UnitType.PERCENT))
+                    height = UnitValue(250.00, UnitType.REAL))
                 }
 
         )

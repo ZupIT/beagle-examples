@@ -1,0 +1,6 @@
+framework module yoga {
+  umbrella header "BeagleYoga-umbrella.h"
+
+  export *
+  module * { export * }
+}
