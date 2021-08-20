@@ -25,7 +25,7 @@ You can clone this repository and test out each project in each folder.
 |  |  |
 | A custom operation that validates a password using a regular expression (REGEX) and that notifies through a text that changes at the screen between values "Senha Inválida" for invalid values and "Senha válida" for valid values. The text is changed at the screen using context (a resource from Beagle). <br><br>• Low complexity<br>• Custom Operations <br>• Context<br><br><br>**[> Browse](CustomOperationBeagle/)** <br><br>  | <img src="readme/screenshots/CustomOperationBeagle.png" width="320" alt="CustomOperationBeagle sample demo">| 
 |  |  |
-| A Fallback screen that could be called when a screen request fails. This screen is called from the backend and most of its configuration are set on the backend, but a few details must be added into a front end design system. <br><br>• Low complexity<br>• Fallback Screen example <br>• Design System<br><br><br>**[> Browse](Fallback/)** <br><br>  | <img src="readme/screenshots/fallbackscreen.png" width="320" alt="Fallback screen sample demo">|
+| A Fallback screen that could be called when a screen request fails. This screen is called from the backend and most of its configuration are set on the backend, but a few details must be added into a front end design system. <br><br>• Low complexity<br>• Fallback Screen example <br>• Design System<br><br><br>**[> Browse](FallbackScreen/)** <br><br>  | <img src="readme/screenshots/fallbackscreen.png" width="320" alt="Fallback screen sample demo">|
 
 🗂 Zup Open Source Forum
 ------------
