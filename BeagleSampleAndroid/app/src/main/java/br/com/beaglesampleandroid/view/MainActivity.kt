@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = this.newServerDrivenIntent<ServerDrivenActivity>(RequestData(url = "/get-started"))
+        val intent = this.newServerDrivenIntent<ServerDrivenActivity>(RequestData(url = "/login"))
 
         startActivity(intent)
         finish()
