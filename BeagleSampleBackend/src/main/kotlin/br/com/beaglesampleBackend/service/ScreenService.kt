@@ -16,10 +16,12 @@
 
 package br.com.beaglesampleBackend.service
 
+import br.com.beaglesampleBackend.builder.FallbackScreen
 import br.com.beaglesampleBackend.builder.FirstScreenBeagleBuilder
 import org.springframework.stereotype.Service
 
 @Service
-class FirstScreenBeagleService {
+class ScreenService {
     fun createScreenBeagle() = FirstScreenBeagleBuilder()
+    fun createFallbackScreen() = FallbackScreen
 }
