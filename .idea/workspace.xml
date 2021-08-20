@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22c01542-914c-4b6e-b4ae-f9588ed969b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/BeagleSampleAndroid/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleAndroid/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeagleSampleAndroid/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleAndroid/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeagleSampleAndroid/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeagleSampleAndroid/app/src/main/java/br/com/beaglesampleandroid/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/BeagleSampleAndroid/app/src/main/java/br/com/beaglesampleandroid/view/MainActivity.kt" afterDir="false" />
-    </list>
+    <list default="true" id="22c01542-914c-4b6e-b4ae-f9588ed969b0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BeagleSampleAndroid" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.0" />
