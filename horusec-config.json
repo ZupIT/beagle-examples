@@ -1,0 +1,14 @@
+{
+  "horusecCliFilesOrPathsToIgnore": [
+    "**/sample/**",
+    "**/.gradle/**",
+    "**/**/gradlew.bat",
+    "**/Gemfile.lock",
+    "**/TextInput/**",
+  ],
+  "horusecCliFalsePositiveHashes": [
+    "21e703bef594324756184b78d9f1eb10ea80412d4c088f7a2f83b0db53238c44"
+  ],
+  "horusecCliRiskAcceptHashes": [
+  ]
+}
