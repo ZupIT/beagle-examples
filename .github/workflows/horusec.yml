@@ -32,3 +32,4 @@ jobs:
         run: |
           curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/master/deployments/scripts/install.sh | bash -s latest
           horusec start -p . -e true -u "https://api-horusec.zup.com.br" -G true -n "${GITHUB_REPOSITORY}_${GITHUB_REF##*/}"
+
