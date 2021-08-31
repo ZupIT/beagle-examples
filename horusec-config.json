@@ -5,5 +5,8 @@
     "**/**/gradlew.bat",
     "**/Gemfile.lock",
     "**/TextInput/**"
+  ],
+  "horusecCliFalsePositiveHashes": [
+    "e88ab44a77cf932f13ae9ed5a8749fe17286ab12295f13f676f76605cb7e0ebe"
   ]
 }
