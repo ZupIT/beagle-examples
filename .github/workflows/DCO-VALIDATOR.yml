@@ -1,0 +1,14 @@
+name: DCO GPG VALIDATOR
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [master]
+
+jobs:
+  dco-gpg-validator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ZupIT/zup-dco-validator@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GPG: true
