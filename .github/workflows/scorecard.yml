@@ -3,10 +3,8 @@ on:
     branches: [master]
 jobs:
   container:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
-      - run: docker run -e GITHUB_AUTH_TOKEN=GITHUB_TOKEN gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/ZupIT/beagle-examples
+      - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/ZupIT/beagle-examples
 
         
