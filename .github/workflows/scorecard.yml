@@ -1,7 +1,7 @@
-name: Score Card
 on:
   pull_request:
     branches: [master]
+
 jobs:
   container:
     runs-on: ubuntu-latest
