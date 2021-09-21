@@ -1,3 +1,4 @@
+name: Score Card
 on:
   pull_request:
     branches: [master]
@@ -7,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo=${{GITHUB_WORKSPACE}}
+      - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo={{$GITHUB_WORKSPACE}}
 
         
