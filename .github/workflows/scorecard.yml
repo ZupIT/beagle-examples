@@ -5,6 +5,7 @@ jobs:
   container:
     runs-on: ubuntu-latest
     steps:
-      - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/ZupIT/beagle-examples
+      - uses: actions/checkout@v2
+      - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo=$GITHUB_WORKSPACE
 
         
