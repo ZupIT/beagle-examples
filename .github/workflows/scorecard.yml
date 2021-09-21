@@ -5,8 +5,8 @@ jobs:
   container:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    runs-on: ubuntu-18.04
-    container: gcr.io/openssf/scorecard:stable
+    runs-on: ubuntu-latest
     steps:
-      - run: scorecard --repo=https://github.com/ZupIT/beagle-examples
+      - run: docker run -e GITHUB_AUTH_TOKEN=GITHUB_TOKEN gcr.io/openssf/scorecard:stable --show-details --repo=https://github.com/ZupIT/beagle-examples
+
         
