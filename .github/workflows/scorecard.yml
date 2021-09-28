@@ -7,7 +7,12 @@ jobs:
   Results:
     runs-on: ubuntu-latest
     permissions:
-      repository-projects: read 
+      repository-projects: read
+      contents: read
+      pull-requests: read
+      security-events: read
+      deployments: read
+      checks: read
     steps:
       - run: docker run -e GITHUB_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }} gcr.io/openssf/scorecard:stable --show-details --repo=${{ github.repository }}
 
