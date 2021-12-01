@@ -1,6 +1,0 @@
-framework module Pods_Beagle_Sample {
-  umbrella header "Pods-Beagle Sample-umbrella.h"
-
-  export *
-  module * { export * }
-}

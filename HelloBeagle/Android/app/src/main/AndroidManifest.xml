@@ -13,14 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.HomeActivity">
-            <intent-filter>
-                <action android:name="screen-native"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-
-            </intent-filter>
-        </activity>
-        <activity android:name=".beagle.AppBeagleActivity" />
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
