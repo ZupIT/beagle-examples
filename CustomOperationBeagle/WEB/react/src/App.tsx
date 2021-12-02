@@ -6,7 +6,7 @@ import BeagleService from './beagle/beagle-service'
 function App() {
   return (
     <BeagleProvider value={BeagleService}>
-      <BeagleRemoteView route={'/isValidPassword'} />
+      <BeagleRemoteView route={'/custom-validator'} />
     </BeagleProvider>
   )
 }

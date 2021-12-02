@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         BeagleConfigurations.setup()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = BeagleScreenViewController(.remote(.init(url: "/isValidPassword")))
+        window?.rootViewController = BeagleScreenViewController(.remote(.init(url: "/custom-operation")))
         window?.makeKeyAndVisible()
     }
 
