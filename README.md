@@ -30,15 +30,11 @@ TO DO: Explain how to run docker compose
 🧬 Samples
 ------------
 
-<!-- Github does not accept formatting with css styles and its markdown is quite basic, the spaces below are a placeholder to widen the second column of images -->
-
-| Project | |
+| Project | Preview|
 |:-----|---------|
-| **Login and Byometric Login**.<br><br>A Beagle implementation of a biometry login flow, using touch id or face id (for iOS). This example was created inspired on the ITI application, just to show what Beagle can do. It does not had any code from ITI itself. In this sample a custom action is created to manage the app's login flow. Also some custom widgets are created to display information on the screen. A **listView** is also implementend on this sample. You can check its code on the Backend project listed here <br><br>• Medium complexity<br>• Custom Actions <br>• Custom Widgets<br>• Navigation<br><br>**[> Browse](LoginBeagle/)** <br><br>  | <img src="readme/screenshots/LoginBeagle.png" width="1500" alt="LoginBeagle sample demo"/> |
+|  **Hello Beagle**.<br><br>A getting started project for you to try out Beagle into your preferred platform, This project contains the basic configuration for each platform and how to load Server Driven Screens into them<br><br>• Low complexity<br>• Flutter <br>• Web<br>• Android<br>• iOS<br><br><br>**[> Browse](BeagleSampleFlutter/)** <br><br>  | <img src="readme/screenshots/flutterexample.png" width="1700" alt="FlexScreenBeagle sample demo"/>|
 |  |  |
-|  **Flutter implementation**.<br><br>A project configured to use Beagle with Flutter. Here you will find a Back and Front end project configured to use Beagle with Flutter and a sample screen<br><br>• Medium complexity<br>• Flutter <br>• Style<br><br><br>**[> Browse](BeagleSampleFlutter/)** <br><br>  | <img src="readme/screenshots/flutterexample.png" alt="FlexScreenBeagle sample demo"/>|
-|  |  |
-|  **Hello Beagle Screen**.<br><br>A hello world with Beagle that shows one simple basic screen. This is a good first screen to help you understand Beagle and the server driven ui concept. <br><br> • Basic complexity <br><br> **[> Browse](HelloBeagle/)**<br><br> | <img src="readme/screenshots/HelloBeagle.png" alt="HelloBeagle sample demo"/>|
+| **Login and Byometric Login**.<br><br>A Beagle implementation of a biometry login flow, using touch id or face id (for iOS). This example was created inspired on the ITI application, just to show what Beagle can do. It does not had any code from ITI itself. In this sample a custom action is created to manage the app's login flow. Also some custom widgets are created to display information on the screen. A **listView** is also implementend on this sample. You can check its code on the Backend project listed here <br><br>• Medium complexity<br>• Custom Actions <br>• Custom Widgets<br>• Navigation<br><br>**[> Browse](LoginBeagle/)** <br><br>  | <img src="readme/screenshots/LoginBeagle.png" alt="LoginBeagle sample demo"/> |
 |  |  |
 |  **Positioning elements Screen**.<br><br>A screen created only to show how elements are positioned in a screen. Learn more about flex and position with Beagle's layout engine [Yoga Layout](https://yogalayout.com/). <br><br>• Low complexity<br>• Flex <br>• Style<br><br><br>**[> Browse](FlexScreenBeagle/)** <br><br>  | <img src="readme/screenshots/FlexScreenBeagle.png" alt="FlexScreenBeagle sample demo"/>|
 |  |  |
