@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  beagle-sample-backend:
+    container_name: beagle-bff
+    image: beagle-bff-image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    restart: always

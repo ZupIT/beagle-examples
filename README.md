@@ -22,9 +22,26 @@ To try out these sample apps, you can use your preferred IDE and follow the mini
 :whale:	Running the backend with docker
 ------------
 
-If you are only looking for testing the frontend projects and you have docker installed in your machine you can easily use docker compose to build our backend project without the need of any extra configuration.
+To run any of the sample you are going to need a functioning backend, which is provided in the [BackendSample](BeagleBackendSample/) folder. If you have all the requirements installed in your machine you can run it in your own environment. 
 
-TO DO: Explain how to run docker compose
+Alternatively if you have [docker](https://www.docker.com/) installed you can easily use docker compose to build the backend project without the need of any extra local configuration. This is specially helpful if you are interested in running only the frontend samples.
+
+###### :point_right:	Make sure docker is running before using the commands :point_left:	
+
+In your terminal navigate to the root of the BeagleSampleBackend folder
+
+```
+cd BeagleSampleBackend
+```
+
+Now run the docker compose file with the command below:
+```
+docker-compose up --build
+```
+
+You should be able to access the backend endpoints on port:8080.
+
+
 
 
 🧬 Samples
