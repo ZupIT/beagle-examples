@@ -32,7 +32,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<kotlin.version>1.3.71</kotlin.version>
+		<kotlin.version>1.5.10</kotlin.version>
 	</properties>
 
 	<dependencies>
@@ -70,6 +70,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+            <finalName>beagle-sample-backend</finalName>
+        </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>

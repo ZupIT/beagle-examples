@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         BeagleConfigurations.setup()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = BeagleScreenViewController(.remote(.init(url: "/sampleFlexScreen")))
+        window?.rootViewController = BeagleScreenViewController(.remote(.init(url: "/sample-flex-screen")))
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

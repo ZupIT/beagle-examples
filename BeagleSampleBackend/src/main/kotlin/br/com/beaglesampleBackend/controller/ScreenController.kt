@@ -16,13 +16,14 @@
 
 package br.com.beaglesampleBackend.controller
 
-import br.com.beaglesampleBackend.builder.FallbackScreen
 import br.com.beaglesampleBackend.service.*
+import br.com.beaglesampleBackend.service.FlexScreenService
+import br.com.beaglesampleBackend.service.IsValidPasswordService
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
-@CrossOrigin(origins = ["http://localhost:8080"], maxAge = 3600)
+@CrossOrigin(origins = ["*"], maxAge = 3600)
 @RestController
 class ScreenController(
     private val firstScreenBeagleService: ScreenService,
@@ -31,7 +32,9 @@ class ScreenController(
     private val carouselOptions: HomeCarouselOptionsService,
     private val paginatedList: PaginatedListService,
     private val fallbackScreen: ScreenService,
-    private val getGetStarted:GetStartedScreenService
+    private val getGetStarted:GetStartedScreenService,
+    private val sampleFlexScreen: FlexScreenService,
+    private val isValidPasswordService: IsValidPasswordService
 ) {
     @GetMapping("/screen")
     fun getFirstScreen() = firstScreenBeagleService.createScreenBeagle()
@@ -53,4 +56,10 @@ class ScreenController(
 
     @GetMapping("/get-started")
     fun getGetStartedScreen() = getGetStarted.createGetStartedScreen()
+
+    @GetMapping("/sample-flex-screen")
+    fun getFlexScreen() = sampleFlexScreen.getFlexScreenBuilder()
+
+    @GetMapping("/custom-validator")
+    fun getIsValidPasswordScreen() = isValidPasswordService.createIsValidPasswordBuilder()
 }

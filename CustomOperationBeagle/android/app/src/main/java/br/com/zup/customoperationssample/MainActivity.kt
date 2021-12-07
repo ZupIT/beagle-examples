@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val intent =  this.newServerDrivenIntent<ServerDrivenActivity>(ScreenRequest(url = "/isValidPassword"))
+        val intent =  this.newServerDrivenIntent<ServerDrivenActivity>(ScreenRequest(url = "/custom-validator"))
         startActivity(intent)
     }
 }
